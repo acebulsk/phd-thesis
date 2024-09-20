@@ -1,0 +1,264 @@
+---
+title: "Advancing Snow Accumulation Models in Needleleaf Forests"
+author: "Alex Cebulski"
+date: today
+date-format: long
+format: 
+  # html
+  # pdf
+  docx:
+    reference-doc: ../config/thesis-word-template.docx
+    number-sections: true
+    toc: false
+editor: source
+bibliography: ../../papers/bibtex/library.bib
+csl: '../../papers/bibtex/csl-styles/apa-disable-disambiguate-add-names.csl'
+---
+
+# Introduction
+
+## Background
+
+This subsection of Chapter 1 will introduce background information, motivation, hydrological significance of the study topic, research gaps, and methods used in the study.
+
+## Research Gap and Objectives
+
+This subsection of Chapter 1 will describe the overall purpose of the thesis and links the individual thesis objectives to research gaps.
+
+Thesis objectives and research questions
+
+Purpose: To better understand the processes that govern snow accumulation in forested environments.
+
+1. Evaluate the suitability of existing snow interception and ablation parameterizations for application in needleleaf forests with differing canopy structure and meteorology.
+
+    1.1 What are the theoretical underpinnings and assumptions behind existing snow interception and ablation parameterizations?
+    
+    1.2 Are the theories and assumptions of existing snow interception parameterizations supported by field measurements collected across diverse canopy structures and meteorological conditions?
+    
+    1.3 Are the theories and assumptions of existing canopy snow ablation parameterizations supported by field measurements collected across varying meteorological conditions?
+
+2. Determine how new snow interception and ablation parameterizations could enhance the representation of processes important for subcanopy snow accumulation.
+
+    2.1 How can the use of novel snow interception parameterizations enhance simulations of snow accumulation in forests with differing tree species, canopy structures, and meteorological conditions?
+
+## Organization of Chapters
+
+This thesis contains 5 chapters, the first chapter includes an introduction and research plan while, the remaining chapters 2-5 each correspond to a journal article which aims to answer each of the research questions.
+
+# The Theoretical Underpinnings of Existing Snow Interception and Ablation Parameterizations
+
+Manuscript Status: Invited for submission to the journal WIREs Water and is currently under review.
+
+Role in thesis: This paper is an advanced review article and corresponds to objective 1, research question 1.1 of the thesis and aims to answer the first research question of Objective 1 which is "What are the theoretical underpinnings and assumptions behind existing snow interception parameterizations?". This advanced review will provide the context necessary for interpreting whether the theories and assumptions of existing parameterizations are true for the field observations collected in this study in the second part of objective 1.
+
+Author Contribution: Conducted literature review, committee members provided edits... 
+
+```{r child = 'chapters/review-paper.qmd'}
+```
+
+# Snow Interception Relationships with Meteorology and Canopy Structure in a Subalpine Forest
+
+This journal article aims to answer part of the second research question of Objective 1, "Are the theories and assumptions of existing snow interception parameterizations true for field measurements collected across diverse forest structures and climates?". This will be achieved by presenting observations of interception from a study site few researchers have focused on, a subalpine discontinuous forest and contrast these results with existing theory developed in maritime and continental climates. This journal article is in progress for submission to the Hydrological Processes special issue "Canadian Geophysical Union 2023".
+
+##### 1.  Introduction
+
+##### 2.  Methods
+
+###### 2.1 Study Site
+
+###### 2.2 Automated Interception Measurements
+
+###### 2.3 Snow Surveys
+
+###### 2.3.1 In-Situ Measurements
+
+###### 2.3.2 UAV-LiDAR Measurements
+    
+###### 2.3.4 Discrete Event Interception Measurements
+
+###### 2.3 Canopy Structure Products
+
+##### 3.  Results
+
+###### 3.1 The influence of meteorology on snow interception
+    
+- The accumulation of canopy load over 26 snowfall events shown in @fig-scl-w-sf measured using the subcanopy lysimeters, exhibits the variability in I/P between and within the different events. The relatively low variability in I/P across and within the different events is attributed to variances in meteorological conditions.
+
+- Frequency distribution of meteorological variables observed over the 26 snowfall events (@fig-hist-met-ip).
+
+- @fig-lai-met-ip shows 15-minute average variables including: air temperature, relative humidity, wind speed, initial canopy snow load, hydrometeor diameter, hydrometeor velocity, versus 15 minute average snow interception efficiency for all 26 snowfall events.
+
+::: {#fig-scl layout-ncol="2"}
+
+![](../snow-int-paper/figs/automated_snowfall_event_periods/cuml_event_snowfall_canopy_storage_sep_scl.png){#fig-scl-w-sf}
+
+![](../snow-int-paper/figs/automated_snowfall_event_periods/event_total_snowfall_vs_IP_colour_troughs.png){#fig-scl-ip}
+
+Two plots showing the relationship between snowfall and interception. Plot (a) shows the cumulative event snowfall versus the corresponding state of canopy snow storage for each of the 26 snowfall events. Plot (b) shows total event snowfall versus the average interception efficiency for each event. Snowfall data was measured using the snowfall gauge at Powerline Station while throughfall data was measured using the three subcanopy lysimeters used for the calculation of canopy storage and interception efficiency. These lysimeters, each denoted by a distinct color (black, red, and green), correspond to varying canopy coverage (0.73, 0.78, and 0.82, respectively).
+
+:::
+
+![Scatter plots of discrete observations (green) of snow interception efficiency observed at 15 minute intervals using the subcanopy lysimeter and snowfall gauge against and binned data (black). Panels show (A) air temperature, (B) wind speed, (C) initial canopy snow load (the snow load observed at the beginning of the timestep), (E) hydrometeor diameter, (F) hydrometeor velocity. The black open circles show the mean of each bin and the error bars represent the standard deviations. The data were filtered to include observations with a snowfall rate > 0 mm/hr and a snowfall rate > the subcanopy lysimeter throughfall rate to minimize observations with unloading. Periods of unloading and melt were also removed through careful analysis of the weighed tree, subcanopy lysimeters, and timelapse imagery.](../snow-int-paper/figs/automated_snowfall_event_periods/troughs_met_vs_IP_bin.png){#fig-met-ip}
+
+###### 3.2 The influence of forest structure on snow accumulation
+    
+- Snow interception efficiency observed across the study site after a 24 hour snow accumulation event reveals the influence of forest structure on snow accumulation. 
+    
+- The spatial distribution in I/P across the study site, calculated using throughfall from lidar measurements and snowfall from the Pluvio snowfall gauge is shown in @fig-lidar-ip. Greater I/P is observed on the north (lee) side of individual trees which is inferred to be due to the predominately southerly winds observed over this event. This effect is more apparent on the southwest of the study site compared to north and eastern locations within the study site.
+    
+::: {#fig-lidar-ip layout="[[1,1], [1]]"}
+
+![PWL I/P](../../analysis/lidar-processing/figs/maps/pwl_e_23_072_23_073_v2.0.0_saip_normalised_resample_0.25.png){#fig-lidar-ip-pwle}
+
+![FT I/P](../../analysis/lidar-processing/figs/maps/fsr_s_23_072_23_073_v2.0.0_saip_normalised_resample_crop_0.25.png){#fig-lidar-ip-fsrs}
+
+Interception efficiency calculated over a 24 hr snowfall event from March 13, 2023 to March 14, 2024 for the PWL forest plot (a) and FT forest plot (b) at a 25 cm resolution. White areas for the bottom row are 25 cm grids that did not have any lidar ground returns or have been masked due to disturbance and thus, no throughfall measurement for the I/P calculation.
+
+:::
+
+- To determine how forest structure was associated with interception efficiency over the March 13-14 snowfall event, each portion of the hemisphere at each grid location was considered. The Spearman's Correlation Coefficient calculated between the single raster grid of I/P and multiple canopy contact number at a given portion of the hemisphere (azimuth [0, 1, ..., 359], zenith angle [0, 1, ..., 90]) is shown in @fig-hemi-ip-cc.
+    
+
+###### 3.3 Combined effects of Meteorology and Forest Structure
+    
+- The mean canopy contact number, obtained through voxel ray sampling across all azimuth angles [0, 1, ..., 359] for each zenith angle [0, 1, ..., 90], shown in @fig-ta-ws-cc demonstrates an exponential rise in contact number with increasing (more horizontal) trajectory angle. This underscores the influence of hydrometeor trajectory angle, which is a function of wind speed, on the apparent forest structure important for interception.
+    
+::: {#fig-ta-ws-cc layout-nrow="2"}
+
+![](../../analysis/lidar-processing/figs/voxrs/scatter/traj_angle_and_wind_vs_contact_number_phiby_2_thetaby_5.png){#fig-ht-cc}
+
+![](../../analysis/lidar-processing/figs/voxrs/scatter/traj_angle_and_wind_vs_canopy_coverage_phiby_2_thetaby_5.png){#fig-ht-cc}
+
+Scatter plots showing the association of (a) hydrometeor trajectory angle and wind speed with mean contact number and (b) hydrometeor trajectory angle and wind speed with apparent canopy coverage calculated as a function of mean contact number. The dots represent the mean mean contact number (a) OR mean canopy coverage (b) across all azimuth angles of the the hemisphere [0, 1, ..., 359] for a each zenith angle [0, 1, ..., 90] at each forest plot. The colour of the dot represents the mean canopy coverage of each forest plot from nadir. Trajectory angle is calculated as zenith angle - 90°.
+
+:::
+    
+##### 4.  Discussion
+
+- This discussion will aim to answer the second research question of objective 1, "Are the theories and assumptions of existing snow interception parameterizations true for field measurements collected across diverse forest structures and climates?" for a discontinuous subalpine forest. This will be achieved by comparing the theories of existing snow interception parameterizations reviewed in Paper 1  from maritime and continental climates with the observations presented in the results here.  
+
+##### 5.  Conclusions
+
+-   Forest structure is the main factor governing the fraction of intercepted snowfall at a particular site, with meteorological conditions contributing less to variability.
+-   @fig-scl: Carefully selected snowfall events, prior to canopy snow ablation, did not approach a maximum snow load load, and interception efficiency was not observed to be associated with event size. This challenges existing snow interception parameterizations which rely on the assumption that interception efficiency is a function of maximum canopy snow load. While some rise in interception efficiency was observed alongside increasing canopy snow load, primarily attributed to increasing canopy coverage, the subsequent decrease in interception efficiency at higher loads implies that canopy snow ablation is proportional to canopy snow load.
+-   @fig-met-ip: No influence of air temperature, relative humidity, hydrometeor velocity, hydrometeor diameter or canopy storage on interception efficiency was observed.
+-   @fig-met-ip: Interception efficiency was shown to increase with wind speed and canopy snow load as a result of increasing snow-leaf contact area.
+-   @fig-met-ip: High wind speeds were observed to decrease intercepted load due to increased snow unloading.
+-   @fig-lidar-ip: Spatially distributed UAV-lidar measurements of throughfall from a snowfall event with steady wind shows reduced snow accumulation on the lee side of individual trees as a result of increasing snow-leaf contact area due to non vertical hydrometeors results.
+
+-   A new snow interception parameterization has been presented which calculates initial interception, before canopy snow ablation, as a function of snowfall rate and snow-leaf contact area ratio. 
+-   A second new parameterization is proposed which calculates snow-leaf contact area ratio as a function of nadir canopy coverage, wind speed and canopy snow load.
+-   Caution should be taken in using this updated interception routine with existing canopy snow ablation parameterizations as they were developed using earlier snow interception routines that also included ablative processes. 
+-   Future work will will involve a canopy snow ablation routine that is revised to work with this new snow interception routine.
+
+#### Paper 3: The Impact of Meteorology on Canopy Snow Ablation Processes: Insights from Field Observation in a Subalpine Forest
+
+This journal article will present results of canopy snow ablation observations from Fortress Mountain Research basin collected over the 2022 and 2023 water years. This journal article will follow a similar story as in Paper 2 in that observations will be presented in the results section and in the discussion question 2 of objective 1 will be addressed. The results from this paper were presented at INARCH and AGU 2023.
+
+##### 1. Introduction
+
+Discuss the difficulty in obtaining canopy snow ablation measurements, especially over space. 
+
+##### 2. Methods
+
+###### 2.1 Study Site
+###### 2.2 Canopy Snow Ablation Measurements
+###### 2.3 Canopy Snow Sublimation Modelling (in absence of usable Eddy Covariance data)
+
+##### 3. Results
+
+###### 3.1 Dominant Ablation Processes Observed
+
+- This first section of the results will present the apportionment of canopy snow ablation, shown in @fig-c-abl, determined using automated measurements of canopy snow ablation from the weighed tree and unloading from the subcanopy lysimeters
+
+- The apportionment of how canopy snow ablation changes with temperature in @fig-c-abl-temp and wind speed in @fig-c-abl-wind will also be presented. Also discuss 0.5 mm/hr of canopy snow that was observed to be entrained above the canopy at wind speeds above 4 m/s.
+
+![The apportionment of canopy snow ablation determined using
+automated measurements of canopy snow ablation from the weighed tree and unloading from the subcanopy lysimeters averaged over two winter seasons. Sublimation was simulated using the Cold Regions Hydrological Model (Pomeroy et al., 2007).](../../conference/agu/2023-sanfran/R/figs/ablation/canopy_snow_ablation_partition_global.png){#fig-c-abl}
+
+::: {#fig-c-abl-met layout-ncol="2"}
+
+![](../../conference/agu/2023-sanfran/R/figs/ablation/canopy_snow_ablation_partition_vs_air_temp.png){#fig-c-abl-temp}
+
+![](../../conference/agu/2023-sanfran/R/figs/ablation/canopy_snow_ablation_partition_vs_mid_canopy_wind.png){#fig-c-abl-wind}
+
+The change in contribution of unloading and the residual to total canopy ablation. Calculated using automated measurements of ablation from the weighed tree and unloading from the subcanopy lysimeters.
+
+:::
+
+###### 3.2 The Influence of Meteorology on Unloading
+
+- The probability of unloading shown in @fig-prob-unl was observed to be higher with air temperatures above 0 °C and with wind speeds above 2 m/s. At air temperatures above -6 °C the effect of wind speed on unloading appears to be reduced. 
+
+- The observed unloading rate attributed to warming was higher at sub-zero temperatures when the canopy was loaded (> 6.5 mm) compared to when there was less than 6.5 mm of snow in the canopy (@fig-qunld-temp).
+
+- High rates of unloading attributed to wind were observed across all wind speed bins when the canopy was loaded (> 6.5 mm). The unloading rate was observed to increase with increasing wind with less than 6.5 mm of snow in the canopy (@fig-qunld-wind).
+
+::: {#fig-bin-unl layout-ncol="2"}
+
+![](../../conference/agu/2023-sanfran/R/figs/ablation-binned/probability_of_unloading_wind_air_temp.png){#fig-prob-unl}
+
+![](../../conference/agu/2023-sanfran/R/figs/ablation-binned/frequency_of_unloading_wind_air_temp.png){#fig-prob-freq}
+
+The probability and frequency of unloading for air temperature and wind speed bins pairs measured using automated measurements of unloading from the subcanopy lysimeters. The probability of unloading was calculated as the number of unloading events within each bin pair divided by the total number of occurrences of each bin pair. 
+
+:::
+
+::: {#fig-qunl-met layout-nrow="2"}
+
+![](../../conference/agu/2023-sanfran/R/figs/ablation-binned/binned_unloading_rate_and_t_air_class_canopy_load.png){#fig-qunld-temp}
+
+![](../../conference/agu/2023-sanfran/R/figs/ablation-binned/binned_unloading_rate_and_wind_mid_class_tree_load.png){#fig-qunld-wind}
+
+Average unloading rates measured by the subcanopy lysimeters
+for periods where wind speeds are less than 2 m/s (a) OR air temperature less than -6 °C (b). Uncertainty ranges shows the 5th and 95th percentiles.
+
+:::
+
+##### 4. Discussion
+
+This discussion will aim to answer the second research question of objective 1, "Are the theories and assumptions of existing snow interception parameterizations true for field measurements collected across diverse forest structures and climates?" for a discontinuous subalpine forest. This will be achieved by comparing the theories of existing canopy snow ablation parameterizations reviewed in Paper 1  from maritime and continental climates with the observations presented in the results here.  
+
+##### 5. Conclusions
+
+### Chapter 3
+
+This chapter corresponds to objective 2, to quantify the performance of current snow interception parameterizations against field observations in differing forest structures and climates. To achieve this objective one journal article is proposed:
+
+#### Paper 4: The Influence of Climate and Forest Structure on Snow Interception Parameterization Performance: Insights for Improved Process Representation in Mountain Forests
+
+The content of this paper is still to be discussed with John. 
+
+The plan in the thesis proposal was to evaluate the CRHM canopy modules using measurements of sub-canopy SWE, interception and ablation measured at various spatial and temporal scales at Fortress Mountain, Marmot Creek, Wolf Creek, and Russell Creek. A limitation of this approach is the limited spatial coverage in continuous point scale process measurements (weighed tree, lysimeters), also doesn't answer forest structure component of the objective. The advantage of this plan is more detailed process investigation (also assuming better weighed tree was installed fall of 2022 at Wolf Creek compared to the dead tree hung in 2021).
+
+While not in the original proposal, after spending a week learning CHM with Chris Marsh I thought a similar analysis could be conducted using CHM by updating the canopy module and comparing simulated SWE to aerial lidar SWE across Fortress Basin and Russell Creek. This could be achieved using the monthly Fortress basin and Vancouver Island aerial lidar snow depth measurements. The disadvantage of this plan would be less detailed process investigation. The advantage is greater spatial coverage across variable forest structure and still contrasting climates (Fortress vs. Vancouver Island).
+
+### Chapter 4
+
+This chapter corresponds to objective 3, determine how the modification of existing snow interception parameterizations better represent the processes important for snow accumulation and redistribution in mountain forests of differing structure and climate
+
+#### Paper 5: An evaluation of new snow interception and ablation parameterizations across diverse forest structures and climates
+
+As in chapter 3, the content of this paper is still to be discussed with John. 
+
+The proposed content of this paper aims to answer the first research question of objective 3, what is the change in forest snow accumulation model error associated with an updated canopy snow interception parameterization?. To achieve this, insights gained from objective 1 and 2 will be used to inform the modification of existing snow interception parameterizations. The updated parameterizations will be evaluated by including them in an updated CRHM canopy module and compared simulated SWE to observed SWE within the forested portion of each basin. As in paper 4 this could also be conducted using CHM with implications for changing the analysis detail and spatial scaling.
+
+#### Paper 6: TBD
+
+To answer the second research question of objective 3, "What is the change in forested basin streamflow model error associated with an updated canopy snow interception parameterization?", a sixth paper would be required.
+
+This paper would involve setting up CRHM (CHM does not have stream routing yet) for mountain basins with a high fraction of their snow-covered zone that is forested and running a sensitivity analysis on predicted streamflow using different versions of the CRHMs canopy module. Possible test basins that meet this criteria are: the Tsitika River (Coastal, 08HF004), Upper Penticton River (Interior Dry, 08NM240), Kuskanax Creek (Interior Wet, 08NE006), and White Gull Creek (Continental Cold Dry, 05KE010).
+
+Further discussion with John should occur to ensure this paper is still justified. After reflection while creating and teaching the Runoff Module for GEOG 225, I realize that the uncertainty in the snowmelt-runoff portion of hydrological models may mask any sensitivity to changes to canopy module. 
+
+# References
+
+::: {#refs}
+:::
+
+# Appendix for Chapter 1 {#sec-appendix-c1}
+
+```{r child = 'chapters/02-review-paper-appdx.qmd'}
+```
+
+# Appendix for Chapter 2
