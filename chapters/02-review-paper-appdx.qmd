@@ -1,6 +1,4 @@
 
-## Appendix {#sec-appendix}
-
 ### Snow Interception Parameterization Derivations
 
 The original formulation of @Hedstrom1998a is:
