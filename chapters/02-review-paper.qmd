@@ -1,0 +1,103 @@
+**Article Category**: Advanced Review
+
+**Authors**:
+
+A. Cebulski^1^ (ORCID ID - 0000-0001-7910-5056)
+
+J.W. Pomeroy^1^ (ORCID ID - 0000-0002-4782-7457)
+
+^1^Centre for Hydrology, University of Saskatchewan, Canmore, Canada
+
+**Abstract:** In needleleaf forests, up to half of annual snowfall may be ablated due to sublimation of snow intercepted in the canopy. However, limited and sparse observations of snow interception and ablation processes have hindered the development of fundamental theories underpinning current estimates of snow accumulation in forests. Existing parameterizations for snow interception and ablation have been developed in locations with distinctive climate, tree species and forest structures, resulting in differing and non-comprehensive process representations. Consequently, their transferability across diverse landscapes and climates remains uncertain. Moreover, difficulties in isolating individual processes using field-based measurements contributes further uncertainty to validation of process representations in hydrological models. Specific gaps in the literature include challenges in differentiating snow throughfall measurements from canopy snow ablation, partitioning unloading rates and canopy snowmelt drainage, the assumption of vertical falling hydrometeor trajectories, the absence of wind resuspension parameterizations, and the limited testing of parameterizations in varied forests and climates. This review article aims to elucidate the theoretical foundations and assumptions underlying the current snow interception and ablation concepts and parameterizations in the literature to inform model-decision makers in selecting parameterizations and guiding future field-based observational studies. The theory and methods behind snow interception and ablation studies are also reviewed to provide the context necessary for examining the applicability of current parameterizations across contrasting environments.
+
+**Graphical Abstract and Caption**
+
+Snow interception and ablation processes are essential components of hydrological models and land surface schemes. Determining how to best represent these processes in models helps inform land management, ecological conservation and water resource decisions.
+
+![](../review-paper/figs/IMG_4319_bitmap_5_mass_bal_WIRES.png)
+
+## Introduction
+
+Snow interception and ablation processes and their conceptual models have never been thoroughly reviewed, though reviews of individual processes exist [@Pomeroy1995; @Lundberg2001; @VanStan2020; @Lundquist2021]. To determine a path forward for the improved prediction of snow accumulation in forested environments, it is essential to conduct a comprehensive review of the underlying theory and methodologies used to develop existing parameterizations. This article will also explore processes often overlooked in existing parameterizations, including non-vertical hydrometeor trajectories, horizontal wind redistribution of snow, and rime accretion. The article further examines the limited research on snow interception and ablation in forests with diverse species and structure has impacted process understanding and restricts transferability across differing environments. Additionally, the methods used to measure or approximate these mass and energy processes are also reviewed, providing the necessary context for interpreting the underlying assumptions of existing snow interception and ablation parameterizations.
+
+## The Mass and Energy Balance of Snow in the Canopy {#sec-theory}
+
+Section 2 begins with discussing the symbology used to represent mass fluxes, energy fluxes and states of snow intercepted in the canopy. This section is written in the context of a winter needleleaf forest environment.
+
+### Mass Balance
+
+Section 2.1 contains a mass balance equation for canopy snow load followed by a description of each of the terms in the equation. A figure is also shown which gives a visual of the mass balance processes important for canopy snow load. Coupled mass and energy equations for the calculation of melt and sublimation of snow intercepted in the canopy are also shown.
+
+### Energy Balance
+
+Section 2.2 contains an energy balance equation for snow intercepted in the canopy followed by a description of the terms. A figure showing a visual representation of the energy balance processes is shown. A discussion of some of the simplifications made with this energy balance representation is then provided.
+
+## Measuring Snow Interception and Ablation {#sec-methods}
+
+Section 3 covers the common methodologies used to measure snow interception and ablation. A description of the principle behind each method is given and any uncertainties related to the method are also discussed. The methodologies described include, weighed tree, mass balance methods, snow surveys, subcanopy lysimeters and remote sensing techniques.
+
+### Weighed Tree
+
+### Mass Balance Methods
+
+#### Snow Surveys {#sec-snow-surveys}
+
+#### Subcanopy Lysimeters
+
+### Remote Sensing
+
+### Tree Sway Frequency
+
+### Trunk Compression
+
+## Methods of Determination {#sec-determination}
+
+Section 4 discusses the parameterizations available in the literature for the determination of the mass and energy balance processes discussed in Section 2. For each parameterization a description the study environment, climate, and methodologies used to derive it is provided. Section 4.1 discusses snow interception parameterizations followed by section 4.2 which discusses snow ablation parameterizations for sublimation, unloading and drip.
+
+
+### Snow Interception Parameterizations {#sec-interception}
+
+#### @Hedstrom1998a
+
+#### @Storck2002 and @Andreadis2009
+
+#### @Katsushima2023
+
+#### Event Based Snow Interception Parameterizations
+
+### Canopy Snow Ablation Parameterizations {#sec-ablation}
+
+#### Sublimation
+
+#### Unloading and Drip {#sec-unloading}
+
+##### @Hedstrom1998a
+
+##### @Storck2002
+
+##### @Roesch2001
+
+##### @Bartlett2015
+
+##### @Katsushima2023
+
+## Discussion {#sec-research-gaps}
+
+
+In Section 5 the theories and assumptions of the parameterizations listed above are compared. Research gaps are also listed to give insight on where current snow interception and ablation parameterizations theories and assumptions may be invalid and where new observations and theoretical development is required. Advice for informing model-decision makers on choosing parameterizations is also given
+
+## Conclusion
+
+Numerous conceptual models of snow interception and ablation have been developed, reflecting differences in the climate, canopy structure, and methodological approaches across previous studies. The choice of parameterization can significantly influence simulated outcomes, underscoring the importance of informed decision-making. However, acquiring the necessary knowledge from the literature to facilitate such decisions has proven challenging, with notable knowledge gaps persisting in process understanding. Difficulties in isolating snow interception processes in in-situ measurements may have resulted in parameterizations that are not isolated to a single process. Future work to help decouple canopy snow interception and ablation parameterizations could help minimize the over representation of certain processes and provide some clarity to model decision makers. This decoupling may have implications for canopy snow ablation parameterizations and thus should be revisited in the context of updated interception routines. Previous attempts to model snow accumulation and ablation in transitional climates had success by combining parameterizations derived from diverse climates. However, using combined parameterizations remains underutilized in contemporary models, and has the potential to better model transitional climates. Recent advances in lidar-based methods to measure subcanopy snow accumulation and canopy metrics has enhanced our understanding of how leaf contact area is influenced by snowfall trajectory angle and canopy snow load. However, further work is required to integrate these novel results into snow interception parameterizations. Parameterizations that ablate snow intercepted in the canopy differ in the level of detail in canopy snowmelt models and number of processes included snow such as wind induced unloading and resuspension, rime-ice accretion, and time-based unloading. Future work is required to determine the appropriate level of detail in canopy snowmelt models and the whether the relationships used in existing ablation parameterizations hold for other locations.
+
+A comprehensive field-based investigation into canopy snow interception and ablation processes is needed to address these remaining research gaps. Utilizing observations of forest snow accumulation and canopy snow ablation across diverse forests and climates is crucial for assessing and refining existing theories of snow interception and ablation processes. This approach will enhance our understanding of where existing parameterizations fail, what processes drive model uncertainty, and how parameterizations can be modified to better represent forest snow accumulation.
+
+## Funding Information
+
+Dean’s Scholarship – University of Saskatchewan Devolved Scholarship – University of Saskatchewan Discovery Grant – National Sciences and Engineering Research Council of Canada Global Water Futures Programme – Canada First Research Excellence Fund Canada Research Chairs Programme – Government of Canada Water Information Program Grant, Alberta Innovates
+
+## Acknowledgments
+
+We wish to acknowledge financial support from the University of Saskatchewan, Natural Sciences and Engineering Research Council of Canada, Global Water Futures Programme, Alberta Innovates and the Canada Research Chairs Programme. We thank Martyn Clark for his advice in outlining the steps to derive analytical solutions from the ordinary difference equation representation of the parameterizations.
+
+\pagebreak
