@@ -1,103 +1,475 @@
-**Article Category**: Advanced Review
 
-**Authors**:
+## Abstract
 
-A. Cebulski^1^ (ORCID ID - 0000-0001-7910-5056)
-
-J.W. Pomeroy^1^ (ORCID ID - 0000-0002-4782-7457)
-
-^1^Centre for Hydrology, University of Saskatchewan, Canmore, Canada
-
-**Abstract:** In needleleaf forests, up to half of annual snowfall may be ablated due to sublimation of snow intercepted in the canopy. However, limited and sparse observations of snow interception and ablation processes have hindered the development of fundamental theories underpinning current estimates of snow accumulation in forests. Existing parameterizations for snow interception and ablation have been developed in locations with distinctive climate, tree species and forest structures, resulting in differing and non-comprehensive process representations. Consequently, their transferability across diverse landscapes and climates remains uncertain. Moreover, difficulties in isolating individual processes using field-based measurements contributes further uncertainty to validation of process representations in hydrological models. Specific gaps in the literature include challenges in differentiating snow throughfall measurements from canopy snow ablation, partitioning unloading rates and canopy snowmelt drainage, the assumption of vertical falling hydrometeor trajectories, the absence of wind resuspension parameterizations, and the limited testing of parameterizations in varied forests and climates. This review article aims to elucidate the theoretical foundations and assumptions underlying the current snow interception and ablation concepts and parameterizations in the literature to inform model-decision makers in selecting parameterizations and guiding future field-based observational studies. The theory and methods behind snow interception and ablation studies are also reviewed to provide the context necessary for examining the applicability of current parameterizations across contrasting environments.
-
-**Graphical Abstract and Caption**
-
-Snow interception and ablation processes are essential components of hydrological models and land surface schemes. Determining how to best represent these processes in models helps inform land management, ecological conservation and water resource decisions.
-
-![](../review-paper/figs/IMG_4319_bitmap_5_mass_bal_WIRES.png)
+In needleleaf forests, up to half of annual snowfall may be returned to the atmosphere through sublimation of snow intercepted in the canopy. However, limited and sparse observations of snow interception and ablation processes have hindered the development of fundamental theories underpinning current estimates of snow accumulation in forests. Existing parameterisations for snow interception and ablation have been developed in locations with distinctive climate, tree species and forest structures, resulting in inconsistent and non-comprehensive process representations. This variability limits the transferability of these parameterisations across diverse landscapes and climates. Moreover, difficulties in isolating individual processes in field-based measurements has led to parameterisations that inadvertently coupled multiple processes, adding to uncertainty. Many studies have also simplified original parameterisations and do not include recent advances from observational studies. This review article aims to elucidate the theoretical foundations and assumptions underlying the current snow interception and ablation parameterisations to provide a better understanding of uncertainties in existing methods and identify priorities for future field-based observational studies. The methods behind snow interception and ablation studies are also reviewed to provide necessary context for examining current parameterisations. Specific gaps in the literature include determining the canopy snow storage capacity, challenges in distinguishing snow throughfall measurements from canopy snow ablation, partitioning unloading rates and canopy snowmelt drainage, the assumption of vertical falling hydrometeor trajectories, the absence of wind resuspension parameterisations, and the limited testing of parameterisations in varied forests and climates.
 
 ## Introduction
 
-Snow interception and ablation processes and their conceptual models have never been thoroughly reviewed, though reviews of individual processes exist [@Pomeroy1995; @Lundberg2001; @VanStan2020; @Lundquist2021]. To determine a path forward for the improved prediction of snow accumulation in forested environments, it is essential to conduct a comprehensive review of the underlying theory and methodologies used to develop existing parameterizations. This article will also explore processes often overlooked in existing parameterizations, including non-vertical hydrometeor trajectories, horizontal wind redistribution of snow, and rime accretion. The article further examines the limited research on snow interception and ablation in forests with diverse species and structure has impacted process understanding and restricts transferability across differing environments. Additionally, the methods used to measure or approximate these mass and energy processes are also reviewed, providing the necessary context for interpreting the underlying assumptions of existing snow interception and ablation parameterizations.
+The melt of seasonal snowpacks is an important source of streamflow around the world, crucial for downstream ecosystems, energy production, drinking water supply and agricultural irrigation that directly support over 2 billion people [@Viviroli2007; @Viviroli2020]. Despite this importance, there is uncertainty in estimates of snow accumulation due to redistribution of snow by wind and forest canopy [@Ellis2010; @Krinner2018; @Rutter2009]. In the Northern Hemisphere, over 50% of snowmelt-dominated basins are covered by needleleaf forest [@Kim2017]. This extensive canopy coverage reduces the amount of snow that is available for streamflow through interception of snowfall and subsequent canopy snow sublimation [@Ellis2010; @Essery2003; @Hedstrom1998]. Intercepted snow in the canopy is subjected to higher rates of sublimation and melt compared to subcanopy snow due to greater surface area, warmer temperatures, turbulent energy exchange and solar exposure [@Lundberg1994; @Pomeroy1998]. Across the Northern Hemisphere, researchers have estimated that 25–45% of annual snowfall may be lost to the sublimation of intercepted snow from the canopy [@Essery2003]. However, the magnitude of sublimation losses depends on the amount of snowfall that is intercepted in the canopy and the competing ablation processes including unloading, melt, drip, and resuspension of snow that control the duration that snow resides in the canopy. These processes contribute to spatial and temporal variability in the accumulation of snowpacks both between and within forested and non-forested landscapes [@Krinner2018; @Rutter2009]. This snowpack variability is not well represented due to a sparse and unrepresentative network of in-situ observations, which are mostly located in forest clearings [e.g., Canada, @Vionnet2021]. Moreover, while high spatial resolution snow depth measurements from aerial lidar are useful for canopy-snow process investigations at the plot scale [e.g., @Staines2023], observing snow accumulation under forest canopies at large extents remains uncertain with current remote sensing technologies [@Rittger2020; @Stillinger2023]. Therefore, there is a need for robust models of snow redistribution by vegetation to estimate snow accumulation in forests and generate predictions of how water resources will change with future climates [@Clark2015; @Pomeroy2007; @Rutter2009]. Such models require a comprehensive understanding of snow redistribution processes.
+
+Existing theories of snow interception and ablation have primarily been developed for dense forest canopies in either warm maritime [@Andreadis2009; @Katsushima2023; @Storck2002] or cold continental [@Ellis2010; @Hedstrom1998; @Roesch2001] climates. These isolated observations have resulted in distinctive theories of the key snow interception and ablation processes. Whilst parameterisations founded on these theories can yield accurate simulations of the timing and magnitude of forest snow accumulation when applied in similar climates to where they were developed [@Lundquist2021; @Rasouli2019; @Roth2019] or when combined into a hybrid parameterisation and assessed at global and regional scales in a wide range of climates [@Essery2003; @Gelfan2004], large discrepancies in simulated subcanopy snow accumulation have been demonstrated in inter-model comparisons by [@Krinner2018] and [@Rutter2009]. Some of the uncertainty in subcanopy snowpack simulations observed by [@Krinner2018] and [@Rutter2009] was attributed to differing snow interception and ablation process representation, in addition to model platform differences [@Clark2010a]. One example of differing process behaviour is the increase in canopy snow storage capacity with warmer temperatures shown by [@Storck2002] and an opposing relationship suggested by [@Hedstrom1998]. The difficulty in isolating individual processes such as throughfall, unloading, and drip in field measurements may have also contributed to unintentional coupling of processes in existing parameterisations. Issues arise when combining coupled parameterisations, such as snow interception parameterisations that also include ablation, with additional ablation parameterisations. Unless models have been calibrated to account for this [e.g., @Hedstrom1998], this combination can potentially result in some double-counting of the ablation process.
+
+This review builds on recent work by @Friesen2015, @VanStan2020, and @Lundquist2021, who examined data collection methods and theories of snow interception and canopy snow ablation. While @Friesen2015 and @VanStan2020 provide broad overviews of the methodologies for measuring and modelling liquid water and snow intercepted in the canopy, they lack the detail necessary to interpret snow interception studies. @Lundquist2021 trace the development of two widely-used snow interception models, @Hedstrom1998 and the combined @Storck2002 and @Andreadis2009, and provide a model experiment that showed the maximum canopy snow load capacity may be unnecessary for modelling snow interception if a comprehensive canopy snow ablation routine is included. However, these reviews do not provide a complete description of the canopy snow mass and energy balance, include recent updates to parameterisations, or discuss the parameterisations required to represent canopy snow ablation. Additionally, they do not connect measurement uncertainties with inconsistencies in process understanding. This review addresses these gaps by first detailing the theoretical mass and energy balance of canopy snow, along with the methods used to measure these processes. Additionally, a comprehensive synthesis of the literature on snow interception and canopy snow ablation process representations is provided, incorporating recent advancements in the field. The review then connects uncertainties in measurement techniques, such as challenges in partitioning throughfall rates from canopy snow ablation and distinguishing unloading from canopy snowmelt drainage, to issues within current parameterisations of snow interception and ablation. The article will also explore processes often overlooked in existing parameterisations, including non-vertical hydrometeor trajectories, wind redistribution of snow in forests, and rime accretion. Lastly, it examines how the limited research on snow interception and ablation in forests with diverse species and structure has impacted process understanding and restricts transferability across differing environments. 
 
 ## The Mass and Energy Balance of Snow in the Canopy {#sec-theory}
 
-Section 2 begins with discussing the symbology used to represent mass fluxes, energy fluxes and states of snow intercepted in the canopy. This section is written in the context of a winter needleleaf forest environment.
+The accumulation of snow under vegetation can be described using coupled mass and energy balance equations applied to control volumes representing the canopy and the snowpack. These control volumes are shown in Figures 1 and 2, where the canopy control volume includes snow, liquid water (stored within canopy snow), ice, and vegetation components, while the snowpack control volume represents snow accumulated on the surface. The mass and energy terms are represented as follows: the symbol $q$ in lowercase signifies mass flux, while the uppercase $Q$ signifies energy flux. The state of snow water equivalent (SWE, kg m^-2^) is denoted by $L$ for snow intercepted in the canopy and S for the subcanopy snowpack. Fluxes that are repeated between the canopy and snowpack control volume have a superscript to specify what control volume they refer to (i.e.,$q^{veg}$ refers to the vegetation control volume and q^snow refers to the surface snowpack control volume).
 
-### Mass Balance
+### Mass Balance {#sec-mass-bal}
 
-Section 2.1 contains a mass balance equation for canopy snow load followed by a description of each of the terms in the equation. A figure is also shown which gives a visual of the mass balance processes important for canopy snow load. Coupled mass and energy equations for the calculation of melt and sublimation of snow intercepted in the canopy are also shown.
+The change in canopy snow load over time, $\frac{dL}{dt}$ (kg m^-2^), may be represented as:
+
+$$
+\frac{dL}{dt} = 
+[q_{sf} - q_{tf}(L) + q_{ros}(L)] - q_{unld}(L) - q_{drip}(L) - q_{wind}^{veg}(L) - q_{sub}^{veg}(L)
+$$ {#eq-canopy-mass-bal}
+
+where $q_{sf}$ (kg m^-2^ s^-1^) is the above canopy snowfall rate, $q_{ros}$ (kg m^-2^ s^-1^) is the rate of rainfall falling on snow intercepted in the canopy (does not include rainfall falling directly on canopy elements), $q_{tf}$ (kg m^-2^ s^-1^) is the throughfall rate, which is snowfall that passes through gaps in the canopy, $q_{unld}$ (kg m^-2^ s^-1^) is the canopy snow unloading rate, $q_{drip}$ (kg m^-2^ s^-1^) is the canopy snow drip rate due to canopy snowmelt and/or transmission of rainfall through snow intercepted in the canopy, $q_{wind}^{veg}$ (kg m^-2^ s^-1^) is the wind transport rate of snow by suspension in our out of the control volume, and $q_{sub}^{veg}$ (kg m^-2^ s^-1^) is the intercepted snow sublimation rate. In the treatment of rainfall interception, $q_{unld}$ and $q_{drip}$ are typically incorporated within the throughfall rate [i.e, @Dingman2015; @VanStan2020]. The rates in @eq-canopy-mass-bal, except for $q_{sf}$, are a function of the snow load present in the canopy $(L)$. Methods to estimate $q_{tf}$, $q_{unld}$, $q_{drip}$ and $q_{sub}^{veg}$ are described in detail in @sec-parameterisations.
+
+![The mass balance of intercepted snow in a needleleaf forest canopy and the subcanopy snowpack. The colours of the arrows correspond to the water phase: solid (purple), liquid (blue) and vapour (light green). The head of the arrow indicates a positive flux either into the canopy (positive) or away from the canopy (negative). Fluxes may transition between positive and negative. In the case of sublimation from the canopy or snowpack, the flux may be positive (sublimation) or negative (deposition). This figure was adapted from Pomeroy and Gray (1995).](../review-paper/figs/final/figure1.png){#fig-mass-bal}
+
+The rate of snow in the canopy undergoing phase change, $q_{melt}^{veg}$ (kg m^-2^ s^-1^), may be calculated as:
+
+$$
+q_{drip} \approx q_{melt}^{veg} = \frac{Q_{melt}^{veg}}{\lambda_{fus} B}
+$$ {#eq-canopy-snowmelt}
+
+where $\lambda_{fus}$ (J kg^-1^) is the latent heat of fusion, $B$ is the fraction of ice in a unit mass of wet snow (usually taken as 0.95-0.97, @Gray1988).
+
+The liquid meltwater output from snow intercepted in the canopy, $q_{drip}$ (kg m^-2^ s^-1^) may be assumed to be approximately equal to $q_{melt}^{veg}$ once the snow has reached its water holding capacity. $Q_{melt}^{veg}(L)$ (W m^-2^) is the rate of energy available to melt canopy snow which is a function of $L$. The processes influencing $Q_{melt}^{veg}(L)$ are shown in @eq-canopy-energy-flux-mp15.
+
+The rate of sublimation from snow intercepted in the canopy, $q_{sub}^{veg}$ (kg m^-2^ s^-1^) is determined by the latent heat flux, $Q_{l}^{veg}$ (W m^-2^). Thus, the sublimation rate of snow intercepted in the canopy may be calculated as [@Stull2017, eq. 4.45]:
+
+$$
+q_{sub}^{veg}(L) = \frac{Q_{l}^{veg}}{\lambda_{sub}}
+$$ {#eq-lsub}
+
+where $\lambda_{sub}$ (J kg^-1^), is the latent heat required for sublimation.
 
 ### Energy Balance
 
-Section 2.2 contains an energy balance equation for snow intercepted in the canopy followed by a description of the terms. A figure showing a visual representation of the energy balance processes is shown. A discussion of some of the simplifications made with this energy balance representation is then provided.
+The processes providing energy available for, $Q_{melt}^{veg}(L)$, or the rate of change of the bulk temperature of all constituents of vegetation, liquid water and snow, $\frac{\partial T^{veg}}{\partial t}$ (K s^-1^) are shown in @fig-canopy-energy-balance. The notation in @fig-canopy-energy-balance and in @eq-canopy-energy-flux-mp15 uses superscripts to specify which control volume the flux refers to: the vegetation control volume (veg), the snow-atmosphere interface (sai), and the top of the canopy between the upper atmosphere and canopy air space (total). @fig-canopy-energy-balance shows the canopy air space which is a control volume used by some models (e.g., @Clark2015) to differentiate the atmospheric conditions within and above the forest canopy.
 
-## Measuring Snow Interception and Ablation {#sec-methods}
+The energy balance of the canopy is typically solved using a bulk approach in hydrological models which treats the canopy as a mixture of air, water, snow, ice, stems, and leaves (@Clark2015b; @Ellis2010; @Parviainen2000):
 
-Section 3 covers the common methodologies used to measure snow interception and ablation. A description of the principle behind each method is given and any uncertainties related to the method are also discussed. The methodologies described include, weighed tree, mass balance methods, snow surveys, subcanopy lysimeters and remote sensing techniques.
+$$
+Q_{melt}^{veg}(L) = 
+Q_{sw}^{veg} +
+Q_{lw}^{veg} +
+Q_{p}^{veg} + Q_{h}^{veg} - Q_{l}^{veg} - C_p^{veg} \frac{\partial T^{veg}}{\partial t} D_{can}
+$$ {#eq-canopy-energy-flux-mp15}
+
+where $C_p^{veg}$ (J m^-3^ K^-1^) is the volumetric bulk storage capacity for heat of all constituents of vegetation, liquid water and snow, $D_{can}$ (m) is the depth of the vegetation canopy, $Q_{sw}^{veg}$ and $Q_{lw}^{veg}$ (W m^-2^) are the net shortwave and longwave radiation heat fluxes to the canopy, $Q_p$ (W m^-2^) is the advective energy rate, which may include energy added to the canopy by $q_{ros}$, and $Q_{l}^{veg}$ and $Q_{h}^{veg}$ (W m^-2^) are the turbulent fluxes of latent heat and sensible heat, respectively, from the vegetation elements to the canopy air space. A negative value corresponds to a transfer of energy away from the vegetation elements.
+
+![Conceptual representation of the physical processes important in the energy balance of the forest canopy and surface snowpack. Where $Q_{sw}$ and $Q_{lw}$ (W m^-2^) are shortwave and longwave fluxes, $Q_{l}$ and $Q_{h}$ (W m^-2^) are the turbulent fluxes of latent heat and sensible heat, $Q_p$ (W m^-2^) is the advective energy rate, and $Q_p$ (W m^-2^) is the ground heat flux. A superscript specifies which control volume the flux refers to: the vegetation control volume (veg), the snow-atmosphere interface (sai), and the top of the canopy between the upper atmosphere and canopy air space (total). The dashed lines represent radiation extinguished, reflected or re-emitted by the canopy, intercepted snow or surface snowpack. This figure was adapted from Clark et al. (2015a).](../review-paper/figs/final/figure2.png){#fig-canopy-energy-balance}
+
+With @eq-canopy-energy-flux-mp15, for a cold canopy snowpack ($T^{veg}$ < 0°C), all energy goes into warming the control volume (increasing $\frac{\partial T^{veg}}{\partial t}$) and no melt of canopy snow occurs (warming phase, $T^{veg}$ = 0). Once $T^{veg}$ reaches 0°C, $Q_{melt}^{veg}(L)$ increases as more energy becomes available for melt and $\frac{\partial T^{veg}}{\partial t}$ equals zero (ripening and output phase) assuming the temperature of canopy snow is equal to that of the canopy when $T^{veg}$ <= 0°C.
+
+## Measurement Techniques {#sec-methods}
 
 ### Weighed Tree
 
-### Mass Balance Methods
+Weighed tree lysimetry is one of the few direct methods to quantify the amount of snow intercepted in and ablated from the canopy. A cut tree is either weighed from a load cell on the ground [e.g., @Schmidt1988; @Lundberg1994; @Storck2002; @Watanabe1964] or an inline strain gauge suspended from the crown of the tree as shown in Figure 3 [e.g., @Pomeroy1993; @Hedstrom1998]. To scale the weight of snow in the canopy (kg) to per unit area (kg m^-2^), there are two methods described in the literature. @Katsushima2023, @Satterlund1967, and @Watanabe1964 estimated the projected crown area (m^2^) of the weighed tree to convert weighed tree measurements in weight (kg) to snow load per unit area (kg m^-2^). @Pomeroy1993 and @Hedstrom1998, calculated areal estimates of $\frac{dL}{dt}$, using the mass balance method described in @sec-mass-bal-methods along with fresh snow survey measurements of throughfall and point measurements of $q_{sf}$, to relate the weight change measured by the weighed tree to a per-unit-area measurement of $\frac{dL}{dt}$. Although the weighed tree method offers a direct measurement of $\frac{dL}{dt}$, it is limited to a point scale and can be impracticable for very tall trees due to challenges in constructing a tree mounting system. During periods of snowfall, $\frac{dL}{dt}$ measured by the weighed tree is attributed to intercepted snowfall and ablation (@eq-canopy-mass-bal). In the absence of $q_{sf}$ and hence $q_{tf}$ and $q_{ros}$, the change in canopy snow load can be attributed to the remaining processes in @eq-canopy-mass-bal.
+
+::: {#fig-insts layout-ncol="2"}
+![](../review-paper/figs/final/figure3a.jpg){#fig-w-tree-loaded}
+
+![](../review-paper/figs/final/figure3b.jpg){#fig-w-tree-bare}
+
+Weighed tree lysimeters, (a) Subalpine fir tree lysimeter loaded with snow, Fortress Mountain Research Basin, Alberta, Canada and (b) Black spruce tree lysimeter relatively free of snow, Havikpak Creek Research Basin, Inuvik, Northwest Territories, Canada.
+:::
+
+### Mass Balance Methods {#sec-mas-bal-methods}
+
+Since $L$ is difficult to measure over spatial and temporal time scales, throughfall measurements can be used to infer canopy snow load as a residual based on @eq-canopy-mass-bal. If the assumption is made during snowfall periods with calm winds and cool air temperatures that ablative processes are negligible, @eq-canopy-mass-bal can be simplified to:
+
+$$
+\frac{dL}{dt} = q_{sf}-q_{tf}(L)
+$$ {#eq-dwdt-ode}
+
+Over a discrete time interval, $\Delta t$, the change in canopy snow load, $\Delta L$ (kg m^-2^) may be calculated as:
+
+$$
+\frac{\Delta L}{\Delta t} = \overline{q_{sf}}-\overline{q_{tf}(L)} = \frac{\Delta sf}{\Delta t} - \frac{\Delta tf}{\Delta t}
+$$ {#eq-dwdt-discrete}
+
+where $\overline{q_{sf}}$ and $\overline{q_{tf}(L)}$ are the average snowfall and throughfall rate over $\Delta t$. $\Delta sf$ and $\Delta tf$ is the accumulated above canopy snowfall (kg m^-2^) and throughfall respectively.
+
+Throughfall measurements of snow differ from rainfall measurements of throughfall which typically include $q_{drip}$ [@VanStan2020]. However, even for snowfall events with cold temperatures and calm winds, ablative processes are likely non-zero and thus true measurements of throughfall are difficult to ascertain.
 
 #### Snow Surveys {#sec-snow-surveys}
 
+Snow surveys conducted below the canopy are one method to provide areal estimates of $\frac{\Delta tf}{\Delta t}$. Combined with measurements of $\frac{\Delta sf}{\Delta t}$, @eq-dwdt-discrete can be used to estimate $\frac{\Delta L}{\Delta t}$. Throughfall depths may be converted to SWE using observed relationships between snow depth and snow density [e.g., @Staines2023] or modelled using empirical equations [e.g., @Lv2020]. If the covariance between snow depth and density is found to be insignificant, @Pomeroy1995 recommend calculating SWE as:
+
+$$
+\frac{\Delta tf}{\Delta t} = \overline{\rho_s} \cdot \frac{d_{ tf}}{\Delta t}
+$$ {#eq-sweins}
+
+where $\overline{\rho_s}$ is the average snow density over the snow survey and $d_{tf}$ is the depth of throughfall (m). $d_{tf}$ may be determined using the difference in post-event and pre-event snow depth using rulers [e.g., @Hedstrom1998], or using aerial lidar derived surface models [e.g, @Staines2023]. Uncertainties with these two methods include penetration of the ruler into the soil which falsely increases the snow depth, and errors associated with lidar methods of 5—20 cm (RMSE) described in @Harder2020 and @Staines2023. If a defined layer (i.e., natural ice crust or measurement plate) is present prior to a snowfall event, depths of snow above this layer may be taken as $d_{tf}$ as in @Moeser2015. Automated acoustic snow depth sensors have also been used to measure $d_{tf}$ as the difference in the change in snow depth to an open area and subcanopy [@Lv2020; @Roth2019]. Regardless of the method chosen, care must be taken to ensure ablation of snow in the canopy and on the ground is minimal over the snowfall period to ensure @eq-dwdt-discrete is valid.
+
+$\rho_s$ may be measured using gravimetric fresh snow density sampling. With this method a pit is dug to below the bottom of the new throughfall layer and a snow density sampler of a known volume is pushed horizontally into the new snow layer (e.g., @fig-fsd) and the resulting sample is weighed. Additional methods are available for the calculation of snow density including snow tubes, microwave radar, gamma ray, snow pillow, and snow scale. However, these methods have constraints in providing a density of a new snow layer and are more commonly applied to measure density of the entire snowpack to the ground.
+
+![Gravimetric fresh snow density sample collection, Fortress Mountain Research Basin, Alberta, Canada. A 1000 cm3 snow density wedge sampler (RIP Cutter, https://snowmetrics.com/shop/rip-1-cutter-1000-cc/) is shown being pushed into the surface of the snowpack. The scale used to measure the weight of the sample is shown on the bottom right.](../review-paper/figs/final/figure4.jpg){#fig-fsd}
+
 #### Subcanopy Lysimeters
+
+Subcanopy lysimeters may provide measurements of $\overline{q_{tf}}$ and/or the downward ablation of snow in the canopy, $\overline{q_{unld}}$ and $\overline{q_{drip}}$. When paired with an automated data logger, measurements can be taken over relatively shorter discrete time intervals compared to manual snow surveys. With this method, a trough or bucket is suspended from a load cell (e.g., @fig-scl-2) or installed on the ground [e.g., @Storck2002] and measures the accumulated weight (kg) of snow entering the lysimeter. The surface area of the opening of the trough is used to convert the weight to a per unit area measurement in (kg m^-2^). For periods where, $q_{unld}$ and $q_{drip}$ can be considered negligible, the subcanopy lysimeters provide measurements of $\overline{q_{tf}} \Delta t$ and using @eq-dwdt-discrete along with $\overline{q_{sf}} \Delta t$ can be used to estimate $\frac{dL}{dt}$. For periods without snowfall, the subcanopy lysimeters provide measurement of $q_{unld}+q_{drip}$.
+
+![An example of a suspended subcanopy lysimeter installed at Fortress Mountain Research Basin, Alberta, Canada to measure rates of throughfall, unloading, and drip.](../review-paper/figs/final/figure5.jpg){#fig-scl-2}
+
+Measurements of $q_{drip}$ are difficult to ascertain due to its simultaneous occurrence with $q_{unld}$ especially in warm temperatures. To isolate, $q_{drip}$, researchers[e.g., @Floyd2012; @Storck2002] have utilized tipping bucket rainfall gauges positioned beneath the canopy to quantify the drainage rate of liquid water from snow intercepted in the canopy. However, employing tipping buckets in temperatures close to 0°C presents difficulties as the mechanical apparatus can freeze, resulting in missed measurements. The simultaneous occurrence of $q_{unld}$ during the melt process may provide an additional source of liquid water as ripe clumps of snow continue to melt into the tipping bucket device. The difficulty in isolating the multiple processes, as outlined in @eq-canopy-mass-bal and @fig-mass-bal, that contribute snow beneath the canopy is the main limitation of using subcanopy lysimeters to measure snow interception and canopy snow ablation. Therefore, use of this methodology should be paired with other observations such as meteorological measurements, timelapse imagery or a weighed tree to help determine if unloading and drip are likely.
 
 ### Remote Sensing
 
+Remote sensing methodologies have proven effective in acquiring measurements of throughfall, canopy snow load, and ablation over larger spatial extents and more frequent temporal scales compared to the measurements discussed above [@Bartlett2015; @Calder1990; @Floyd2008; @Russell2020]. For example, @Calder1990 used a gamma ray attenuation system to continuously measure canopy snow load within a forest plot. However, the gamma ray technique has not been repeated in canopy-scale snow interception studies due to the danger of emissions from the radioactive source. Aside from the study conducted by @Calder1990, remote sensing methods generally do not directly measure canopy snow load in units of kg m^-3^. Instead, they provide a volumetric measurement of canopy load, a measurement of throughfall, an index based on above canopy albedo, or an areal fraction of canopy covered by snow.
+
+One volumetric approach, as demonstrated by @Russell2020, utilized autonomous terrestrial laser scanning (ATLS) to measure the volume of snow intercepted in the canopy. This method involves collecting ATLS point clouds for an individual tree during snow-free and snow-on conditions. The 3D approximations created from these point clouds are used to calculate the canopy volume for both conditions, while also accounting for branch bending and lidar beam occlusion. By subtracting the snow-on volume from the snow-free volume, an estimate of the snow intercepted in the canopy is obtained. Limitations with the ATLS method include challenges such as changes in tree geometry under snow loading and lidar beam occlusion which were only partially addressed by the @Russell2020 method, and the difficulty of estimating the density of intercepted snow in the canopy. These challenges contributed to the weak correlation observed by @Russell2020 when comparing results with measurements of canopy snow load obtained through weighed tree assessments. Indirect measurements of canopy snow load using aerial lidar throughfall measurements are discussed in @sec-snow-surveys.
+
+The studies conducted by @Roesch2001 and @Bartlett2015 utilized measurements of above canopy albedo, which is hypothesised to increase as snow is intercepted in the canopy and reduce light transmittance through the canopy. However, given the potential for fresh snowfall to cover the upward-facing radiometer and lead to erroneous albedo measurements, cleaning radiometers following snowfall events is crucial. A study using radiometer measurements that were cleaned after each snowfall event, by @Nakai1999 highlights that very large canopy snow loads show an increase in above canopy albedo. For small snow loads (< 1.6 kg m^-2^) @Pomeroy1996 show that no relationship was found between canopy snow load and above canopy albedo over a mature pine canopy using a frequently cleaned radiometer. More recent work by @Lv2019 shows that the normalised snow difference index calculated using Landsat satellite imagery dramatically increased with canopy snow load. @Lv2019 also show a small, but detectable increase in albedo was found when the canopy was covered with snow. This method has limitations for smaller snowfall events in some tree species and canopy structures @Pomeroy1996 or when radiometer measurements are erroneous.
+
+Time-lapse photography has been an important component of understanding canopy snow processes at the plot or individual tree scale since early work by @Berndt1969 to quantify rime accretion on needleleaf canopy. @Pomeroy1993 developed perimeter-area relationships to quantify the sublimation rate of intercepted snow, using photographs and fractal geometry, but found no unique relationship between oblique snow-covered canopy fraction, measured using digital images and Java image analysis software, and the mass of snow weighed on a suspended tree. A method to determine the snow-covered fraction of the canopy was developed by @Floyd2008 using automated image analysis who noted limitations of this method due to condensation/frost build up on the camera lens and lighting conditions. Similar methodologies have also been utilized by several other studies to understand canopy-snow processes [@Parajka2012; @Garvelmann2013; @Dong2017]. Recent work by @Lumbrazo2022 involved citizen scientists to classify time-lapse images of snow in the canopy into an index of canopy snow-covered fraction to diagnose canopy snow ablation process models. Additionally, @Harvey2025 show that a deep learning convolutional neural network model provided estimates of canopy snow presence from time-lapse imagery that had very close agreement to images analyzed by humans and also much better accuracy than the automated thresholding methods used by previous studies.
+
 ### Tree Sway Frequency
+
+The sway frequency of trees has been shown to decrease proportionally with increasing mass stored in the canopy [@Papesch1984; @Raleigh2022]. A study by @Raleigh2022 utilized a three-dimensional accelerator attached to the upper section of a tree to quantify wind induced movements and provide an index of canopy snow load. @Raleigh2022 showed that the influence of thermal effects on tree rigidity must be considered when analyzing sway frequency in cold climates. @Raleigh2022 notes additional challenges with this method including difficulties in isolating a separate relationship for tree sway frequency and thermal effects and relating changes in sway frequency to changes in snow load. @Schmidt1990 show that the modulus of elasticity of tree branches varies with temperature below 0°C, indicating this technique is strongly impacted by freezing and thawing of trunks. Measurements of canopy snow load are also limited to periods of heightened wind where canopy snow is also likely to ablate.
 
 ### Trunk Compression
 
-## Methods of Determination {#sec-determination}
+Measurement of trunk compression, initially utilized for monitoring the mass of intercepted rain in the canopy [@Friesen2008], has been adapted for measurement of canopy snow load by @Martin2013. This method is based on Hooke’s law of elasticity to infer a change in mass through the trunk’s compression and expansion. However, uncertainties with this method include the need for individual tree-specific calibration for determining the modulus of elasticity. Additionally, factors such as transpiration, sap flow, wind, and temperature contribute to noise in the instrumentation, primarily through thermal expansion and wind induced compression of the trunk. The expansion and compression of trees with freezing and thawing discussed by @Gutmann2017 suggests further research is required to apply this method to freezing trunks. Sensors with extremely high precision (± 1—2 µm) are also required for this method leading to high cost.
 
-Section 4 discusses the parameterizations available in the literature for the determination of the mass and energy balance processes discussed in Section 2. For each parameterization a description the study environment, climate, and methodologies used to derive it is provided. Section 4.1 discusses snow interception parameterizations followed by section 4.2 which discusses snow ablation parameterizations for sublimation, unloading and drip.
+### Eddy Covariance
 
+The rate of canopy snow sublimation, $q_{sub}^{veg}$ (kg m^-2^ s^-1^), can be measured using the eddy covariance technique [e.g., @Harding1996; @Parviainen2000; @Lundberg2001; @Molotch2007]. With this method, an eddy covariance system measures the latent heat flux above the canopy resulting from evapotranspiration, evaporation, and sublimation of snow on the surface and in the canopy. During cool periods where evapotranspiration and evaporation rates are assumed negligible, the latent heat flux can be attributed to $Q_l^{sai}$ + $Q_l^{veg}$ and can be converted to $q_{sub}^{snow}$ + $q_{sub}^{veg}$ using @eq-lsub. A second eddy covariance system installed beneath the canopy above the surface snowpack to measure $Q_l^{sai}$, which can be used to isolate $Q_l^{veg}$ in the above canopy latent heat measurements [@Molotch2007]. Alternatively, the subcanopy snowpack sublimation rate may be assumed negligible, and a single eddy covariance system is used [@Parviainen2000; @Lundberg2001]. Uncertainties in this measurement technique stem from assumptions such as negligible transpiration rates from surrounding vegetation, the requirements of a homogeneous surface, and slow variations in airflow properties. Many studies show a failure to close the above canopy energy balance when the canopy is snow-covered [e.g., @Harding1996]. @Harvey2025 also demonstrated that this method incorrectly identified $q_{sub}^{veg}$ for several days when the canopy was observed to be without snow in time-lapse images. They attributed this to differing flux footprints of the above and below-canopy eddy covariance measurements and/or sublimation of wind-suspended snow. 
 
-### Snow Interception Parameterizations {#sec-interception}
+### Snow Isotopes
 
-#### @Hedstrom1998a
+Investigating the isotopic composition of water and snow has proven valuable for understanding hydrological [e.g., @Galewsky2016] and snow [@Beria2018] processes. During phase changes, snow undergoes isotopic fractionation, altering the relative abundance of heavier and lighter isotopes of hydrogen and oxygen among the different phases. While sublimation of snow intercepted in the canopy is known to enrich heavier isotopes in the remaining snow [@Beria2018], relatively few studies have utilized snow isotopes to explore canopy snow processes [@Claassen1995; @Koeniger2008]. Interpreting isotopic fractionation in canopy snow is challenging, as fractionation from cold, sublimating snow can be minimal [@Schlaepfer2014], whilst wet snow undergoing sublimation, deposition, and melt shows varying degrees of fractionation [@Beria2018]. Additionally, some clumps of snow may completely sublimate while others partially sublimate or melt, complicating the link between isotope enrichment and a specific process. Chemical changes in intercepted snow have been shown by @Pomeroy1999 to present similar complications on linking chemical changes to individual processes, limiting its usefulness for quantifying canopy snow mass exchange processes. Subsequent fractionation also can occur in the subcanopy snowpack as meltwater percolates and refreezes or the surface snow sublimates [@Beria2018], which further complicates isolating specific processes. 
+
+## Parameterisations {#sec-parameterisations}
+
+### Snow Interception Parameterisations {#sec-interception}
+
+Snow interception parameterisations differ in their approximation of the maximum canopy snow storage capacity (@fig-example-wmax-ip, a) and the fraction of snowfall intercepted (@fig-example-wmax-ip, b), due to differences in the relationships and variables included in each parameterisation (@tbl-mod-desc). This leads to large discrepancies in the predicted canopy snow load shown in @fig-L-cold-warm and thus the amount of snow available for sublimation losses. The factors contributing to these model discrepancies can be grouped into intrinsic factors of the vegetative structure (e.g., canopy coverage, leaf area and surface temperature) and extrinsic factors (e.g., snowfall event meteorology, methodologies). Parameterisations for snowfall interception have all been derived for evergreen needleleaf forests and thus constrain the scope of this section [@Hedstrom1998; @Satterlund1967; @Storck2002].
+
+![Panel (a) Comparison of the @Hedstrom1998 (HP98) and @Andreadis2009 (SA09) canopy snow storage capacity parameterisations. Panel (b) shows interception efficiency for event totals as the change in event canopy snow load divided by the corresponding change in event snowfall in the open for parameterisations: HP98, Katsushima et al., (2023) (KA23), SA09, and Moeser et al., (2009) (M15). Initial canopy load is held at 0, air temperature is -5°C, LAI of 3.5 and the HP98 species coefficient for spruce (5.9 kg m^-2^).](../review-paper/figs/final/figure6.png){#fig-example-wmax-ip}
+
+![The state of canopy snow load (solid lines) for a cold and warm event using the parameterisations by Hedstrom and Pomeroy (1998) (HP98), Katsushima et al., (2023), combined Storck et al. (2002) and Andreadis et al., (2009) (SA09). The interception storage capacity is shown for the HP98 (purple) and SA09 (orange) parameterisations using a horizontal dashed line. The KA23 parameterisation does not include a canopy snow storage capacity. To isolate the influence of snow interception parameterisations ablative processes have not been computed. Constants for these two plots include a wind speed of 1 m s^-1^, LAI of 3.5 (-) and the HP98 species coefficient for spruce (5.9 kg m^-2^).](../review-paper/figs/final/figure7.png){#fig-L-cold-warm}
+
+::: {#tbl-models tbl-cap="Summary of canopy interception/precipitation (I/P) model behaviour and measurement techniques."}
+| Model | Variables | General Description | Measurement Technique |
+|---|---|---|---|
+| Satterlund & Haupt (1967) | $L_{max}$, $K$, $q_{sf}$, $P_{sf}^{e}$ | I/P initially rises due to rising $L$ which bridges gaps and increases $C_p$. I/P later declines when $L$ approaches $L_{max}$ due to branch bending which reduces $C_{p}$ and increases unloading. | Weighed tree lysimeter |
+| Hedstrom & Pomeroy (1998) | $C_{p}(C_{c},u,w,H,J)$, $L$, $L_{0}$, $q_{sf}$, $L_{max}(S,\overline{S},LAI,ρ_{s},T_{a})$ | I/P starts high and then declines as $L$ approaches $L_{max}$ which reduces $C_{p}$ and increases unloading. This decline is stronger for warmer $T_{a}$ as branches bend more easily. | Snow survey mass balance |
+| Storck et al. (2002) | $L_{max}(L_{r},T_{a},m,LAI)$ | I/P is constant over time and space. $L_{max}$ increases with $LAI$ and increases as a step function of $T_a$ due to higher cohesion and adhesion. When $L > L_{max}$ new snow is unloaded to the surface snowpack. | Weighed tree lysimeter with subcanopy lysimeter |
+| Roth & Nolin (2019) | $q_{sf},T_{a},G_{z}$ | I/P increases with increasing $T_{a}$ and a lidar derived canopy structure metric $G_{z}$. | Paired open and forested acoustic snow depth sensors and aerial lidar canopy metrics |
+| Katsushima et al. (2023) | $L,T_{a},u_{1/3}$ | I/P decreases with increasing $u_{13}$ when $T_{a}$ < 0°C, I/P increases with $T_{a}$ when $-4^{\circ}C \le T_{a} < 0^{\circ}C$, and I/P decreases with $T_{a}$ and $L$ when $T_{a}$ > 0°C. | Weighed tree lysimeter |
+:::
+
+#### @Hedstrom1998
+
+In the observations collected by @Hedstrom1998a in the southern boreal forest from a Jack Pine and Black Spruce stand, snow interception efficiency starts high and then declines and was represented using an inverse exponential function (@fig-example-wmax-ip, b). @Hedstrom1998a describe a relationship to relate $q_{tf}(L)$ to interception efficiency, $\frac{I}{P}(L)$, the fraction of snow intercepted over a snowfall period, both of which are proposed to be a function of $L$. The mass balance method (i.e., @eq-dwdt-ode) was used to estimate $\frac{I}{P}$ which incorporated fresh snow survey measurements of $\Delta_{tf}$ at the plot scale and $\Delta_{sf}$ to an open clearing over events with $\Delta t$ ranging from days to weeks. Average cumulative snowfall over these events was 4 kg m^-2^ with event temperatures ranging from -40 °C to near 0 °C and very low wind speeds (exact values not reported). These measurements, in addition to those collected by @Schmidt1991 were used to formulate the @Hedstrom1998 snow interception parameterisation. @Hedstrom1998 calculate $q_{tf}$ as:
+
+$$
+q_{tf}(L) = \begin{cases}
+    \left(1-\frac{I}{P}(L)\right)q_{sf},& \text{if } L< L_{max}\\
+    q_{sf},              & \text{otherwise}
+\end{cases}
+$$ {#eq-tf-ode}
+
+$\frac{I}{P}(L)$ is calculated as:
+
+$$
+\frac{I}{P}(L) = \frac{\Delta L}{\overline{q_{sf}} \Delta t} 
+$$ {#eq-ip}
+
+where $\overline{q_{sf}}$ (kg m^-2^), is the average snowfall rate over the discrete time interval $\Delta t$. For a given snowfall event, @Hedstrom1998a propose a function to calculate $\frac{I}{P}(L)$ as:
+
+$$
+\frac{I}{P}(L) = C_{p}\frac{L_{max}-L}{L_{max}}
+$$ {#eq-hp98-int-smpl1}
+
+where $C_{p}$ (-) is the fraction of snow-leaf contact area per unit area of ground. @eq-hp98-int-smpl1 has been simplified slightly from the original formula presented in @Hedstrom1998a. See @eq-hp98-int-orig in @sec-appendix for the steps to simplify.
+
+The calculation of $C_{p}$ in @Hedstrom1998a is:
+
+$$
+C_{lca} = \frac{C_c}{1-\frac{C_cuH}{wJ}}
+$$ {#eq-hp98-cp}
+
+where $C_c$ (-) is the canopy closure, $u$ (m s^-1^) is the horizontal velocity of the snow particle (approximated by wind speed), $w$ (m s^-1^) is the snow particle vertical fall velocity, $H$ (m) is the height of the canopy, $J$ (m) is the forested downwind distance. Since $w$ is not a commonly available meteorological forcing variable @Hedstrom1998 assume a constant of 0.8 m s^-1^. In the absence of detailed canopy structure metrics $J$ is difficult to determine in practice. An example of how $C_p$ varies with wind speed and canopy coverage is shown in @fig-example-lca. A limit in the increase in $C_p$ is shown in @fig-example-lca as $C_p$ reaches 1.0 and does not increase further at a wind speed of 2 m s^-1^ and $C_c$ of 0.8.
+
+![Plots showing the leaf contact area (top) and increase in leaf contact area (bottom) with increasing wind speed calculated using the method from Hedstrom & Pomeroy (1998). The colour of each line represents the leaf contact area at nadir which is equal to the canopy coverage. Here the canopy height is held constant at 10 m, the forested downwind distance is 100 m, and the fall velocity is 0.8 m s^-1^.](../review-paper/figs/final/figure8.png){#fig-example-lca}
+
+@Hedstrom1998a integrate @eq-hp98-int-orig to provide an analytical solution to calculate the change in intercepted snow load, $\Delta L$ (kg m^-2^) over a discrete time interval:
+
+$$
+\Delta L = (L_{max}-L_0)\left(1- \text{exp} \left(\frac{-C_{lca}}{L_{max}} \overline{q_{sf}} \Delta t \right) \right)
+$$ {#eq-hp98-int-numeric}
+
+where $L_0$ (kg m^-2^) is the canopy snow load before snowfall is added to the canopy and $L_{max}$ (kg m^-2^) is the canopy snow storage capacity. The steps of the derivation of @eq-hp98-int-numeric from @eq-hp98-int-smpl1 are shown in @eq-interception-integration-steps of @sec-appendix. @eq-hp98-int-numeric has similar form to the rainfall interception parameterisations developed by [@Aston1979; @Merriam1960]:
+
+$$
+\Delta L = (L_{max})\left(1- exp \left(- \gamma \overline{q_{sf}} \Delta t \right) \right)
+$$ {#eq-merriam-int}
+
+with $\gamma$ being an exponential fitting parameter.
+
+@Hedstrom1998 calculate $L_{max}$ as:
+
+$$
+L_{max} = S \cdot LAI
+$$ {#eq-l-max}
+
+where $LAI$ (dimensionless) is the leaf area index, and $S$ (kg m^-2^) is a species maximum snow load correction factor that is a function of snow density:
+
+$$
+S = \overline{S} (0.27 + \frac{46}{\rho_s})
+$$ {#eq-species-correction}
+
+where $\rho_s$ (kg m^-3^) is the fresh snow density (kg m^-3^) and @Schmidt1991 observed $\overline{S}$ = 6.6 and 5.9 kg m^-2^ for pine and spruce, respectively.
+
+Fresh snow density $\rho_s$ was estimated by @Hedstrom1998a based on a regression through observations from sites in Saskatchewan and Yukon [@Hedstrom1998], the Fraser Experimental Forest, Colorado (1989) and Nelson, British Columbia (1990) [@Schmidt1991], and the Central Sierra Snow Laboratory, California [@ArmyCorps1956] as:
+
+$$
+\rho_s = 67.92 + 51.25 e ^{(T_{a})/2.59}
+$$ {#eq-rhoSnow}
+
+where $T_a$ is the ambient air temperature (°C). According to this equation, $\rho_s$ increases with higher temperatures which will result in lower $S$ and subsequently lower $L_{max}$ (@fig-example-wmax-ip, a), resulting in the lower canopy snow loads for warm temperatures compared to cold temperatures shown in @fig-L-cold-warm). There are other factors not directly accounted for by this equation such as solar radiation, humidity, hydrometeor type and size, wind speed, and compression of snow which may contribute to the melt and/or metamorphism of fresh snowfall.
+
 
 #### @Storck2002 and @Andreadis2009
 
+@Andreadis2009 developed a snow interception parameterisation using data collected by @Storck2002 in dense old growth forest in the maritime climate of southwestern Oregon, USA. @Storck2002 used a weighed tree lysimeter (Douglas fir, Ponderosa pine, White fir, and Lodgepole pine) to measure $\frac{dL}{dt}$, a subcanopy lysimeter (installed beneath the subcanopy snowpack) measured $q_{tf}+q_{unld}+q_{drip}+q_{discharge}$, and $q_{sf}$ was measured in an open clearing. Using these point scale measurements @Storck2002 attempted to isolate the individual processes in @eq-canopy-mass-bal to develop their process understanding. The opposing relationship and increased sensitivity of the @Storck2002 calculation of canopy snow storage capacity to air temperature compared to @Hedstrom1998a is shown in @fig-example-wmax-ip. The observations from @Storck2002 found $\frac{I}{P}$ was equal to a constant of 0.6 up to canopy snow loads of 40 kg m^-2^. This results in the positive linear relationship of $L$ with increasing snowfall until $L_{max}$ is reached (@fig-L-cold-warm). This is similar to the observations by @Calder1990 who also observed a constant value of $\frac{I}{P}(L)$ for canopy snow loads up to 30 mm in the uplands of Scotland [see Fig. 2 in @Lundberg2001]. @Storck2002 limit, $L$ as being less than or equal to $L_{max}$ using a step function of temperature.
+
+@Storck2002 calculate $L_{max}$ as:
+
+$$
+L_{max} = L_r \cdot m \cdot LAI
+$$ {#eq-imax-storck-andreas}
+
+where $m$ (kg m^-2^) is an empirical parameter determined based on their observations of the canopy snow storage capacity (default value = $5 \cdot e^{-6}$), $L_r$ (dimensionless) is a step function of temperature based on observations by @Kobayashi1987 of snow cohesion on a plank of wood and @Pfister1999 and @Storck2002 who observed that snow interception decreases with decreasing temperatures. Based on these observations $L_r$ is calculated as:
+
+$$
+L_r = \begin{cases}
+    4,& \text{if } T_a>-1 ^{\circ} C \\
+    1.5 T_a+5.5,              & \text{if } -1 ^{\circ} C \geq T_a >-3 ^{\circ} C \\
+        1.0,              & \text{if } T_a \leq -3 ^{\circ} C
+\end{cases}
+$$ {#eq-storck-andreas-lr}
+
+The @Storck2002 dataset was derived from observed snowfall events of 5—80 kg m^-2^ with an average of \~15 kg m^-2^, winds less than 2 m s^-1^ and relatively warm air temperatures above -5°C.
+
 #### @Katsushima2023
 
-#### Event Based Snow Interception Parameterizations
+More recent work by @Katsushima2023 collected measurements of snow interception using a weighed Japanese cedar tree (*Cryptomeria japonica*) in a warm-humid coastal environment. To isolate periods of interception without unloading they selected weighed tree observations at night with precipitation rate $\ge$ 1 kg m^-2^ hr^-1^, wind speed $\le$ 1 m s^-1^, and an air temperature of $\le$ 1.5 °C. @Katsushima2023 observed a decline in interception efficiency with increasing wind speed, which they attributed to increased hydrometeor velocity and bouncing on impact. They did not observe a maximum interception capacity within their canopy snow load measurement range of 0-25 kg m^-2^. @Katsushima2023 propose a new step-based equation based on their observations in Japan for the calculation of $\frac{I}{P}(L, T_a, v)$ as a function of $L$, wind speed and air temperature:
 
-### Canopy Snow Ablation Parameterizations {#sec-ablation}
+$$
+\frac{I}{P}(L) = \begin{cases}
+    0.73-0.59T_a-0.0082L,& \text{if } T_a\geq 0 ^{\circ} C \\
+    0.86+0.064T_a-0.22v_{1/3},              & \text{if } -4 ^{\circ} C \leq T_a <0 ^{\circ} C \\
+        0.86+0.064\cdot(-4)-0.22v_{1/3},              & \text{if } T_a < -4 ^{\circ} C
+\end{cases}
+$$ {#eq-kat-ip}
+
+where $T_a$ is the air temperature (°C) 4 m above the ground and $v_{1/3}$ is the wind speed (m s^-1^) at one-third of the canopy height.
+
+#### Event Based Snow Interception Parameterisations
+
+Additional snow interception parameterisations are available in the literature that approximate the increase in canopy load over a snowfall accumulation period. However, since these parameterisations were developed over events with varying time intervals, they cannot directly be included in hydrological models that run on regular time intervals. Still, the work by @Satterlund1967, @Moeser2015 and @Roth2019 has been important to develop theory on the influence of forest structure on snow interception.
+
+@Satterlund1967 derived a snow interception function by fitting a curve to observations of snow accumulation on a weighing tree over two storms in Idaho. The two storms had accumulated snowfall ranging from 0.5—7 kg m^-2^ and temperatures close to 0°C with little wind. These observations showed an initial increase in the rate of intercepted snow, as snowflakes bridge gaps between needles. The initial low interception efficiency was followed by an increase and then flattening off of the interception rate as branches bent due to the weight of snow which @Satterlund1967 represented by a numerical analytical sigmoidal function fitted to their observed data:
+
+$$
+\Delta L = \frac{L_{max}}{1+exp^{-K(\overline{q_{sf}} \Delta t-P_{sf}^e)}}
+$$ {#eq-satterlund}
+
+where $K$ is a constant expressing the rate of interception (kg m^-2^ ^-1^), and $P_{sf}^e$ (kg m^-2^), is the amount of snowfall accumulated at the point of most rapid loading.
+
+The @Moeser2015 parameterisation is based on the @Satterlund1967 sigmoidal growth curve, @eq-satterlund, and a modification to the @Hedstrom1998 $L_{max}$ function (@fig-example-wmax-ip, b). Their modifications to $L_{max}$ were informed by detailed measurements of canopy structure derived from aerial LiDAR and manual snow depth measurements within a dense forest with a temperate climate in Switzerland. The observations in the @Moeser2015 study are based on snowfall events of 13 to 27 cm in a temperate climate with observed air temperatures ranging from -12 °C to -1.9 °C. Since @Moeser2015 did not observe snowfall storm events below 10 mm, their decision to use a sigmoidal function with initially low snow interception efficiency is based observations from @Satterlund1967.
+
+The @Moeser2015 formulation of $L_{max}$ also differs from the previous studies in that it does not include a parameter for air temperature. To calculate $L_{max}$, @Moeser2015 use the natural logarithm of mean distance to canopy ($\overline{D_c}$, m), and total open area ($A_o$, m^2^):
+
+$$
+L_{max} = 2.167(\overline{D_c}) + -3.410(\overline{D_c})^2 + 
+$$
+
+$$
+55.761(C_c) + 181.858(C_c)^2 + -2.493(A_o) + 0.499(A_o)^2 + 20.819
+$$ {#eq-moeser-imax}
+
+The use of additional forest structure metrics in the @Moeser2015 snow interception equation allows for application to highly heterogeneous forests, something that LAI-based algorithms such as @Hedstrom1998 were not designed for. While lidar-derived canopy metrics like those in @eq-moeser-imax are beneficial for capturing plot-scale variability in subcanopy snow accumulation, these metrics are currently not feasible to obtain for larger scale hydrological models.
+
+A more recent study by @Roth2019a presents another event-based snow interception algorithm based on point-scale measurements of snow depth between paired open and forested sites. The @Roth2019a study was conducted over 6 years at stations located in Oregon with air temperatures ranging from -14 to 6 °C. The wind speed observed over their study period is not provided. They make use of a new forest structure metric, median gap length $G_z$ which can be derived by aerial LiDAR observations. Like @Andreadis2009, the @Roth2019a formulation includes air temperature but rather than using a step function they use a continuous representation. This new algorithm is derived using a power law relationship, based on an empirical relationship with event size, temperature, and forest structure, which deviates from the exponential function used in @Hedstrom1998a or @Moeser2015. The @Roth2019a algorithm does not include a maximum canopy snow capacity, such as used in @Hedstrom1998a and @Moeser2015, but rather calculates the change in canopy snow load, $\Delta L$ (kg m^-2^) as:
+
+$$
+\Delta L = \overline{q_{sf}} \Delta t ^{0.04 \cdot T_{air} - 0.75 \cdot G_z + 1.56}
+$$ {#eq-roth-i}
+
+where $\overline{q_{sf}}$ is the average event snowfall rate (kg m^-2^), $T_{a}$ is the within canopy air temperature (°C), and $G_z$ is the median gap length versus change in height (dimensionless).
+
+### Canopy Snow Ablation Parameterisations {#sec-ablation}
+
+Current canopy snow ablation parameterisations are based on measurements collected in Saskatchewan [@Hedstrom1998], British Columbia [@Floyd2012; @Schmidt1991], Oregon [@Storck2002], Colorado [@Sexstone2018], Japan [@Katsushima2023; @Yamazaki1996], and Russia [@Gelfan2004]. The following section will discuss the various processes that ablate snow intercepted in the canopy.
 
 #### Sublimation
 
+To estimate canopy snow sublimation, @Pomeroy1998b builds on earlier laboratory experiments by @Thorpe1966, applied to blowing snow by @Schmidt1972 and modified for forested environments by @Schmidt1991, @Pomeroy1993a, and @Pomeroy1998b. Since snow intercepted in the canopy is not as well exposed to the atmosphere as a single ice sphere, @Pomeroy1993a derived an exposure coefficient to reduce the rate of sublimation allowing the calculation to be scaled from particle to the canopy scale. The sublimation rate for snow in the canopy, $q_{sub}^{veg}(L)$ (kg m^-2^ s^-1^) can be calculated as:
+
+$$
+q_{sub}^{veg}(L) = \kappa_{sub}^{sphere} C_e L
+$$ {#eq-pom98-v_i}
+
+where $C_e$ is a dimensionless exposure coefficient. Methods to estimate $C_e$ are described in @Pomeroy1998b.
+
+The sublimation rate coefficient for single ice spheres, $\kappa_{sub}^{sphere}$ (s^-1^), is represented as a function of the mass $m$ (kg) of the ice sphere:
+
+$$
+\kappa_{sub}^{sphere} = \frac{dm}{m \ dt} = \frac{
+  \frac{2 \pi r}{m} (\frac{\rho_{wa}}{{\rho_s}}-1) - K J
+}{
+  \lambda_{sub} J + \frac{1}{D \rho_s Sh}
+}
+$$ {#eq-pom98-sublimation}
+
+with a radius $r$ (m) where $\rho_{wa}$ (kg m^-3^), is the water vapour density of the remote environment, $\rho_s$ (kg m^-3^) is the saturation water vapour density at temperature $T_a$ (K) for the particle surface, $D$ is the diffusivity of water vapour in still air (m^2^ s^-1^), $Sh$ is the Sherwood number indexing the turbulent transfer of water vapour (-), and $K$ is the net shortwave radiation flux (W m^-2^) to the particle found as:
+
+$$
+K = \pi r^2 (1-\alpha) S \downarrow
+$$ {#eq-pom98-sw}
+
+where $\alpha$ (dimensionless) is the particle shortwave albedo and $S \downarrow$ (W m^-2^) is the incoming shortwave radiation.
+
+$J$ is found as:
+
+$$
+J = \frac{1}{\lambda_T T_a Nu} \left[ \frac{\lambda_{sub} M}{R T_a} -1 \right]
+$$ {#eq-pom98-j}
+
+where $R$ is the universal gas constant (8313 J kmole^-1^ K^-1^), $M$ (kg kmole^-1^) is the molecular weight of water, $\lambda_T$ is the thermal conductivity of the atmosphere (W m^-1^ K^-1^), and $Nu$ is the Nusselt number (-). Values of acceptable constants and coefficients for the above equations are given in @Pomeroy1995.
+
 #### Unloading and Drip {#sec-unloading}
 
-##### @Hedstrom1998a
+@Hedstrom1998a did not find any association between canopy snow unloading and meteorological factors such as wind speed and air temperature in the cold dense canopy of the Saskatchewan boreal forest. As a result, the rate of canopy snow unloading, $q_{unld}(L)$, attributed to snow metamorphism and wind gusts is represented in @Hedstrom1998a as a function of time and $L$:
 
-##### @Storck2002
+$$
+q_{unld}(L) = \kappa_{unld} L
+$$ {#eq-hp98-flu}
 
-##### @Roesch2001
+where $\kappa_{unld}$ (s^-1^), is a time constant.
 
-##### @Bartlett2015
+Integrating @eq-hp98-flu provides an analytical solution for $L^{t+\Delta t}$, the canopy snow load following unloading over a discrete time interval, $\Delta t$ (s^-1^):
 
-##### @Katsushima2023
+$$
+L^{t+\Delta t} =L^t\  \text{exp} ^{-\kappa_{unld}\Delta t}
+$$ {#eq-hp98-exp-decay}
 
-## Discussion {#sec-research-gaps}
+The steps to derive to @eq-hp98-exp-decay from @eq-hp98-flu are shown in @sec-appendix.
 
+Later modifications to the @Hedstrom1998 algorithm were provided in @Gelfan2004 who found that all snow was unloaded from the canopy as liquid meltwater (drip) within 6 hours when ice-bulb temperatures remained above freezing for 3 hours with observed wind speed greater than 0.5 m s^-1^. Using this concept, @Ellis2010 built on additional observations by @Floyd2012 to modify the value of $\kappa_{unld}$ based on ice-bulb temperature thresholds to unload canopy snow as either wet clumps ($q_{unld}$) or meltwater drip ($q_{drip}$). When the ice-bulb temperature exceeds the snow threshold, snow is unloaded as $q_{unld}$; if it exceeds the drip threshold, all canopy snow is unloaded as $q_{drip}$ within 6 hours. The threshold values from @Floyd2012 were found to be 2°C and 4°C for wet snow and drip unloading respectively.
 
-In Section 5 the theories and assumptions of the parameterizations listed above are compared. Research gaps are also listed to give insight on where current snow interception and ablation parameterizations theories and assumptions may be invalid and where new observations and theoretical development is required. Advice for informing model-decision makers on choosing parameterizations is also given
+@Storck2002 found unloading to occur in maritime environments when air temperature rose above 0°C. The amount of solid snow unloading from the canopy was found to be linearly proportional to the amount of meltwater drip from canopy snow. For their field experiment in Oregon, @Storck2002 provide a ratio of mass release to meltwater drip found during a two-week snowfall event. During this unloading event they measured 33 kg m^-2^ to have reached the ground as snow and 84 kg m^-2^ as meltwater drip resulting in a mass release to meltwater drip ratio of 0.4. @Storck2002 suggested wind speed may influence canopy snow unloading; however, this was not observed due to the low wind speeds observed during their study. Using the observations from @Storck2002, @Andreadis2009 created a parameterisation to calculate unloading proportional to the rate of meltwater drip leaving the canopy $q_{drip}(L)$.
 
-## Conclusion
+$$
+q_{unld}(L) = \begin{cases}
+    0,& \text{if } L \le L_{res} \\
+    X_u q_{drip},              & \text{if }  L > L_{res}
+\end{cases}
+$$ {#eq-sa-unload-dudt}
 
-Numerous conceptual models of snow interception and ablation have been developed, reflecting differences in the climate, canopy structure, and methodological approaches across previous studies. The choice of parameterization can significantly influence simulated outcomes, underscoring the importance of informed decision-making. However, acquiring the necessary knowledge from the literature to facilitate such decisions has proven challenging, with notable knowledge gaps persisting in process understanding. Difficulties in isolating snow interception processes in in-situ measurements may have resulted in parameterizations that are not isolated to a single process. Future work to help decouple canopy snow interception and ablation parameterizations could help minimize the over representation of certain processes and provide some clarity to model decision makers. This decoupling may have implications for canopy snow ablation parameterizations and thus should be revisited in the context of updated interception routines. Previous attempts to model snow accumulation and ablation in transitional climates had success by combining parameterizations derived from diverse climates. However, using combined parameterizations remains underutilized in contemporary models, and has the potential to better model transitional climates. Recent advances in lidar-based methods to measure subcanopy snow accumulation and canopy metrics has enhanced our understanding of how leaf contact area is influenced by snowfall trajectory angle and canopy snow load. However, further work is required to integrate these novel results into snow interception parameterizations. Parameterizations that ablate snow intercepted in the canopy differ in the level of detail in canopy snowmelt models and number of processes included snow such as wind induced unloading and resuspension, rime-ice accretion, and time-based unloading. Future work is required to determine the appropriate level of detail in canopy snowmelt models and the whether the relationships used in existing ablation parameterizations hold for other locations.
+where $L_{res}$ (kg m^-2^) is the residual intercepted snow that can only be melted or sublimated (taken as 5 kg m^-2^ based on observations from @Storck2002), $X_u$ (-) is the ratio of mass release to meltwater drip [taken as 0.4 from @Storck2002]. In @Andreadis2009, $q_{drip}(L)$ is calculated by solving an energy balance equation to produce meltwater drip if sufficient energy is available.
 
-A comprehensive field-based investigation into canopy snow interception and ablation processes is needed to address these remaining research gaps. Utilizing observations of forest snow accumulation and canopy snow ablation across diverse forests and climates is crucial for assessing and refining existing theories of snow interception and ablation processes. This approach will enhance our understanding of where existing parameterizations fail, what processes drive model uncertainty, and how parameterizations can be modified to better represent forest snow accumulation.
+@Roesch2001 proposed a third approach to address unloading and drip, where the mass release of canopy snow is proportional to a temperature function, $f(T)$ (s^-1^) and a wind-induced unloading function, $f(u)$ (s^-1^):
 
-## Funding Information
+$$
+q_{unld}(L) = L \cdot [f(T) + f(u)]
+$$ {#eq-roesch-unload}
 
-Dean’s Scholarship – University of Saskatchewan Devolved Scholarship – University of Saskatchewan Discovery Grant – National Sciences and Engineering Research Council of Canada Global Water Futures Programme – Canada First Research Excellence Fund Canada Research Chairs Programme – Government of Canada Water Information Program Grant, Alberta Innovates
+The theory behind the @Roesch2001 parameterisation is based on the @Yamazaki1996 study who found an exponential decrease of interception efficiency with time, temperature and wind speed, with a response time of 0.5 day when temperature is below 0°C and 1–5 h with a temperature above 0°C. The @Roesch2001 parameterisation was also informed by the @Miller1962 study that observed a decline in snow interception with wind speed greater than 2 m s^-1^. @Roesch2001 show that boreal forest observations by @Betts1997, who noted a weak relationship (no R^2^ given) between low wind speeds (< 3 m s^-1^) and occurrence of high above-canopy albedos, also supported their theory, though no such association was observed in the same environment by @Pomeroy1996 who carefully cleaned their upward facing radiometers after snowstorms. The outcome of this wind speed denominator is that 50% of intercepted snow is unloaded within 6 hours for a wind speed of 5 m s^-1^. The @Roesch2001 temperature induced unloading function, $f(T)$ (s^-1^), is:
+
+$$
+f(T) = \begin{cases}
+    0,& \text{if } T_c < T_m \\
+    \frac{T_c - T_m}{C_1},              & \text{if }  T_c \ge T_m
+\end{cases}
+$$ {#eq-roesch-unload-t}
+
+$T_c$ is the air temperature of the canopy (K), $T_m$ is a user defined threshold temperature [270.15 K is suggested by @Roesch2001] and $C_1$ is a constant of 1.87 x $10^5$ (K s^-1^). The result of @eq-roesch-unload-t is that once $T_c$ reaches $T_m$ canopy snow is unloaded at a rate proportional to $T_c$. The @Roesch2001 wind induced unloading function, $f(v)$ (s^-1^), is:
+
+$$
+f(u) = \begin{cases}
+    0,& \text{if } u_{top} < u_m \\
+    \frac{u_{top}}{C_2},              & \text{if }  u_{top} \ge u_m
+\end{cases}
+$$ {#eq-roesch-unload-v}
+
+where $u_{top}$ (m s^-1^) is the wind speed at a height above ground corresponding to the mean canopy height, $u_m$ is a threshold wind speed (m s^-1^) and $C_2$ is a constant of 1.56 x $10^5$ m.
+
+Another approach to estimate $f(u)$ is provided by @Bartlett2015:
+
+$$
+f(u) = 0.38u_{top} -0.13
+$$ {#eq-bartlett-unload-v}
+
+where $u_{top}$ is the wind speed at the canopy top (m s^-1^). @Bartlett2015 also experimented with calculating $f(u)$ based on air temperature and solar radiation in addition to wind speed but found the addition of three meteorological variables did not provide consistent improvement across all three sites.
+
+The observations by @Katsushima2023 provide additional insights on canopy snow unloading from a warm and humid region. To isolate periods of unloading due to melt, @Katsushima2023 filtered their weighed tree measurements to daytime periods with a canopy snow load > 5 kg m^-2^, a wind speed of < 1 m s^-1^ and no precipitation. Using these periods of unloading due to melt, @Katsushima2023 found a statistically significant relationship between air temperature, solar radiation and the unloading rate coefficient due to snowmelt, $f(T)$ for a range of temperatures from -3.7–3.5 °C. To isolate periods of unloading due to wind, weighed tree observations were obtained at night with a canopy snow load > 5 kg m^-2^, an air temperature < 0°C, and no precipitation. @Katsushima2023 calculated unloading due to snowmelt, $f(T)$ as:
+
+$$
+f(T) = 0.039T_a+0.097Q_{sw}+0.0049L
+$$ {#eq-kat-fmelt}
+
+and wind-induced unloading, $f(u)$ as:
+
+$$
+f(u) = 0.020u_{1/3}
+$$
+
+where $u_{1/3}$ is the wind speed at one-third the canopy height. 
+
+## Discussion
+
+### Differences in Snow Interception Parameterisations
+
+Various theories have been formulated to describe the mechanisms underlying the loading of snow into and ablation of snow from the canopy, offering insights for how to describe these processes in hydrological models. However, the decision of choosing an appropriate snow interception parameterisation remains uncertain across different climates and forests. For maritime climates, @Storck2002 suggest the increase in cohesive forces amongst snow particles and adhesive forces between snow clumps to the branch leads to a higher canopy storage capacity during mild air temperatures (-2 to 0.2 °C) as shown in @fig-L-cold-warm. While @Storck2002 presents the most comprehensive study to measure the individual processes in @eq-canopy-mass-bal, many of the snowfall events they observed transitioned between snow and rain which presented difficulties in isolating snow interception from canopy snow ablation processes and rainfall interception. The small snowfall events (2–5 kg m^-2^) observed by @Satterlund1967 at temperatures close to 0 °C had very low interception efficiencies. However, it is unclear how much of an influence canopy snowmelt and unloading attributed to the warm temperatures contributed to the low interception efficiency observed by @Satterlund1967. @Pomeroy1995, @Hedstrom1998 and @Schmidt1991 observed a slight decline in interception with above zero air temperatures as frozen branches thaw and bend, thereby reducing the effective canopy contact area and increasing the angle of repose of snow intercepted in the canopy (@fig-L-cold-warm). These observations were used to develop an equation for interception efficiency presented by @Hedstrom1998. However, the duration (days to weeks) between snow surveys conducted by @Hedstrom1998 likely contributed to increased ablation of canopy snow, potentially reducing interception efficiency at higher canopy snow loads. For temperatures above 0°C, @Katsushima2023 also found a decline in interception efficiency above 10 kg m^-2^ which support the findings by @Hedstrom1998, although these weighed tree measurements are also influenced by ablation and may explain the very low snow loads predicted by this parameterisation for warm events in @fig-L-cold-warm.
+
+### Forest Structure and Snow Interception
+
+Two of the most commonly used snow interception parameterisations, @Hedstrom1998 and @Storck2002, both use LAI as a primary variable. However, methods for measuring LAI are highly variable and may (e.g., plant area index) or may not include both leaf and non-photosynthetic material, both of which can intercept snow. Additionally, research by @Lopez-Moreno2007 and @Staines2023 has shown variability in the zenith angle of the canopy hemisphere important for snow interception. These findings challenge the use of broadband LAI or nadir canopy cover metrics currently employed in snow interception models. Using novel lidar based snow accumulation and canopy metrics methods, @Staines2023 investigated whether leaf contact area is influenced by canopy snow load. In a closed canopy, they found that the number of lidar beam contacts with the canopy increased with canopy snow load as a result of new snow covering small canopy gaps. However, in partially open canopy, a decrease in canopy contacts with increased snow load was observed due to branch bending. These two processes partially compensated for each other, with an overall increase in canopy contacts with snow load observed by at the plot scale [@Staines2023]. 
+
+Snowflake trajectories are frequently non-vertical [e.g., @Thériault2012], which can also significantly affect the fraction of leaf contact area per unit of ground [@Herwitz1995; @Staines2023; @VanStan2011]. Previous research on rainfall interception by @Herwitz1995 and @VanStan2011 have shown rainfall trajectory angle to have an important influence on leaf contact area, which dramatically altered observed throughfall rates at the forest plot scale. Moreover, @Katsushima2023 found that air temperature and wind speed were insufficient to describe interception efficiency and hypothesize that hydrometeor diameter may be a key factor to consider. Estimates of the hydrometeor trajectory angle can be made primarily as a function of wind speed [@Herwitz1995] if assumptions are made about the hydrometeor vertical velocity, which is less variability than wind speed. Using this theory, @Hedstrom1998 provide a model, shown in @fig-example-lca, of increasing C_p with wind speed. However, insufficient observations from wind-driven snowfall have been made to test this theory or @eq-hp98-cp. As a result, @eq-hp98-cp is typically not included in hydrological model application of snow interception parameterisations. An assessment of the @Hedstrom1998 theory could be facilitated through new aerial lidar measurements of snow accumulation and forest structure metrics similar to those described in @Staines2023.
+
+### In Search of a Canopy Snow Storage Capacity
+
+Recent work by @Roth2019, @Lundquist2021, and @Lumbrazo2022 have observed higher canopy storage capacities than those observed by @Storck2002 and @Hedstrom1998. This suggests that the sensitivity of interception efficiency to the state of canopy snow load [@Hedstrom1998] or air temperature [@Storck2002] may be less than previously thought. Measurement uncertainty of throughfall, which may have included some downward ablation of snow intercepted in the canopy and/or melt of subcanopy snow, may have contributed to an oversensitivity of the theory developed by @Satterlund1967 and @Hedstrom1998 to branch bending and bridging. As a result of these measurement uncertainties, parameterisations derived from empirical observations are unlikely to be truly isolated from other processes which may contribute to the underestimate of canopy storage capacities. For example, snow interception parameterisations that include some degree of ablation, could lead to potential double counting of ablative processes, such as unloading or drip, when interception parameterisations are combined with subsequent unloading and drip routines, unless these were calibrated to include any early ablation [e.g. @Hedstrom1998].
+
+The deposition of water vapour as rime-ice in the forest canopy has also been shown to accumulate large amounts of snow and ice in the canopy [@Berndt1969; @Lumbrazo2022], which are greater than the Hedstrom & Pomeroy’s (1998) and Storck et al. (2002)’s canopy storage capacities and exhibit ablation rates much lower than existing models [@Lumbrazo2022]. For example, observations from @Berndt1969 found 50 kg m^-2^ of rime-ice accumulated on the canopy during precipitation free days over a winter season. @Lehtonen2016 also note the potential for rime-ice accretion to contribute to forest damage due to heavy canopy loads causing stem breakage. Under projected future climate in eastern and northern Finland, @Lehtonen2016 found that heavy snow loads from rime and wet snow were expected to increase due a more humid and warmer climate. Aside from the @Lehtonen2016 study in Finland, rime-ice accumulation is not typically included in snow interception parameterisations and may contribute to an underestimation of snow loads in coastal-temperate climates under certain conditions.
+
+### Differences in Canopy Snow Ablation Parameterisations
+
+Parameterisations that ablate snow intercepted in the canopy are generally consistent regarding their relationships with different processes but vary in their rate and complexity. Recent work by @Lundquist2021 demonstrated the importance of calculating melt of snow intercepted in the canopy to better represent canopy snow unloading. They also found that by using this method, while also omitting the canopy snow storage capacity in their snow loading parameterisation, they improved subcanopy snow accumulation estimates. However, aside from a few models, JULES [@Best2011], CLASS [@Verseghy2017] and SUMMA [@Clark2020], meltwater drip of canopy snow is typically calculated using an empirical time-based, temperature and humidity approach [@Ellis2010; @Pomeroy2007]. If a physically based canopy snow melt routine is implemented, it is often simplified. For example, @Best2011, @Clark2020, @Parviainen2000 and @Verseghy2017 assume the air temperature and surface temperature of the canopy are in equilibrium with that of the snow in the canopy (@eq-canopy-energy-flux-mp15). However, the energy balance of the snow and vegetative components are different due to differing heat capacities, albedo and energy transfer processes [@Musselman2017; @Pomeroy2009]. As a result, the surface temperature of the vegetative elements is nearly always greater than clumps of snow intercepted in the canopy [@Musselman2017; @Pomeroy2009]. This simplification likely results in an underestimation in the melt rate of snow intercepted in the canopy. An alternative to the bulk temperature approach used by @Clark2015b, would be to solve for the energy balance of snow in the canopy separately from the canopy element energy balance. To better represent the vertical heterogeneity that exists within the forest canopy or snowpack, @Clark2015b suggest that partial differential equations (PDEs) can be used to discretize the canopy into multiple vertical layers. Separating the canopy into multiple discretized units which would be more exposed to the atmosphere, compared to a single snowpack layer used by many models, may also yield a better representation of the melt of snow intercepted in the canopy. However, the benefit of the additional model complexity in separating the snow and vegetative component energy balances has not yet been directly assessed. Limited research has been conducted on the density and water holding capacity of snow intercepted in the canopy and therefore the value of B is estimated from surface snowpack studies [@Dingman2015; @Gray1988]. With more snowfall events falling at warmer temperatures because of climate change [@Bush2019; @Hu2020], melt and drip process of canopy snow will become more apparent and will warrant better representation in models.
+
+### Contribution of Measurement Uncertainty on Canopy Snow Ablation Parameterisations
+
+A comparison of snow process models by @Rutter2009, noted that some of the model uncertainty in estimating subcanopy snow accumulation can be attributed to the misrepresentation of canopy snow ablative processes. Unloading parameterisations [@Andreadis2009; @Hedstrom1998; @Roesch2001] have been shown to have poor transferability when applied at new locations with the default calibration [@Bartlett2015; @Lumbrazo2022]. While physically based models exist for the calculation of $q_{drip}$, the associated increase in $q_{unld}$ due to the decline in cohesion and adhesion as snow melts is still empirically based in @Storck2002 and @Ellis2010 and has uncertain transferability to new environments. However, collecting measurements of $q_{drip}$ separate from $q_{unld}$ is challenging as in the case of the @Storck2002 and @Floyd2012 methodology and thus methods to estimate $q_{unld}$ are highly uncertain. The lowest performance in canopy snow unloading parameterisations assessed by @Lumbrazo2022 was observed for locations characterized with sparse wind-exposed forest which led to wind-induced unloading, and warm and humid conditions which led to rime-ice formation. During the rime-ice events canopy snow was unloaded by the model but was observed to stay attached to the canopy due to the adhesion of rime-ice to the canopy which is not easily removed by wind. Under more typical snowfall conditions, the poor transferability of existing parameterisations to new locations shown in @Lumbrazo2022 may be attributed to the weak statistical relationships of some parameterisations and misrepresentation of canopy snow loading. For example, the relationships identified by both @Betts1997 and @Bartlett2015 were found to be relatively weak. The association of canopy snow interception and albedo measurements are complicated as fresh snowfall events typically cover the upward-facing radiometer causing biased readings. Neither @Betts1997 nor @Bartlett2015 discuss the frequency of cleaning snow-covered radiometers. Since the @Roesch2001 and @Bartlett2015 parameterisations are used widely across hydrological models and land surface schemes [@Clark2020; @Verseghy2017; @Wheater2022], they would benefit from additional testing using direct measurements of canopy snow unloading.
+
+If canopy snow sublimation is included in the ablation parameterisation, the @Pomeroy1998b method is often used and has shown relatively good performance across differing landscapes and climates from maritime to continental in North America and Europe [@Parviainen2000; @Essery2003; @Gelfan2004]. This method was first validated using weighed trees in Saskatchewan over 23 cold winter days, where the cumulative error in simulated sublimation rates were 0.06 kg m^-2^ [@Pomeroy1998b]. Additional validations were provided by @Parviainen2000 in Saskatchewan using a combination of parameterisations from the Canadian Land Surface Scheme model (CLASS) in @Verseghy1993 and from @Pomeroy1998. @Parviainen2000 compared simulated sublimation rates to observations from eddy covariance which resulted in a mean bias of 0.103 kg m^-2^ over an eight-day period. The low bias reported was attributed to the diurnal fluctuation of over-estimation at night and under-estimation during the day which balanced out; maximum and minimum errors were not reported but can be observed to be much higher depending on the part of the day (Fig. 3, Parviainen & Pomeroy, 2000). More recent model testing of winter sublimation rates has been conducted in the north-central Rocky Mountains by @Sexstone2018, who simulated cumulative snow sublimation above the forest canopy over four seasons and reported errors between 15 to 57 kg m^-2^ year-1 (percent bias from -37% to 29%), or 0.04 to 0.16 kg m^-2^ day^-1^. Uncertainties in estimating sublimation rates are related to the difficulty in making direct observations [@Sexstone2016], the influence of atmospheric stability and turbulence within canopies [@LeMone2019], and the canopy snow-covered duration [@Rutter2009].
+
+### The Applicability of Parameterisations in Diverse Forest Structures and Species
+
+Theories of snow interception and ablation included in existing parameterisations were based on observations collected within dense forest canopies [@Betts1997; @Hedstrom1998; @Storck2002]. Aside from @Lumbrazo2022, the theory behind snow interception and ablation parameterisations has not been tested for sparse or discontinuous forest canopies. Moreover, @Gouttevin2015 and @Musselman2017 have shown forest gaps allow for additional input of energy from solar irradiance, which creates variations in the canopy temperature which is important for melting or sublimating intercepted snow in the canopy. Furthermore, sparse forests exhibit higher wind speeds which has important implications for hydrometeor trajectory angles, wind induced unloading, and wind transport to surrounding sites [@Dickerson2017; @King2008]. The added complexity of these processes within sparse forests lead to additional challenges when understanding snow interception and interception losses. While needleleaf canopies have been the main focus of this review and existing interception and ablation studies, process investigation in more diverse tree species remain a notable research gap. For example, @Huerta2012 observed significant canopy snow loads in a deciduous forest canopy in the Andes Cordillera in the Southern Hemisphere. Coefficients from existing snow interception parameterisations, derived in needleleaf canopies, were not transferable to this location. Therefore, the theory included in existing snow interception and ablation parameterisations, derived in dense needleleaf forests, also need to be tested in discontinuous forest environments of differing tree species.
+
+### The Potential of Hybrid Parameterisations
+
+While the existing parameterisations have shown good performance in some studies [@Ellis2010; @Essery2003; @Krinner2018; @Pomeroy2022; @Rasouli2019], combining parameterisations has been shown to provide increased transferability across diverse environments [@Essery2003; @Gelfan2004]. For example, in @Essery2003 and @Gelfan2004, a step function was used to apply the @Storck2002 snow interception parameterisation during warm events and the @Hedstrom1998 parameterisation for cold events (@Essery2004; @Gelfan2004). While this method of combining different parameterisations based on a step function of air temperature was successful in @Essery2003 and @Gelfan2004, this technique remains infrequently used in current hydrological models with a few exceptions [@Ellis2010]. There is also an opportunity to develop and assess other methods to combine different parameterisations to better model transitional climates.
+
+## Conclusions
+
+Numerous conceptual models of snow interception and ablation have been developed, reflecting differences in the climate, canopy structure, and methodological approaches across previous studies. The choice of parameterisation can significantly influence simulated outcomes, underscoring the importance of informed model decision-making. However, acquiring the necessary knowledge from the literature to facilitate such decisions has proven challenging, with notable knowledge gaps persisting in process understanding. Previous difficulties in isolating snow interception processes in in-situ measurements may have resulted in parameterisations that are not isolated to a single process. Future work to isolate initial canopy snow interception and ablation processes could help revise parameterisations to better represent the intended physical process. Previous attempts to model snow accumulation and ablation in transitional climates had success by combining parameterisations derived from diverse climates. However, using combined parameterisations remains underutilized in contemporary models, and has the potential to better model transitional climates. Recent advances in lidar-based methods to measure subcanopy snow accumulation and canopy metrics has enhanced the understanding of how leaf contact area is influenced by snowfall trajectory angle and canopy snow load. However, further work is required to integrate these novel results into snow interception parameterisations. Parameterisations that ablate snow intercepted in the canopy differ in the level of detail in canopy snowmelt models and number of processes included snow such as wind-induced unloading and resuspension, rime-ice accretion, and time-based unloading. Future research is necessary to establish the appropriate level of process inclusion in canopy snowmelt models, to better represent rates of canopy snow unloading and meltwater drip resulting from canopy snowmelt, and to evaluate whether the relationships used in existing ablation parameterisations can apply to other locations.
+
+Additional field-based investigations of canopy snow interception and ablation processes are needed to address remaining research gaps, including whether existing theories of snow interception are applicable for measurements of initial snow interception before ablation, if non-vertical snowfall trajectories significantly impact throughfall, determining the fraction of melting canopy snow that is unloaded as mass clumps compared to meltwater, evaluating the importance of wind resuspension and transport of canopy snow, and testing parameterisations in varied forests and climates. Observations of initial snow interception and canopy snow ablation collected at high-temporal and fine-scale resolutions across diverse forests and climates will help isolate individual processes, improve assessments of theoretical applicability, and help address these research gaps. This approach will enhance the understanding of where existing parameterisations fail, what processes drive model uncertainty, and how parameterisations can be modified to better represent forest snow accumulation.
 
 ## Acknowledgments
 
-We wish to acknowledge financial support from the University of Saskatchewan, Natural Sciences and Engineering Research Council of Canada, Global Water Futures Programme, Alberta Innovates and the Canada Research Chairs Programme. We thank Martyn Clark for his advice in outlining the steps to derive analytical solutions from the ordinary difference equation representation of the parameterizations.
+We wish to acknowledge financial support from the University of Saskatchewan, Natural Sciences and Engineering Research Council of Canada, Global Water Futures Programme, Alberta Innovates and the Canada Research Chairs Programme. We thank Martyn Clark for his advice in outlining the steps to derive analytical solutions from the ordinary difference equation representation of the parameterisations.
 
 \pagebreak
