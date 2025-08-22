@@ -79,7 +79,7 @@ Weighed tree lysimetry is one of the few direct methods to quantify the amount o
 Weighed tree lysimeters, (a) Subalpine fir tree lysimeter loaded with snow, Fortress Mountain Research Basin, Alberta, Canada and (b) Black spruce tree lysimeter relatively free of snow, Havikpak Creek Research Basin, Inuvik, Northwest Territories, Canada.
 :::
 
-### Mass Balance Methods {#sec-mas-bal-methods}
+### Mass Balance Methods {#sec-mass-bal-methods}
 
 Since $L$ is difficult to measure over spatial and temporal time scales, throughfall measurements can be used to infer canopy snow load as a residual based on @eq-canopy-mass-bal. If the assumption is made during snowfall periods with calm winds and cool air temperatures that ablative processes are negligible, @eq-canopy-mass-bal can be simplified to:
 
@@ -155,7 +155,7 @@ Snow interception parameterisations differ in their approximation of the maximum
 
 ![The state of canopy snow load (solid lines) for a cold and warm event using the parameterisations by Hedstrom and Pomeroy (1998) (HP98), Katsushima et al., (2023), combined Storck et al. (2002) and Andreadis et al., (2009) (SA09). The interception storage capacity is shown for the HP98 (purple) and SA09 (orange) parameterisations using a horizontal dashed line. The KA23 parameterisation does not include a canopy snow storage capacity. To isolate the influence of snow interception parameterisations ablative processes have not been computed. Constants for these two plots include a wind speed of 1 m s^-1^, LAI of 3.5 (-) and the HP98 species coefficient for spruce (5.9 kg m^-2^).](../review-paper/figs/final/figure7.png){#fig-L-cold-warm}
 
-::: {#tbl-models tbl-cap="Summary of canopy interception/precipitation (I/P) model behaviour and measurement techniques."}
+::: {#tbl-mod-desc tbl-cap="Summary of canopy interception/precipitation (I/P) model behaviour and measurement techniques."}
 | Model | Variables | General Description | Measurement Technique |
 |---|---|---|---|
 | Satterlund & Haupt (1967) | $L_{max}$, $K$, $q_{sf}$, $P_{sf}^{e}$ | I/P initially rises due to rising $L$ which bridges gaps and increases $C_p$. I/P later declines when $L$ approaches $L_{max}$ due to branch bending which reduces $C_{p}$ and increases unloading. | Weighed tree lysimeter |
@@ -188,7 +188,7 @@ $$
 \frac{I}{P}(L) = C_{p}\frac{L_{max}-L}{L_{max}}
 $$ {#eq-hp98-int-smpl1}
 
-where $C_{p}$ (-) is the fraction of snow-leaf contact area per unit area of ground. @eq-hp98-int-smpl1 has been simplified slightly from the original formula presented in @Hedstrom1998. See @eq-hp98-int-orig in @sec-appendix for the steps to simplify.
+where $C_{p}$ (-) is the fraction of snow-leaf contact area per unit area of ground. @eq-hp98-int-smpl1 has been simplified slightly from the original formula presented in @Hedstrom1998. See @eq-hp98-int-orig in @sec-review-appendix for the steps to simplify.
 
 The calculation of $C_{p}$ in @Hedstrom1998 is:
 
@@ -203,13 +203,13 @@ where $C_c$ (-) is the canopy closure, $u$ (m s^-1^) is the horizontal velocity 
 @Hedstrom1998 integrate @eq-hp98-int-orig to provide an analytical solution to calculate the change in intercepted snow load, $\Delta L$ (kg m^-2^) over a discrete time interval:
 
 $$
-\Delta L = (L_{max}-L_0)\left(1- \text{exp} \left(\frac{-C_{lca}}{L_{max}} \overline{q_{sf}} \Delta t \right) \right)
+\Delta L = (L_{max}-L_0)\left(1- \text{exp} \left(-\frac{C_{lca}}{L_{max}} \overline{q_{sf}} \Delta t \right) \right)
 $$ {#eq-hp98-int-numeric}
 
-where $L_0$ (kg m^-2^) is the canopy snow load before snowfall is added to the canopy and $L_{max}$ (kg m^-2^) is the canopy snow storage capacity. The steps of the derivation of @eq-hp98-int-numeric from @eq-hp98-int-smpl1 are shown in @eq-interception-integration-steps of @sec-appendix. @eq-hp98-int-numeric has similar form to the rainfall interception parameterisations developed by [@Aston1979; @Merriam1960]:
+where $L_0$ (kg m^-2^) is the canopy snow load before snowfall is added to the canopy and $L_{max}$ (kg m^-2^) is the canopy snow storage capacity. The steps of the derivation of @eq-hp98-int-numeric from @eq-hp98-int-smpl1 are shown in @eq-interception-integration-steps of @sec-review-appendix. @eq-hp98-int-numeric has similar form to the rainfall interception parameterisations developed by [@Aston1979; @Merriam1960]:
 
 $$
-\Delta L = (L_{max})\left(1- exp \left(- \gamma \overline{q_{sf}} \Delta t \right) \right)
+\Delta L = (L_{max})\left(1- \text{exp} \left(- \gamma \overline{q_{sf}} \Delta t \right) \right)
 $$ {#eq-merriam-int}
 
 with $\gamma$ being an exponential fitting parameter.
@@ -280,7 +280,7 @@ Additional snow interception parameterisations are available in the literature t
 @Satterlund1967 derived a snow interception function by fitting a curve to observations of snow accumulation on a weighing tree over two storms in Idaho. The two storms had accumulated snowfall ranging from 0.5—7 kg m^-2^ and temperatures close to 0°C with little wind. These observations showed an initial increase in the rate of intercepted snow, as snowflakes bridge gaps between needles. The initial low interception efficiency was followed by an increase and then flattening off of the interception rate as branches bent due to the weight of snow which @Satterlund1967 represented by a numerical analytical sigmoidal function fitted to their observed data:
 
 $$
-\Delta L = \frac{L_{max}}{1+exp^{-K(\overline{q_{sf}} \Delta t-P_{sf}^e)}}
+\Delta L = \frac{L_{max}}{1+\text{exp}^{-K(\overline{q_{sf}} \Delta t-P_{sf}^e)}}
 $$ {#eq-satterlund}
 
 where $K$ is a constant expressing the rate of interception (kg m^-2^ ^-1^), and $P_{sf}^e$ (kg m^-2^), is the amount of snowfall accumulated at the point of most rapid loading.
@@ -363,7 +363,7 @@ $$
 L^{t+\Delta t} =L^t\  \text{exp} ^{-\kappa_{unld}\Delta t}
 $$ {#eq-hp98-exp-decay}
 
-The steps to derive to @eq-hp98-exp-decay from @eq-hp98-flu are shown in @sec-appendix.
+The steps to derive to @eq-hp98-exp-decay from @eq-hp98-flu are shown in @sec-review-appendix.
 
 Later modifications to the @Hedstrom1998 algorithm were provided in @Gelfan2004 who found that all snow was unloaded from the canopy as liquid meltwater (drip) within 6 hours when ice-bulb temperatures remained above freezing for 3 hours with observed wind speed greater than 0.5 m s^-1^. Using this concept, @Ellis2010 built on additional observations by @Floyd2012 to modify the value of $\kappa_{unld}$ based on ice-bulb temperature thresholds to unload canopy snow as either wet clumps ($q_{unld}$) or meltwater drip ($q_{drip}$). When the ice-bulb temperature exceeds the snow threshold, snow is unloaded as $q_{unld}$; if it exceeds the drip threshold, all canopy snow is unloaded as $q_{drip}$ within 6 hours. The threshold values from @Floyd2012 were found to be 2°C and 4°C for wet snow and drip unloading respectively.
 
@@ -471,5 +471,56 @@ Additional field-based investigations of canopy snow interception and ablation p
 ## Acknowledgments
 
 We wish to acknowledge financial support from the University of Saskatchewan, Natural Sciences and Engineering Research Council of Canada, Global Water Futures Programme, Alberta Innovates and the Canada Research Chairs Programme. We thank Martyn Clark for his advice in outlining the steps to derive analytical solutions from the ordinary difference equation representation of the parameterisations.
+
+## Appendix {#sec-review-appendix}
+
+### Snow Interception Parameterization Derivations
+
+The original formulation of the @Hedstrom1998a snow interception parameterisation is:
+
+$$
+\frac{I}{P}(L) = C_{lca} \frac{L_{max}-L_0-\Delta L}{L_{max}}
+$$ {#eq-hp98-int-orig}
+
+where $L_0$ (kg m^-2^), is the canopy snow load before snowfall is added to the canopy, $\Delta L$ (kg m^-2^), is the change in canopy snow load due to snowfall. @eq-hp98-int-orig is written in this way in @Hedstrom1998a since they had measurements of $L_0$ at the beginning of the storm. However, this equation further simplified here since:
+
+$$
+L = L_0 + \Delta L
+$$
+
+and therefore:
+
+$$
+\frac{I}{P}(L) = C_{lca}\frac{L_{max}-L}{L_{max}}
+$$
+
+The derivation of the @Hedstrom1998a analytical snow interception solution, @eq-hp98-int-numeric, from @eq-hp98-int-smpl1 is provided by first combining @eq-ip and @eq-hp98-int-smpl1:
+
+$$
+\frac{dL}{q_{sf} dt} = C_{lca}\frac{L_{max}-L}{L_{max}}
+$$ {#eq-hp98-int-smpl}
+
+$$\frac{1}{L_{max}-L} dL = \frac{C_{lca}}{L_{max}} q_{sf} dt$$
+
+$$
+\int^{L_1}_{L_0}\left[\frac{1}{L_{max}-L}\right] dL =\frac{C_{lca}}{L_{max}} \overline{q_{sf}} \int^{t_1}_{t_0} dt $$ $$-ln\left(\frac{L_{max}-L_1}{L_{max}-L_0}\right)  = \frac{C_{lca}}{L_{max}} \overline{q_{sf}} \Delta t $$ $$\frac{L_{max}-L_1}{L_{max}-L_0} = \text{exp} \left(-\frac{C_{lca}}{L_{max}} \overline{q_{sf}} \Delta t \right)$$ $$1-\frac{L_{max}-L_1}{L_{max}-L_0} = 1- \text{exp} \left(-\frac{C_{lca}}{L_{max}} \overline{q_{sf}} \Delta t \right)$$ $$(L_{max}-L_0)-(L_{max}-L_1) = (L_{max}-L_0)\left(1- \text{exp} \left(-\frac{C_{lca}}{L_{max}} \overline{q_{sf}} \Delta t \right) \right)$$
+
+$$\Delta L = (L_{max}-L_0)\left(1- \text{exp} \left(-\frac{C_{lca}}{L_{max}} \overline{q_{sf}} \Delta t \right) \right)$$ {#eq-interception-integration-steps}
+
+here, it is assumed that $\overline{q_{sf}}$ is the average snowfall rate over the discrete time interval $\Delta t$. Since $\overline{q_{sf}}$, $C_{lca}$ and $L_{max}$ are temporally constant over the discrete time interval $\Delta t$ they can be moved outside the integral. The analytical solution in @eq-hp98-int-numeric is only possible because the snowfall and throughfall rate are treated in isolation from the other processes in @eq-canopy-mass-bal.
+
+### Snow Unloading Parameterization Derivations
+
+If the change in canopy snow load due to unloading alone is:
+
+$$
+ \frac{d L}{d t} =-q_{unld}(L)
+$$ then:
+
+Then the steps to get from @eq-hp98-flu to @eq-hp98-exp-decay when $L \ge 0$ are:
+
+$$\frac{1}{L} d L = -\kappa_{unld} \Delta t$$ $$\int^{L(t+\Delta t)}_{L(t)}\frac{1}{L} dL = -\kappa_{unld}\int^{t+\Delta t}_tdt $$ $$ln(L^{t+\Delta t}) - ln(L^t) = -\kappa_{unld} \Delta t $$ $$ ln \left( \frac{L^{t+\Delta t}}{L^t}\right) = -\kappa_{unld}\Delta t$$ $$L^{t+\Delta t} = L^t \text{exp}^{-\kappa_{unld} \Delta t}$$ {#eq-unloading-integration-steps}
+
+note since $\kappa_{unld}$ is temporally constant it can be moved outside the integral. The analytical solution in @eq-hp98-exp-decay is only possible because unloading is treated in isolation from the other processes in @eq-canopy-mass-bal.
 
 \pagebreak
