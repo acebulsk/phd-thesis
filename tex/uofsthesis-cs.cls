@@ -12,7 +12,7 @@
 % - No new features, just under-the-hood improvements and bugfixes.
 % - Replaced all \bf commands with \bfseries commands for improved compatibility
 %   with overleaf.com.
-% - Removed a stray character from thesis_template.tex 
+% - Removed a stray character from thesis_template.tex
 %
 % Version 1.4.23
 % --------------
@@ -21,14 +21,14 @@
 %
 % Version 1.4.22
 % --------------
-% - Improved layout of list of abbreviations (LoA) so it respects margins.  LoA 
+% - Improved layout of list of abbreviations (LoA) so it respects margins.  LoA
 %   now uses a tabularx environment with ltablex package to allow page-spanning.
 % - LoA now uses same line spacing as the rest of the document so it conforms to
 %   alleged CGPS guidelines.
 % - Chapter headings now use boldface weight instead of small caps.  This looks
 %   worse but is the only way to convince CGPS that the chapter headings have
 %   the same appearance in the table of contents.
-% - Added support for correct hyperlinking of frontmatter when hyperref 
+% - Added support for correct hyperlinking of frontmatter when hyperref
 %   package is used.
 % - Now loads hyperref package by default.  Can be disabled with the document
 %   class option "nohyperref".
@@ -41,10 +41,10 @@
 %
 % Version 1.4.20
 % --------------
-% 
+%
 % - Added CGPS address to Permission to Use page as instructed by CGPS.
 % - Removed the word "Chapter" from chapter titles.  Chapter titles are now
-%   Typeset on a single line starting with chapter number followed by chapter title. 
+%   Typeset on a single line starting with chapter number followed by chapter title.
 %   This change is at the request of CGPS.
 %
 % Version 1.4.19
@@ -55,7 +55,7 @@
 %   convocation date.
 % - Changed "College of Graudate Studies and Research" on the title page to
 %   the new correct name "College of Graduate and Postdoctoral Studies".
-% - Now requires the appendix package which improves the listing of 
+% - Now requires the appendix package which improves the listing of
 %   appendices in the table of contents.
 % - Thesis template updated to indicate that appendix chapters must now
 %   be placed within the appendices environment.  The \uofsappendix command
@@ -64,11 +64,11 @@
 %
 % Version 1.4.18
 % --------------
-% 
-% - Something changed in the bowels of LaTeX, or perhaps the tocloft package, 
+%
+% - Something changed in the bowels of LaTeX, or perhaps the tocloft package,
 %   causing the table of contents title to be flushed right.  I added an extra
 %   \hfill to \cftaftertoctitle to compensate, and this seems to work.  Thanks to
-%   Computer Science MSc student Amir Zadeh for spotting this problem. 
+%   Computer Science MSc student Amir Zadeh for spotting this problem.
 %
 % Version 1.4.17
 % --------------
@@ -78,9 +78,9 @@
 % Version 1.4.16
 % --------------
 %
-% - The table of contents was set to be turned off if the nofigurelist 
-%   was used.  Now the table of contents is typeset unconditionally.  
-%   Credit goes to Mohsen Soltanifar and his M.Sc. thesis in the the U of S 
+% - The table of contents was set to be turned off if the nofigurelist
+%   was used.  Now the table of contents is typeset unconditionally.
+%   Credit goes to Mohsen Soltanifar and his M.Sc. thesis in the the U of S
 %   Math Department for finding this bug.
 %
 % Version 1.4.15
@@ -93,7 +93,7 @@
 %
 % Version 1.4.14
 % --------------
-% 
+%
 % - Fixed a bug where captions were set to a fixed width of 5in.  This had
 %   the desired effect of indenting the margins of the caption a small amount
 %   but had the undesirable effect that the captions of side-by-side figures
@@ -111,8 +111,8 @@
 %   This was due to the \addcontentsline{} command occurring after
 %   \bibliography{} in the definition of \uofsbibliography in uofsthesis.cls
 %
-% Version 1.4.12 
-% -------------- 
+% Version 1.4.12
+% --------------
 %
 % - Fixed a small bug which caused the headings of the Abstract and
 %   list of abbreviations to be formatted incorrectly when using
@@ -122,12 +122,12 @@
 %   in the class documentation.  thesis_template.tex was updated to
 %   use this command.
 % - Added \uofsbibliography command which simplifies the setup of
-%   the reference list when using bibtex.  
-%   Use of this command can be found in the 
+%   the reference list when using bibtex.
+%   Use of this command can be found in the
 %   class documentation.  thesis_template.tex was update to use this
 %   command.
 % - Added \uofsbibliographynobibtex command which sets up the reference
-%   list when using a 'thebibliography' environment and bibitems. 
+%   list when using a 'thebibliography' environment and bibitems.
 %   Again, usage is explained in the documentation.
 %
 %
@@ -139,13 +139,13 @@
 %
 % - The geometry package is used to force letter-size paper.  This should
 %   solve the problem of some LaTeX distributions defaulting to A4-sized paper
-%   when latex+dvips is used to generate docuements.  
+%   when latex+dvips is used to generate docuements.
 %
 %
 % Version 1.4.10
 % --------------
-% 
-% - Bug fix: Chapter headings should no longer vary in spacing and vertical 
+%
+% - Bug fix: Chapter headings should no longer vary in spacing and vertical
 %   position when the global line spacing is changed using document class
 %   options.
 %
@@ -171,7 +171,7 @@
 % -------------
 %
 % Changes:
-% 
+%
 % - Changed the page headings in the frontmatter section so that they
 %   have a one-inch top margin instead of a 5 cm one.  Chapter
 %   headings still have the required 5cm margin.  This is done in
@@ -179,18 +179,18 @@
 %   with the thesis preparation guide.
 %
 %
-% 
+%
 %
 % Version 1.4.6
 % -------------
 %
 % Changes:
-% 
+%
 % - An improved framework for appendices is now provided in the
 %   thesis_template.tex file.
 % - Removed the [tableposition=top] option from the included 'caption'
 %   package.  It was causing issues on Mac's and wasn't actually doing
-%   anything.  
+%   anything.
 % - Changed headings for most frontmatter items to use \chapter,
 %   eliminating the need for hardcoded vertical spacing before the
 %   page number.  As a side effect, titles in the frontmatter are now
@@ -208,18 +208,18 @@
 %   Default address is ``Head of Computer Science Department''.
 %
 % Changes:
-% 
+%
 % - Added an option in THIS FILE to reduce spacing between headings
 %   paragraphs even further.  To use it you have to uncomment the
 %   lines in THIS FILE under SPACING OF HEADINGS OPTION below.
 %
 %
 %
-% Version 1.4.4 
+% Version 1.4.4
 % -------------
 %
 % Changes:
-% 
+%
 % - Department address on permission to use  page is updated to reflect our move to THORV.
 %
 %
@@ -227,25 +227,25 @@
 % -------------
 %
 % New Features:
-% 
+%
 % - The department name that appears on the title page
-%   may now be specified in the document pre-amble using 
+%   may now be specified in the document pre-amble using
 %   \department{dept-name}.  If no department name is specified, the default
 %   is 'Computer Science'.  Documentation is updated to reflect this change.
-% - The type of academic unit that appears on the title page 
-%   may now be specified, e.g. if you are not in a departmentalized college.  
+% - The type of academic unit that appears on the title page
+%   may now be specified, e.g. if you are not in a departmentalized college.
 %   \academicunit{unit-type} specifies the type of academic unit (e.g. division, college).
 %   Default is 'Department'.
-% - Added a 'doublespace' option.  
+% - Added a 'doublespace' option.
 %
 % Changes:
 %
-% - The class now issues only a warning (instead of error) if 'singlespace' is used 
+% - The class now issues only a warning (instead of error) if 'singlespace' is used
 %   without using 'proposal'.
 %   So you can do single-space theses if you really want to, but it is not permitted
 %   by CGSR.
 %
-% 
+%
 %
 % Version 1.4.2
 % -------------
@@ -261,13 +261,13 @@
 %   from the text body.  The figure/table number and designation are now also in bold text.
 %   It is supposed to be possible with this package to force table captions to be above the table
 %   but I was unable to get this to work.
-% 
+%
 %
 % Version 1.4.1
 % -------------
 %
-% Changes:  
-% - Fixed a small problem where when double or 1.5 spacing is used, the multi-line 
+% Changes:
+% - Fixed a small problem where when double or 1.5 spacing is used, the multi-line
 %   figure and table captions also come out double or 1.5 spaced.  I Redefined the figure and table
 %   environments to ensure that captions are always single-spaced.
 %
@@ -278,7 +278,7 @@
 % 2004/09/13
 %
 % Changes:
-% 
+%
 % - Redefined the 'quote' and 'quotation' environments so that the text is always single-spaced
 %   according to CGSR guidelines.  Quotation spacing is now single-spaced regardless of
 %   global spacing.  Text size of quotations should match base font size of thesis.
@@ -300,15 +300,15 @@
 %
 % Version 1.3
 % -----------
-% 
+%
 % 2004/08/16
-% 
+%
 % Changes:
-% 
-% - The entry in the table of contents for the table of contents now reads ``Contents'' instead 
+%
+% - The entry in the table of contents for the table of contents now reads ``Contents'' instead
 %   of ``Table of Contents'' to match the title of the table of contents page.
 % - Not really a class file issue, but I updated the thesis_template.tex file to prevent an
-%   empty chapter from occurring when using BibTeX.  
+%   empty chapter from occurring when using BibTeX.
 %   Also improved bibliography instructions in the template file.
 %
 %
@@ -317,28 +317,28 @@
 % -----------
 %
 % 2004/07/19
-% 
+%
 % Changes:
-% 
+%
 % - Now passes options through to the base report package by using \LoadClassWithOptions
 %   Allows options like 12pt to be used.
 % - Fixed spacing for pages with title headings.  The top margin was too large
-% - Fixed some spacing in the chapter headings that CGSR was having issues with. 
+% - Fixed some spacing in the chapter headings that CGSR was having issues with.
 %
 %
 %
 % Version 1.1
 % -----------
-% 
+%
 % 2004/07/02
-% 
+%
 % Changes:
-% 
+%
 % - Fixed \ifx statement for nofigurelist option.
 % - Added warning to read the CGSR guidelines to documentation and template.
 % - Added frontmatter items to Table of Contents
 % - Added support for list of abbreviations and added related documentation.
-% 
+%
 % 2004/06/28 -- Original Version
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -521,7 +521,7 @@
 %    Replaced this line with the following line to fix
 %    compatiblity with the color package.
 %
-%    \global\setbox\@currbox\vbox\bgroup 
+%    \global\setbox\@currbox\vbox\bgroup
 
     \global\setbox\@currbox\color@vbox\normalcolor\vbox\bgroup
 
@@ -530,7 +530,7 @@
     \hsize\columnwidth \@parboxrestore}
 
 \long\def\@footnotetext#1{\insert\footins{\def\baselinestretch{1}\footnotesize
-    \interlinepenalty\interfootnotelinepenalty 
+    \interlinepenalty\interfootnotelinepenalty
     \splittopskip\footnotesep
     \splitmaxdepth \dp\strutbox \floatingpenalty \@MM
     \hsize\columnwidth \@parboxrestore
@@ -566,7 +566,7 @@
 \newcommand{\department}[1]{\gdef\@department{#1}}
 \newcommand{\academicunit}[1]{\gdef\@academicunit{#1}}
 
-\academicunit{} 
+\academicunit{}
 \department{}
 \author{}
 \title{}
@@ -656,7 +656,7 @@ Unless otherwise noted, copyright of the material in this thesis belongs to the 
 %\edef\foo{\PhD}
 %\edef\bar{\@degree}
 %% Set document type name for front matter
-%\ifx 
+%\ifx
 %\newcommand{\doctype}{dissertation}
 %\else
 %\newcommand{\doctype}{thesis}
@@ -667,11 +667,15 @@ Unless otherwise noted, copyright of the material in this thesis belongs to the 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Remove chapter numbers and reformat the chapter headings for the preamble
-\titleformat{\chapter}{\renewcommand{\baselinestretch}{1.5}\LARGE\bfseries\fillast}{\renewcommand{\baselinestretch}{\spacemultiplier}\normalsize}{0pt plus0pt minus0pt}{}
-\titlespacing{\chapter}{0pt}{-30pt plus0pt minus0pt}{20pt plus0pt minus0pt}
+%\titleformat{\chapter}{\renewcommand{\baselinestretch}{1.5}\LARGE\bfseries\centering}{\renewcommand{\baselinestretch}{\spacemultiplier}\normalsize}{0pt plus0pt minus0pt}{}
+%\titlespacing{\chapter}{0pt}{-30pt plus0pt minus0pt}{20pt plus0pt minus0pt}
 
 
 \newcommand{\frontmatter}{
+
+% format frontmatter sections
+\titleformat{\chapter*}[block]{\LARGE\bfseries\centering}{}{0pt}{}
+
 %CHeck for required definitons
 \ifx \@abstract \@empty
 \ClassError{uofsthesis-cs}{\protect\abstract{} is undefined}
@@ -695,13 +699,13 @@ Saskatoon, Saskatchewan S7N 5C9 Canada
 
 \phantomsection
 \addcontentsline{toc}{chapter}{Permission to Use}
-\chapter*{Permission to Use} 
+\chapter*{Permission to Use}
 \noindent In presenting this \doctype\ in partial fulfillment of the requirements for a Postgraduate degree from the University of Saskatchewan, I agree that the Libraries of this University may make it freely available for inspection. I further agree that permission for copying of this \doctype\ in any manner, in whole or in part, for scholarly purposes may be granted by the professor or professors who supervised my \doctype\ work or, in their absence, by the Head of the Department or the Dean of the College in which my \doctype\ work was done. It is understood that any copying or publication or use of this \doctype\ or parts thereof for financial gain shall not be allowed without my written permission. It is also understood that due recognition shall be given to me and to the University of Saskatchewan in any scholarly use which may be made of any material in my \doctype.
 
 {\let\clearpage\relax\vspace*{1.5cm} \chapter*{Disclaimer}}
 
 
-%\noindent The [name of company/corporation/brand name and website] were exclusively created to meet the thesis and/or exhibition requirements for the degree of [title of degree] at the University of Saskatchewan.  
+%\noindent The [name of company/corporation/brand name and website] were exclusively created to meet the thesis and/or exhibition requirements for the degree of [title of degree] at the University of Saskatchewan.
 \noindent Reference  in this \doctype\ to any specific commercial products, process, or service by trade name, trademark, manufacturer, or otherwise, does not constitute or imply its endorsement, recommendation, or favoring by the University of Saskatchewan. The views and opinions of the author expressed herein do not state or reflect those of the University of Saskatchewan, and shall not be used for advertising or product endorsement purposes.
 
 \bigskip
@@ -793,9 +797,9 @@ Saskatoon, Saskatchewan S7N 5C9 Canada
 %          \renewcommand{\baselinestretch}{1}\normalsize
           \begin{center}
 		  \begin{tabularx}{\textwidth}{lX}
-              \@loa   
+              \@loa
             \end{tabularx}
-          \end{center}        
+          \end{center}
         }
         \newpage
 \fi
@@ -803,14 +807,12 @@ Saskatoon, Saskatchewan S7N 5C9 Canada
 \pagenumbering{arabic}
 
 % Return to normal chapters
-\titleformat{\chapter}[display]{\LARGE\bfseries\centering}{Chapter \thechapter}{20pt}{\LARGE\bfseries}
- 
-% Old title format with the word "Chapter" in the title. 
-%\titleformat{\chapter}[display]{\renewcommand{\baselinestretch}{1.5}\LARGE\sc\fillast}{Chapter
-%  \thechapter}{0pt}{}[\renewcommand{\baselinestretch}{\spacemultiplier}\normalsize]  
-  
-\titlespacing{\chapter}{0pt}{1.4cm}{20pt}
-\setcounter{chapter}{0}
+\titleformat{\chapter}[block]{\LARGE\bfseries\centering}{\thechapter{ }}{0pt}{\LARGE\bfseries}
+
+% Old title format with the word "Chapter" in the title.
+% \titleformat{\chapter}[display]{\renewcommand{\baselinestretch}{1.5}\LARGE\sc\fillast}{Chapter
+%  \thechapter}{0pt}{}[\renewcommand{\baselinestretch}{\spacemultiplier}\normalsize]
+
 }
 
 
@@ -829,11 +831,11 @@ Saskatoon, Saskatchewan S7N 5C9 Canada
 % the titlesec package overrides the changes to the chapter headings that
 % the \appendix commands make.  We use the following workround:
 \titleformat{\chapter}[display]{\renewcommand{\baselinestretch}{1.5}\normalsize
-\LARGE\bfseries\fillast}{Appendix \thechapter}{0pt}{}
+\LARGE\bfseries\centering}{Appendix \thechapter}{0pt}{}
 
-% This is needed to put a one-inch top margin on the first page of 
-% appendices -- this seems to be what CGSR wants.  If not, just comment 
-% out the next line. 
+% This is needed to put a one-inch top margin on the first page of
+% appendices -- this seems to be what CGSR wants.  If not, just comment
+% out the next line.
 \titlespacing{\chapter}{0pt}{-30pt}{20pt}
 
 % Appendices need to be single-spaced.  Reset spacing to single
@@ -848,8 +850,8 @@ Saskatoon, Saskatchewan S7N 5C9 Canada
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % This command simplifes setup for the typesetting of the bibliography.
-% It takes 2 parameters:   1. the bibliography style name (optional), 2. the  
-% name of the .bib file (minus extension),.  
+% It takes 2 parameters:   1. the bibliography style name (optional), 2. the
+% name of the .bib file (minus extension),.
 
 
 \newcommand{\uofsbibliography}[2][plain]{
@@ -860,9 +862,9 @@ Saskatoon, Saskatchewan S7N 5C9 Canada
 {
 \renewcommand{\baselinestretch}{1}\normalsize
 
-% Select the title of the bibliography section by redefining the \bibname 
+% Select the title of the bibliography section by redefining the \bibname
 % command:
-\renewcommand{\bibname}{References} 
+\renewcommand{\bibname}{References}
 
 % Add references to Table of Contents
 \newpage
@@ -870,7 +872,7 @@ Saskatoon, Saskatchewan S7N 5C9 Canada
 \addcontentsline{toc}{chapter}{References}
 
 \bibliographystyle{#1}
-\bibliography{#2}  
+\bibliography{#2}
 }
 }
 
@@ -878,13 +880,13 @@ Saskatoon, Saskatchewan S7N 5C9 Canada
 
 \newcommand{\uofsbibliographynobibtex}{
 % We need to force single spacing for the bibliography which must be single
-% spaced according to CGSR rules.  The line below changes spacing to single 
+% spaced according to CGSR rules.  The line below changes spacing to single
 % space. This command does not take effect until a new font size is selected,
 % so we add the \normalsize command to make the spacing take effect.
 
 \renewcommand{\baselinestretch}{1}\normalsize
 
-\renewcommand{\bibname}{References} 
+\renewcommand{\bibname}{References}
 
 \newpage
 % Add references to Table of Contents
