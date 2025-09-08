@@ -451,9 +451,10 @@
 
 
 % Customize the table of contents title fonts
-\renewcommand{\cfttoctitlefont}{\LARGE\bfseries\hfill}
-\renewcommand{\cftloftitlefont}{\LARGE\bfseries\hfill}
-\renewcommand{\cftlottitlefont}{\LARGE\bfseries\hfill}
+
+\renewcommand{\cfttoctitlefont}{\LARGE\sc\hfill}
+\renewcommand{\cftloftitlefont}{\LARGE\sc\hfill}
+\renewcommand{\cftlottitlefont}{\LARGE\sc\hfill}
 \renewcommand{\cftaftertoctitle}{\hfill\hfill} % October 2, 2014 - not sure why the double-\hfill is needed now, but I have to put it there to get the table of contents centred.
 \renewcommand{\cftafterloftitle}{\hfill}
 \renewcommand{\cftafterlottitle}{\hfill}
@@ -464,12 +465,20 @@
 % Add leaders to chapter headings because CGPS arbitrarily declares it should be so.
 \renewcommand{\cftchapdotsep}{\cftdotsep}
 
-
-
 % Font changes - chapter headings and so forth
 %\allsectionsfont{\sc}
 %\titleformat{\chapter}[display]{\LARGE\sc\fillast}{Chapter \thechapter}{0pt}{}
 
+% Center formatting for unnumbered chapters (Abstract, Acknowledgements, etc.)
+% could not target unnumbered headings directly so made global change and then revert later
+\titleformat{\chapter}[display]
+  {\LARGE\centering} % formatting
+  {}                         % no number
+  {0pt}                      % spacing
+  {}                         % code before title
+
+% Remove extra vertical space before/after for unnumbered chapters (Abstract, Acknowledgements)
+\titlespacing*{\chapter}{0pt}{-30pt}{1em}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SPACING OF HEADINGS OPTION:  For less spacing between headings and
@@ -487,56 +496,56 @@
 
 % Redefine quote and quotation environments so that they are single spaced
 % according to CGSR regulations.
-\renewenvironment{quotation}
-               {\list{}{\listparindent 1.5em%
-                        \itemindent    \listparindent
-                        \rightmargin   \leftmargin
-                        \parsep        \z@ \@plus\p@}%
-                \item\renewcommand{\baselinestretch}{1}\normalsize\relax}
-               {\endlist}
-\renewenvironment{quote}
-               {\list{}{\rightmargin\leftmargin}%
-                \item\renewcommand{\baselinestretch}{1}\normalsize\relax}
-               {\endlist}
+% \renewenvironment{quotation}
+%                {\list{}{\listparindent 1.5em%
+%                         \itemindent    \listparindent
+%                         \rightmargin   \leftmargin
+%                         \parsep        \z@ \@plus\p@}%
+%                 \item\renewcommand{\baselinestretch}{1}\normalsize\relax}
+%                {\endlist}
+% \renewenvironment{quote}
+%                {\list{}{\rightmargin\leftmargin}%
+%                 \item\renewcommand{\baselinestretch}{1}\normalsize\relax}
+%                {\endlist}
 % Increase the space between last line of text and footnote rule.
 % This is a very untidy way to do it!
 
-\skip\footins 20pt plus4pt minus4pt
+% \skip\footins 20pt plus4pt minus4pt
 
 % Reset baselinestretch within footnotes and floats. Originally stolen
 % from Stanford thesis style.
-
-\def\@xfloat#1[#2]{\ifhmode \@bsphack\@floatpenalty -\@Mii\else
-   \@floatpenalty-\@Miii\fi\def\@captype{#1}\ifinner
-      \@parmoderr\@floatpenalty\z@
-    \else\@next\@currbox\@freelist{\@tempcnta\csname ftype@#1\endcsname
-       \multiply\@tempcnta\@xxxii\advance\@tempcnta\sixt@@n
-       \@tfor \@tempa :=#2\do
-                        {\if\@tempa h\advance\@tempcnta \@ne\fi
-                         \if\@tempa t\advance\@tempcnta \tw@\fi
-                         \if\@tempa b\advance\@tempcnta 4\relax\fi
-                         \if\@tempa p\advance\@tempcnta 8\relax\fi
-         }\global\count\@currbox\@tempcnta}\@fltovf\fi
+%
+% \def\@xfloat#1[#2]{\ifhmode \@bsphack\@floatpenalty -\@Mii\else
+%    \@floatpenalty-\@Miii\fi\def\@captype{#1}\ifinner
+%       \@parmoderr\@floatpenalty\z@
+%     \else\@next\@currbox\@freelist{\@tempcnta\csname ftype@#1\endcsname
+%        \multiply\@tempcnta\@xxxii\advance\@tempcnta\sixt@@n
+%        \@tfor \@tempa :=#2\do
+%                         {\if\@tempa h\advance\@tempcnta \@ne\fi
+%                          \if\@tempa t\advance\@tempcnta \tw@\fi
+%                          \if\@tempa b\advance\@tempcnta 4\relax\fi
+%                          \if\@tempa p\advance\@tempcnta 8\relax\fi
+%          }\global\count\@currbox\@tempcnta}\@fltovf\fi
 
 %    Replaced this line with the following line to fix
 %    compatiblity with the color package.
 %
 %    \global\setbox\@currbox\vbox\bgroup
 
-    \global\setbox\@currbox\color@vbox\normalcolor\vbox\bgroup
-
-    \def\baselinestretch{1}
-    \boxmaxdepth\z@
-    \hsize\columnwidth \@parboxrestore}
-
-\long\def\@footnotetext#1{\insert\footins{\def\baselinestretch{1}\footnotesize
-    \interlinepenalty\interfootnotelinepenalty
-    \splittopskip\footnotesep
-    \splitmaxdepth \dp\strutbox \floatingpenalty \@MM
-    \hsize\columnwidth \@parboxrestore
-   \edef\@currentlabel{\csname p@footnote\endcsname\@thefnmark}\@makefntext
-    {\rule{\z@}{\footnotesep}\ignorespaces
-      #1\strut}}}
+%     \global\setbox\@currbox\color@vbox\normalcolor\vbox\bgroup
+%
+%     \def\baselinestretch{1}
+%     \boxmaxdepth\z@
+%     \hsize\columnwidth \@parboxrestore}
+%
+% \long\def\@footnotetext#1{\insert\footins{\def\baselinestretch{1}\footnotesize
+%     \interlinepenalty\interfootnotelinepenalty
+%     \splittopskip\footnotesep
+%     \splitmaxdepth \dp\strutbox \floatingpenalty \@MM
+%     \hsize\columnwidth \@parboxrestore
+%    \edef\@currentlabel{\csname p@footnote\endcsname\@thefnmark}\@makefntext
+%     {\rule{\z@}{\footnotesep}\ignorespaces
+%       #1\strut}}}
 
 
 %Make fancier table and figure captions -- from 'caption' package
@@ -578,6 +587,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % MAKETITLE definition
 %%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \renewcommand{\maketitle}{
 %Check for needed definitions
@@ -639,14 +649,24 @@ Unless otherwise noted, copyright of the material in this thesis belongs to the 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Things needed for the frontmatter.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\abstract}[1]{\gdef\@abstract{#1}}
-\abstract{}
-\newcommand{\acknowledgements}[1]{\gdef\@acknowledgements{#1}}
-\acknowledgements{}
-\newcommand{\dedication}[1]{\gdef\@dedication{#1}}
-\dedication{}
+% Use unique macro names to avoid clashes with LaTeX / Pandoc
+\newcommand{\@thesisabstract}{}                     % storage
+\newcommand{\thesisabstract}[1]{\gdef\@thesisabstract{#1}}
+\thesisabstract{}                                   % initialize empty
+
+\newcommand{\@thesisacknowledgements}{}             % storage
+\newcommand{\thesisacknowledgements}[1]{\gdef\@thesisacknowledgements{#1}}
+\thesisacknowledgements{}                           % initialize empty
+
+\newcommand{\@thesisdedication}{}                   % storage
+\newcommand{\thesisdedication}[1]{\gdef\@thesisdedication{#1}}
+\thesisdedication{}                                 % initialize empty
+
+\newcommand{\@loa}{}                                % list of abbreviations
 \newcommand{\loa}[1]{\gdef\@loa{#1}}
-\loa{}
+\loa{}                                              % initialize empty
+
+\newcommand{\@ptuaddress}{}                         % PTU address (you had this)
 \newcommand{\ptuaddress}[1]{\gdef\@ptuaddress{#1}}
 \ptuaddress{}
 
@@ -673,145 +693,160 @@ Unless otherwise noted, copyright of the material in this thesis belongs to the 
 
 \newcommand{\frontmatter}{
 
-% format frontmatter sections
-\titleformat{\chapter*}[block]{\LARGE\bfseries\centering}{}{0pt}{}
+  %CHeck for required definitons
+  \ifx \@thesisabstract \@empty
+  \ClassError{uofsthesis-cs}{\protect\thesisabstract{} is undefined}
+  \fi
 
-%CHeck for required definitons
-\ifx \@abstract \@empty
-\ClassError{uofsthesis-cs}{\protect\abstract{} is undefined}
-\fi
+  %Each item in the frontmatter is to be on a separate page.
+  \pagenumbering{roman}
 
-%Each item in the frontmatter is to be on a separate page.
-\pagenumbering{roman}
+  % PERMISSION TO USE
+  \ifx\undefined\proposal
+  %\vbox{}\vspace{1.1cm}
+  %\addcontentsline{toc}{chapter}{Permission to Use}
+  \ifx \@ptuaddress \@empty
+  \ptuaddress{Head of the Department of Computer Science\\
+  176 Thorvaldson Building, 110 Science Place\\
+  University of Saskatchewan\\
+  Saskatoon, Saskatchewan S7N 5C9 Canada
+  }
+  \fi
 
-% PERMISSION TO USE
-\ifx\undefined\proposal
-%\vbox{}\vspace{1.1cm}
-%\addcontentsline{toc}{chapter}{Permission to Use}
-\ifx \@ptuaddress \@empty
-\ptuaddress{Head of the Department of Computer Science\\
-176 Thorvaldson Building, 110 Science Place\\
-University of Saskatchewan\\
-Saskatoon, Saskatchewan S7N 5C9 Canada
-}
-\fi
+  \begingroup
+  \setstretch{1.4} % sets line spacing only inside this group to cheat onto one page
 
+  \phantomsection
+  \addcontentsline{toc}{chapter}{Permission to Use}
+  \chapter*{Permission to Use}
+  \noindent In presenting this \doctype\ in partial fulfillment of the requirements for a Postgraduate degree from the University of Saskatchewan, I agree that the Libraries of this University may make it freely available for inspection. I further agree that permission for copying of this \doctype\ in any manner, in whole or in part, for scholarly purposes may be granted by the professor or professors who supervised my \doctype\ work or, in their absence, by the Head of the Department or the Dean of the College in which my \doctype\ work was done. It is understood that any copying or publication or use of this \doctype\ or parts thereof for financial gain shall not be allowed without my written permission. It is also understood that due recognition shall be given to me and to the University of Saskatchewan in any scholarly use which may be made of any material in my \doctype.
 
-\phantomsection
-\addcontentsline{toc}{chapter}{Permission to Use}
-\chapter*{Permission to Use}
-\noindent In presenting this \doctype\ in partial fulfillment of the requirements for a Postgraduate degree from the University of Saskatchewan, I agree that the Libraries of this University may make it freely available for inspection. I further agree that permission for copying of this \doctype\ in any manner, in whole or in part, for scholarly purposes may be granted by the professor or professors who supervised my \doctype\ work or, in their absence, by the Head of the Department or the Dean of the College in which my \doctype\ work was done. It is understood that any copying or publication or use of this \doctype\ or parts thereof for financial gain shall not be allowed without my written permission. It is also understood that due recognition shall be given to me and to the University of Saskatchewan in any scholarly use which may be made of any material in my \doctype.
-
-{\let\clearpage\relax\vspace*{1.5cm} \chapter*{Disclaimer}}
+  {\let\clearpage\relax\vspace*{1.5cm} \chapter*{Disclaimer}}
 
 
-%\noindent The [name of company/corporation/brand name and website] were exclusively created to meet the thesis and/or exhibition requirements for the degree of [title of degree] at the University of Saskatchewan.
-\noindent Reference  in this \doctype\ to any specific commercial products, process, or service by trade name, trademark, manufacturer, or otherwise, does not constitute or imply its endorsement, recommendation, or favoring by the University of Saskatchewan. The views and opinions of the author expressed herein do not state or reflect those of the University of Saskatchewan, and shall not be used for advertising or product endorsement purposes.
+  %\noindent The [name of company/corporation/brand name and website] were exclusively created to meet the thesis and/or exhibition requirements for the degree of [title of degree] at the University of Saskatchewan.
+  \noindent Reference in this \doctype\ to any specific commercial products, process, or service by trade name, trademark, manufacturer, or otherwise, does not constitute or imply its endorsement, recommendation, or favoring by the University of Saskatchewan. The views and opinions of the author expressed herein do not state or reflect those of the University of Saskatchewan, and shall not be used for advertising or product endorsement purposes.
 
-\bigskip
+  \bigskip
 
-\noindent Requests for permission to copy or to make other uses of materials in this \doctype\ in whole or part should be addressed to:
+  \noindent Requests for permission to copy or to make other uses of materials in this \doctype\ in whole or part should be addressed to:
 
-\begin{itemize}
-\item[] \@ptuaddress
-\item[] OR
-\item[] {Dean \\
-	College of Graduate and Postdoctoral Studies\\
-	University of Saskatchewan\\
-	116 Thorvaldson Building, 110 Science Place\\
-	Saskatoon, Saskatchewan  S7N 5C9 Canada}
-\end{itemize}
-\newpage
-\fi
-% ABSTRACT
-\phantomsection
-\addcontentsline{toc}{chapter}{Abstract}
-\chapter*{Abstract}
-%\strut\\
-\@abstract
-\newpage
+  \begin{itemize}
+  \item[] \@ptuaddress
+  \item[] OR
+  \item[] {Dean \\
+  	College of Graduate and Postdoctoral Studies\\
+  	University of Saskatchewan\\
+  	116 Thorvaldson Building, 110 Science Place\\
+  	Saskatoon, Saskatchewan  S7N 5C9 Canada}
+  \end{itemize}
 
-%ACKNOWLEDGEMENTS (if any)
-\ifx \@acknowledgements \@empty
-\relax
-\else
-        \ifx\proposal\undefined
-        \phantomsection
-        \addcontentsline{toc}{chapter}{Acknowledgements}
-        \chapter*{Acknowledgements}
-        \@acknowledgements
-        \newpage
-        \fi
-\fi
+  \endgroup  % <<--- restores normal spacing
+  \newpage
+  \fi
 
-%DEDICATION (If any)
-\ifx \@dedication \@empty
-\relax
-\else
-        \ifx\proposal\undefined
-        \vbox{}\vfil
-        \@dedication
-        \vfil
-        \newpage
-        \fi
-\fi
+  % ABSTRACT
+  \phantomsection
+  \addcontentsline{toc}{chapter}{Abstract}
+  \chapter*{Abstract}
+  %\strut\\
+  \@thesisabstract
+  \newpage
 
-%TABLE OF CONTENTS
-\phantomsection
-\addcontentsline{toc}{chapter}{Contents}
-{\renewcommand{\baselinestretch}{1}\normalsize
-\tableofcontents
-}
-\newpage
-
-%LIST OF TABLES
-\ifx\notablelist\undefined
-\phantomsection
-\addcontentsline{toc}{chapter}{List of Tables}
-{\renewcommand{\baselinestretch}{1}\normalsize
-\listoftables
-}
-\newpage
-\fi
-
-%LIST OF FIGURES
-\ifx\nofigurelist\undefined
-\phantomsection
-\addcontentsline{toc}{chapter}{List of Figures}
-{\renewcommand{\baselinestretch}{1}\normalsize
-\listoffigures
-}
-\newpage
-\fi
-
-%LIST OF ABBREVIATIONS
-\ifx \@loa \@empty
-\relax
-\else
-%        \addcontentsline{toc}{chapter}{List of Abbreviations}
-        {
+  %ACKNOWLEDGEMENTS (if any)
+  \ifx \@thesisacknowledgements \@empty
+  \relax
+  \else
+          \ifx\proposal\undefined
           \phantomsection
-          \addcontentsline{toc}{chapter}{List of Abbreviations}
-          \chapter*{List of Abbreviations}
+          \addcontentsline{toc}{chapter}{Acknowledgements}
+          \chapter*{Acknowledgements}
+          \@thesisacknowledgements
+          \newpage
+          \fi
+  \fi
 
-%          \renewcommand{\baselinestretch}{1}\normalsize
-          \begin{center}
-		  \begin{tabularx}{\textwidth}{lX}
-              \@loa
-            \end{tabularx}
-          \end{center}
-        }
-        \newpage
-\fi
+  %DEDICATION (If any)
+  \ifx \@thesisdedication \@empty
+  \relax
+  \else
+          \ifx\proposal\undefined
+          \vbox{}\vfil
+          \@thesisdedication
+          \vfil
+          \newpage
+          \fi
+  \fi
 
-\pagenumbering{arabic}
+  %TABLE OF CONTENTS
+  \phantomsection
+  \addcontentsline{toc}{chapter}{Contents}
+  {\renewcommand{\baselinestretch}{1}\normalsize
+  \tableofcontents
+  }
+  \newpage
 
-% Return to normal chapters
-\titleformat{\chapter}[block]{\LARGE\bfseries\centering}{\thechapter{ }}{0pt}{\LARGE\bfseries}
+  %LIST OF TABLES
+  \ifx\notablelist\undefined
+  \phantomsection
+  \addcontentsline{toc}{chapter}{List of Tables}
+  {\renewcommand{\baselinestretch}{1}\normalsize
+  \listoftables
+  }
+  \newpage
+  \fi
 
-% Old title format with the word "Chapter" in the title.
-% \titleformat{\chapter}[display]{\renewcommand{\baselinestretch}{1.5}\LARGE\sc\fillast}{Chapter
-%  \thechapter}{0pt}{}[\renewcommand{\baselinestretch}{\spacemultiplier}\normalsize]
+  %LIST OF FIGURES
+  \ifx\nofigurelist\undefined
+  \phantomsection
+  \addcontentsline{toc}{chapter}{List of Figures}
+  {\renewcommand{\baselinestretch}{1}\normalsize
+  \listoffigures
+  }
+  \newpage
+  \fi
+
+  %LIST OF ABBREVIATIONS
+  \ifx \@loa \@empty
+  \relax
+  \else
+  %        \addcontentsline{toc}{chapter}{List of Abbreviations}
+          {
+            \phantomsection
+            \addcontentsline{toc}{chapter}{List of Abbreviations}
+            \chapter*{List of Abbreviations}
+
+  %          \renewcommand{\baselinestretch}{1}\normalsize
+            \begin{center}
+  		  \begin{tabularx}{\textwidth}{lX}
+                \@loa
+              \end{tabularx}
+            \end{center}
+          }
+          \newpage
+  \fi
+
+  \pagenumbering{arabic}
+
+  % Return to normal chapters
+  % \titleformat{\chapter}[block]{\LARGE\sc\centering}{\thechapter{ }}{0pt}{\LARGE\sc}
+
+  % Old title format with the word "Chapter" in the title.
+  % \titleformat{\chapter}[display]{\renewcommand{\baselinestretch}{1.5}\LARGE\sc\fillast}{Chapter
+  %  \thechapter}{0pt}{}[\renewcommand{\baselinestretch}{\spacemultiplier}\normalsize]
+
+  % Custom by AC
+  \titleformat{\chapter}[block]
+  {\LARGE\sc\centering}   % format
+  {\thechapter\ }         % label
+  {0pt}                   % sep between label and title
+  {\LARGE\sc}             % before-code
+
+  \titlespacing*{\chapter}
+    {0pt}    % left margin
+    {3em}    % space above (adjust this value)
+    {2em}    % space below (between title and text)
+
 
 }
 
