@@ -1,0 +1,27 @@
+project:
+  type: book
+  output-dir: .
+book:
+  output-file: "CEBULSKI-DISSERTATION-2025"
+  chapters:
+    - index.qmd
+    # - chapters/01-introduction.qmd inside index..
+    - chapters/02-review-paper/02-review-paper.qmd
+    - chapters/03-snow-int-paper/03-snow-int-paper.qmd
+    - chapters/refs.qmd
+title: "Advancing Snow Accumulation Models in Needleleaf Forests"
+author: "Alex C. Cebulski"
+format:
+  pdf:
+    documentclass: tex/uofsthesis-cs
+    keep-tex: true
+    template-partials:
+      - frontmatter/title.tex
+      - frontmatter/before-body.tex
+    include-in-header:
+    - frontmatter/header.tex
+    toc: false
+    colorlinks: false
+
+bibliography: ../../papers/bibtex/better-bibtex.bib
+csl: '../../papers/bibtex/csl-styles/apa-disable-disambiguate-add-names.csl'
