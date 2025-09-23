@@ -11,11 +11,14 @@ source('scripts/manuscript_values.R')
 
 Manuscript status: The contents of this chapter have been compiled from a research article published in the journal *Hydrological Processes*. 
 
-Citation: **Cebulski, A. C.**, & Pomeroy, J. W. (2025). Snow Interception Relationships With Meteorology and Canopy Density. Hydrological Processes, 39(4), e70135. https://doi.org/10.1002/hyp.70135
+Citation: Cebulski, A. C., & Pomeroy, J. W. (2025). Snow Interception Relationships With Meteorology and Canopy Density. *Hydrological Processes*, 39(4), e70135. https://doi.org/10.1002/hyp.70135
 
-Role in thesis: This journal article aims to answer research question 1.2 of the thesis. This question will be answered through analysis of observations of interception from a study site few researchers have focused on, a subalpine discontinuous forest and contrast these observations with existing theory developed in maritime and continental climates.
+Role in thesis: This journal article addresses Research Question 2.
   
-Author Contribution: Alex Cebulski conducted in-situ data collection, conceptualized research plan with comments from supervisor and thesis committee members, and lead author in collaboration with supervisor. 
+Author Contribution: 
+
+A. Cebulski: Initial idea, data collection, analysis, manuscript preparation
+J. Pomeroy: Idea refinement, analysis refinement, manuscript revision
 
 ## Abstract
 

@@ -2,11 +2,14 @@
 
 Manuscript Status: The contents of this chapter have been compiled from a advanced review article published in the journal *WIREs Water*.
 
-Citation: **Cebulski, A. C.**, & Pomeroy, J. W. (2025). Theoretical Underpinnings of Snow Interception and Canopy Snow Ablation Parameterisations. WIREs Water, 12, e70010. https://doi.org/10.1002/wat2.70010
+Citation: Cebulski, A. C., & Pomeroy, J. W. (2025). Theoretical Underpinnings of Snow Interception and Canopy Snow Ablation Parameterisations. *WIREs Water*, 12, e70010. https://doi.org/10.1002/wat2.70010
 
 Role in thesis: This paper is an advanced review article and corresponds to objective 1, research question 1.1 of the thesis. This advanced review will provide the context necessary for interpreting whether the theories and assumptions of existing parameterisations are true for the field observations collected in this study in the second part of objective 1.
 
-Author Contribution: A. C. Cebulski: conceptualization (lead), investigation (equal), software (lead), visualization (lead), writing – original draft (lead), writing – review and editing (equal). J. W. Pomeroy: conceptualization (supporting), funding acquisition (lead), investigation (equal), project administration (lead), resources (lead), supervision (lead), writing review and editing (equal).
+Author Contribution: 
+
+A. Cebulski: Conceptualization (lead), investigation (equal), software (lead), visualization (lead), writing – original draft (lead), writing review and editing (equal)
+J. Pomeroy: Conceptualization (supporting), funding acquisition (lead), investigation (equal), project administration (lead), resources (lead), supervision (lead), writing review and editing (equal).
 
 ## Abstract
 
