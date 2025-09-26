@@ -15,7 +15,10 @@ Manuscript status: Analysis is complete and manuscript is currently in progress.
 
 Citation: Cebulski, A. C., Pomeroy, J. W., Floyd, W. C. (in prep.). Evaluation of a New Needleleaf Forest Snowpack Model for Diagnosing Snow Accumulation Regimes in Western and Northern Canada. *Hydrological Processes*, 12, e70010. https://doi.org/10.1002/wat2.70010
 
-Role in thesis: This journal article corresponds to research question 2.1 of the thesis, the model implementation and testing phase. New parameterisations and process understanding of snow interception and ablation processes from chapters 1, 2 and 3 will incorporated into the Cold Regions Hydrological Model (CRHM) platform to model forest snow accumulation at four research basins in western Canada. The updated parameterisations will be evaluated by including them in an updated CRHM canopy module. Simulated SWE using this updated module will be compared to observed SWE at a point within the forest of each research basin.
+Role in thesis: This article incorporates the new parameterisations of snow interception and canopy snow ablation, developed in Chapters 2–4, into the Cold Regions Hydrological Model (CRHM) platform. The updated parameterisations are evaluated the error in simulated and observed subcanopy SWE at four research basins in western and northern Canada. The results demonstrate improved simulations of subcanopy SWE, thereby addressing Research Question 4 of Objective 2 concerning the evaluation of the new parameterisations.
+
+A. Cebulski: Conceptualization (lead), analysis (lead), visualization (lead), writing – original draft (lead), writing review and editing (equal)\
+J. Pomeroy: Conceptualization (supporting), funding acquisition (lead), analysis (supporting), project administration (lead), resources (lead), supervision (lead), writing review and editing (equal).
 
 ## Abstract
 

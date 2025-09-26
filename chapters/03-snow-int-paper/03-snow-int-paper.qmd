@@ -13,12 +13,12 @@ Manuscript status: The contents of this chapter have been compiled from a resear
 
 Citation: Cebulski, A. C., & Pomeroy, J. W. (2025). Snow Interception Relationships With Meteorology and Canopy Density. *Hydrological Processes*, 39(4), e70135. https://doi.org/10.1002/hyp.70135
 
-Role in thesis: This journal article addresses Research Question 2.
-  
+Role in thesis: This article presents novel observations of snow interception prior to canopy snow ablation, enabling an evaluation of theories underlying existing parameterisations. In addition, building on previous work, a novel canopy density metric is presented that provides enhanced prediction of initial snow interception and highlights issues in prior parameterisations. The results address Research Question 2 of Objective 1 by providing a comprehensive evaluation of existing snow interception theories and proposes new relationships which show potential for improved representation of the interception process.
+
 Author Contribution: 
 
-A. Cebulski: Initial idea, data collection, analysis, manuscript preparation
-J. Pomeroy: Idea refinement, analysis refinement, manuscript revision
+A. Cebulski: Conceptualization (lead), data collection (lead), analysis (lead), writing – original draft (lead), writing review and editing (equal)\
+J. Pomeroy: Conceptualization (supporting), data collection (supporting), analysis (supporting), writing review and editing (equal)
 
 ## Abstract
 

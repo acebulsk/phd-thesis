@@ -15,12 +15,12 @@ Manuscript status: This chapter has been submitted as a research article to the 
 
 Citation: Cebulski, A. C., & Pomeroy, J. W. (under review). Processes Governing the Ablation of Intercepted Snow. *Water Resources Research*.
 
-Role in thesis: This journal article answers research question 1.3 of the thesis. It will present analysis of canopy snow ablation observations from Fortress Mountain Research basin collected over the 2022 and 2023 water years and contrast these against existing theories.
+Role in thesis: This article presents new observations of canopy snow ablation to evaluate theories and hypothesis regarding dominant processes governing unloading, melt, and drip of intercepted snow. The results address Research Question 3 from Objective 1 by providing and empirical assessment of these processes and their representation within existing parameterisations, which were previously constrained by limited observations. In addition, the study establishes new relationships with a stronger physical basis.
 
 Author Contribution: 
 
-A. Cebulski: Conceptualization (lead), data collection (equal), analysis (lead), visualization (lead), writing – original draft (lead), writing review and editing (equal)
-J. Pomeroy: Conceptualization (supporting),  data collection (supporting), funding acquisition (lead), analysis (equal), project administration (lead), resources (lead), supervision (lead), writing review and editing (equal).
+A. Cebulski: Conceptualization (lead), data collection (equal), analysis (lead), visualization (lead), writing – original draft (lead), writing review and editing (equal)\
+J. Pomeroy: Conceptualization (supporting), data collection (supporting), funding acquisition (lead), analysis (supporting), project administration (lead), resources (lead), supervision (lead), writing review and editing (supporting).
 
 ## Abstract
 
