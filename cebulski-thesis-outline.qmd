@@ -1,33 +1,17 @@
 ---
-title: "Thesis Outline"
-subtitle: "Thesis Title: Advancing Snow Accumulation Models in Needleleaf Forests"
-author: "Alex Cebulski"
-date: today
-date-format: long
-format: 
-  pdf:
-    pdf-engine: latexmk
-    pdf-engine-opt: -xelatex
-    colorlinks: false
-    keep-tex: true
-    # latex-clean: false # keeps log file
-    number-sections: true
-    toc: false
-    fig-pos: H # makes figs appear in the location specified. without this they sometimes appear in the middle of a paragraph.
-  # docx:
-  #   reference-doc: ../config/thesis-word-template.docx
-  #   number-sections: true
-  #   toc: false
-editor: source
+project:
+  type: book
+  output-dir: .
+book:
+  title: "Thesis Outline"
+  subtitle: "Thesis Title: Advancing Snow Accumulation Models in Needleleaf Forests"
+  author: "Alex Cebulski"
+  date: today
+  date-format: long
+  chapters:
+    - chapters/02-review-paper.qmd
 bibliography: ../../papers/bibtex/better-bibtex.bib
 csl: '../../papers/bibtex/csl-styles/apa-disable-disambiguate-add-names.csl'
-header-includes:
-  - \usepackage[left]{lineno}
-  - \linenumbers
-  - \usepackage{xcolor}
-  - \usepackage{float} # allow tables after section header
-  - \floatplacement{table}{H} # allow tables after section header
-  - \usepackage{setspace}
 ---
 
 ---
@@ -99,6 +83,8 @@ Purpose: To better understand the processes that govern snow accumulation in for
 
 This thesis contains 5 chapters, the first chapter includes an introduction and research plan while, the remaining chapters 2-5 each correspond to a journal article which aims to answer one of the research questions.
 
+\pagebreak
+
 # The Theoretical Underpinnings of Existing Snow Interception and Ablation parameterisations
 
 Manuscript Status: The contents of this chapter have been compiled from a advanced review article published in the journal *WIREs Water*.
@@ -107,10 +93,12 @@ Citation: **Cebulski, A. C.**, & Pomeroy, J. W. (2025). Theoretical Underpinning
 
 Role in thesis: This paper is an advanced review article and corresponds to objective 1, research question 1.1 of the thesis. This advanced review will provide the context necessary for interpreting whether the theories and assumptions of existing parameterisations are true for the field observations collected in this study in the second part of objective 1.
 
-Author Contribution: A. C. Cebulski: conceptualization (lead), investigation (equal), software (lead), visualization (lead), writing – original draft (lead), writing – review and editing (equal). J. W. Pomeroy: conceptualization (supporting), funding acquisition (lead), investigation (equal), project administration (lead), resources (lead), supervision (lead), writing review and editing (equal).
+Author Contribution: A. C. Cebulski: conceptualization (lead), investigation (equal), software (lead), visualization (lead), writing – original draft (lead), writing review and editing (equal). J. W. Pomeroy: conceptualization (supporting), funding acquisition (lead), investigation (equal), project administration (lead), resources (lead), supervision (lead), writing review and editing (equal).
 
 ```{r child = 'chapters/02-review-paper.qmd'}
 ```
+
+\pagebreak
 
 # Snow Interception Relationships with Meteorology and Canopy Density
 
@@ -125,6 +113,8 @@ Author Contribution: Alex Cebulski conducted in-situ data collection, conceptual
 ```{r child = 'chapters/03-snow-int-paper.qmd'}
 ```
 
+\pagebreak
+
 # Processes Governing the Ablation of Intercepted Snow
 
 Manuscript status: This chapter has been submitted as a research article to the journal *Water Resources Research* on August 19, 2025 and is currently under review.
@@ -135,6 +125,8 @@ Role in thesis: This journal article answers research question 1.3 of the thesis
 
 ```{r child = 'chapters/04-ablation-paper.qmd'}
 ```
+
+\pagebreak
 
 # Evaluation of a New Needleleaf Forest Snowpack Model for Diagnosing Snow Accumulation Regimes in Western and Northern Canada
 
@@ -151,6 +143,8 @@ Role in thesis: This journal article corresponds to research question 2.1 of the
 
 ```{r child = 'chapters/06-synth-conclusion.qmd'}
 ```
+
+\pagebreak
 
 # References
 
