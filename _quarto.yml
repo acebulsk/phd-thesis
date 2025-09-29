@@ -8,6 +8,9 @@ book:
     # - chapters/01-introduction.qmd inside index..
     - chapters/02-review-paper/02-review-paper.qmd
     - chapters/03-snow-int-paper/03-snow-int-paper.qmd
+    - chapters/04-ablation-paper/04-ablation-paper.qmd
+    - chapters/05-model-eval-paper/05-model-eval-paper.qmd
+    - chapters/06-synth-conclusion.qmd
     - chapters/refs.qmd
 title: "Advancing Snow Accumulation Models in Needleleaf Forests"
 author: "Alex C. Cebulski"
