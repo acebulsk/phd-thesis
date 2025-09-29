@@ -13,12 +13,13 @@ source('scripts/get-manuscript-values.R')
 
 Manuscript status: Analysis is complete and manuscript is currently in progress. Anticipated submission is to the journal *Hydrological Processes* Fall, 2025.
 
-Citation: Cebulski, A. C., Pomeroy, J. W., Floyd, W. C. (in prep.). Evaluation of a New Needleleaf Forest Snowpack Model for Diagnosing Snow Accumulation Regimes in Western and Northern Canada. *Hydrological Processes*, 12, e70010. https://doi.org/10.1002/wat2.70010
+Citation: Cebulski, A. C., Pomeroy, J. W., Floyd, W. C. (in prep.). Evaluation of a New Needleleaf Forest Snowpack Model for Diagnosing Snow Accumulation Regimes in Western and Northern Canada. *Hydrological Processes*, 12, e70010. <https://doi.org/10.1002/wat2.70010>
 
 Role in thesis: This article incorporates the new parameterisations of snow interception and canopy snow ablation, developed in Chapters 2–4, into the Cold Regions Hydrological Model (CRHM) platform. The updated parameterisations are evaluated the error in simulated and observed subcanopy SWE at four research basins in western and northern Canada. The results demonstrate improved simulations of subcanopy SWE, thereby addressing Research Question 4 of Objective 2 concerning the evaluation of the new parameterisations.
 
 A. Cebulski: Conceptualization (lead), analysis (lead), visualization (lead), writing – original draft (lead), writing review and editing (equal)\
-J. Pomeroy: Conceptualization (supporting), funding acquisition (lead), analysis (supporting), project administration (lead), resources (lead), supervision (lead), writing review and editing (equal).
+J. Pomeroy: Conceptualization (supporting), funding acquisition (lead), analysis (supporting), project administration (lead), resources (lead), supervision (lead), writing review and editing (equal)\
+W.C. Floyd: Conceptualization (supporting), analysis (supporting), writing review and editing (equal)
 
 ## Abstract
 
@@ -88,7 +89,7 @@ site_meta |>
 
 ### Simulation of Subcanopy Snowpack
 
-The Cold Regions Hydrological Modelling Platform (CRHM) was implemented to simulate SWE at each of the four forest plots. The CRHM platform is described in detail in @Pomeroy2022; and the up-to-date source code is available at https://github.com/srlabUsask/crhmcode. Hourly climate forcing data from station-based measurements of air temperature, relative humidity, wind speed, total precipitation, and above canopy incoming solar radiation were used to run the CRHM models. Incoming solar radiation observations were not available for Wolf Creek and were simulated following theoretical clear-sky radiation by @Garnier1970 and atmospheric transmittance by @Annandale2002 and @Shook2011. 
+The Cold Regions Hydrological Modelling Platform (CRHM) was implemented to simulate SWE at each of the four forest plots. The CRHM platform is described in detail in @Pomeroy2022; and the up-to-date source code is available at <://github.com/srlabUsask/crhmcode>. Hourly climate forcing data from station-based measurements of air temperature, relative humidity, wind speed, total precipitation, and above canopy incoming solar radiation were used to run the CRHM models. Incoming solar radiation observations were not available for Wolf Creek and were simulated following theoretical clear-sky radiation by @Garnier1970 and atmospheric transmittance by @Annandale2002 and @Shook2011. 
 
 Atmospheric precipitation was partitioned into snow and/or rain phases following the psychometric energy balance approach of @Harder2013 which accounts for the influence of temperature and humidity on precipitation phase. The interaction of incoming precipitation with the forest canopy was treated using two different approaches. An updated approach following new relationships presented in @Cebulski2025a and @Cebulski2025b (CP25) to represent the canopy snow energy and mass balance were integrated within CRHM. This new approach simulates initial interception of snow in the canopy as a function of canopy density [@Cebulski2025a] and subsequent ablation of snow intercepted in the canopy by melt and dry-snow unloading [@Cebulski2025b], energy balance-based snowmelt [@Cebulski2025b], and energy balance-based sublimation [@Essery2003]. A second approach (E10) which is based on observations by @Hedstrom1998, @Pomeroy1998b, and @Floyd2012; and implemented as described in @Ellis2010. E10 calculates initial interception of snow in the canopy as a function of canopy density, antecedent snow load, and a species dependent storage capacity following @Hedstrom1998. Ablation of snow intercepted in the canopy is determined by dry snow unloading [function of canopy snow load as in @Hedstrom1998], unloading due to melt [@Ellis2010], canopy snowmelt drainage [threshold function of ice-bulb temperature as in @Ellis2010], and sublimation by an analytical energy balance-based parameterisation [@Pomeroy1998b]. See @Cebulski2025 for a complete description of the E10 parameterisation. While neither the E10 nor CP25 model was calibrated for this study, their parameterisations were originally developed using data from Marmot and Fortress, respectively.
 
@@ -228,6 +229,6 @@ We acknowledge financial support from the University of Saskatchewan Dean’s Sc
 
 ## Data and Sofware Availability Statement
 
-The Cold Regions Hydrological Model Platform (CRHM) source code is available at https://github.com/srlabUsask/crhmcode. Model forcing data, model outputs, validation data, processed data, and scripts to run the processing are available at ____ .
+The Cold Regions Hydrological Model Platform (CRHM) source code is available at <https://github.com/srlabUsask/crhmcode>. Model forcing data, model outputs, validation data, processed data, and scripts to run the processing are available at ____ .
 
 \pagebreak

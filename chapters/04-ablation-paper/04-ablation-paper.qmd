@@ -63,7 +63,7 @@ The observations presented in this study were collected at Fortress Mountain Res
 
 ### The Cold Regions Hydrological Model Platform
 
-The Cold Regions Hydrological Model Platform (CRHM) was used to implement calculations of the canopy snow energy and mass budget. A full description of the CRHM platform is described in @Pomeroy2022 and the source code is available at https://github.com/srlabUsask/crhmcode. The climate forcing data used to run CRHM was from station-based fifteen-minute interval measurements of air temperature, relative humidity, wind speed, precipitation, and incoming solar radiation from the FT, PWL, and FRS stations. CRHM incorporates a flexible modular design allowing the user to select various modules (parameterisations) that represent hydrological processes. The phase of atmospheric precipitation was determined from the energy balance of falling hydrometeors [@Harder2013]. A new CRHM module was created here to simulate the coupled mass and energy balance of snow intercepted in the canopy. The energy balance is described in detail in @sec-ebal and the updates to the mass balance through revisions to the canopy snow unloading empirical functions are presented in @sec-dry-unld and @sec-melt-unld. 
+The Cold Regions Hydrological Model Platform (CRHM) was used to implement calculations of the canopy snow energy and mass budget. A full description of the CRHM platform is described in @Pomeroy2022 and the source code is available at <https://github.com/srlabUsask/crhmcode>. The climate forcing data used to run CRHM was from station-based fifteen-minute interval measurements of air temperature, relative humidity, wind speed, precipitation, and incoming solar radiation from the FT, PWL, and FRS stations. CRHM incorporates a flexible modular design allowing the user to select various modules (parameterisations) that represent hydrological processes. The phase of atmospheric precipitation was determined from the energy balance of falling hydrometeors [@Harder2013]. A new CRHM module was created here to simulate the coupled mass and energy balance of snow intercepted in the canopy. The energy balance is described in detail in @sec-ebal and the updates to the mass balance through revisions to the canopy snow unloading empirical functions are presented in @sec-dry-unld and @sec-melt-unld. 
 
 ### Canopy Snow Mass Balance {#sec-mbal}
 
@@ -389,6 +389,6 @@ We acknowledge financial support from the University of Saskatchewan Dean’s Sc
 
 ## Data & Software Availability Statement
 
-The Cold Regions Hydrological Model Platform (CRHM) source code is available at https://github.com/srlabUsask/crhmcode. Model forcing data, model outputs, validation data, processed data, and scripts are available at https://doi.org/10.5281/zenodo.16898881. 
+The Cold Regions Hydrological Model Platform (CRHM) source code is available at <https://github.com/srlabUsask/crhmcode>. Model forcing data, model outputs, validation data, processed data, and scripts are available at <https://doi.org/10.5281/zenodo.16898881>. 
 
 \pagebreak

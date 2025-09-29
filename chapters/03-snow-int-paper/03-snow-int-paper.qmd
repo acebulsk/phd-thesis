@@ -11,7 +11,7 @@ source('scripts/manuscript_values.R')
 
 Manuscript status: The contents of this chapter have been compiled from a research article published in the journal *Hydrological Processes*. 
 
-Citation: Cebulski, A. C., & Pomeroy, J. W. (2025). Snow Interception Relationships With Meteorology and Canopy Density. *Hydrological Processes*, 39(4), e70135. https://doi.org/10.1002/hyp.70135
+Citation: Cebulski, A. C., & Pomeroy, J. W. (2025). Snow Interception Relationships With Meteorology and Canopy Density. *Hydrological Processes*, 39(4), e70135. <https://doi.org/10.1002/hyp.70135>
 
 Role in thesis: This article presents novel observations of snow interception prior to canopy snow ablation, enabling an evaluation of theories underlying existing parameterisations. In addition, building on previous work, a novel canopy density metric is presented that provides enhanced prediction of initial snow interception and highlights issues in prior parameterisations. The results address Research Question 2 of Objective 1 by providing a comprehensive evaluation of existing snow interception theories and proposes new relationships which show potential for improved representation of the interception process.
 
@@ -131,7 +131,7 @@ The UAV (FreeFly Alta X) payload included a REIGL miniVUX-2 airborne laser scann
 
 #### In-situ snow depth and density
 
-Event-based snow surveys provided measurements of subcanopy throughfall depth and density at 30 locations following the transects shown in @fig-site-map. These measurements were used to upscale the weighed tree from weight to weight per unit area, assess the accuracy of lidar derived snow depth measurements, and provide a fresh snow density for the calculation of SWE (mm) from the snow depth measurements. Minimal ablation and redistribution of both the surface snowpack and/or snow intercepted in the canopy was crucial to ensure the snow survey measurements were attributed to throughfall. Therefore, only snowfall events with minimal canopy snow ablation as determined through in-situ observations, analysis of timelapse imagery, and mass change on the weighed tree lysimeter were selected. A 1000 cm^3^ Perla snow density wedge sampler (RIP Cutter, https://snowmetrics.com/shop/rip-1-cutter-1000-cc/) was used to measure the density of the fresh snow layer, $\overline{\rho_{tf}}$ (kg m^-3^) from snow pits. Throughfall depth measurements, $\Delta HS$ were converted to SWE using the following equation:
+Event-based snow surveys provided measurements of subcanopy throughfall depth and density at 30 locations following the transects shown in @fig-site-map. These measurements were used to upscale the weighed tree from weight to weight per unit area, assess the accuracy of lidar derived snow depth measurements, and provide a fresh snow density for the calculation of SWE (mm) from the snow depth measurements. Minimal ablation and redistribution of both the surface snowpack and/or snow intercepted in the canopy was crucial to ensure the snow survey measurements were attributed to throughfall. Therefore, only snowfall events with minimal canopy snow ablation as determined through in-situ observations, analysis of timelapse imagery, and mass change on the weighed tree lysimeter were selected. A 1000 cm^3^ Perla snow density wedge sampler (RIP Cutter, <https://snowmetrics.com/shop/rip-1-cutter-1000-cc/>) was used to measure the density of the fresh snow layer, $\overline{\rho_{tf}}$ (kg m^-3^) from snow pits. Throughfall depth measurements, $\Delta HS$ were converted to SWE using the following equation:
 
 $$
 \Delta SWE_{tf} = \Delta HS \cdot \overline{\rho_{tf}}
@@ -424,4 +424,4 @@ We acknowledge financial support from the University of Saskatchewan Dean’s Sc
 
 ## Data Availability
 
-The data that support the findings in this study are available at https://doi.org/10.5281/zenodo.14018893.
+The data that support the findings in this study are available at <https://doi.org/10.5281/zenodo.14018893>.
