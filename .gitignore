@@ -2,3 +2,6 @@
 
 /.quarto/
 *_files/
+.vscode/ltex.dictionary.en-CA.txt
+*.html
+*.Rproj
