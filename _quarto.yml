@@ -12,6 +12,9 @@ book:
     - chapters/05-model-eval-paper/05-model-eval-paper.qmd
     - chapters/06-synth-conclusion.qmd
     - chapters/refs.qmd
+  appendices: 
+    - chapters/02-review-paper/02-review-paper-appdx.qmd
+    - chapters/03-snow-int-paper/03-snow-int-paper-suppinfo.qmd
 # title: "Snowfall Partitioning by Needleleaf Canopies: Observations and Model Development"
 title: "Snowfall Interception and Ablation in Needleleaf Canopies: Observations and Model Development"
 author: "Alex C. Cebulski"
