@@ -4,7 +4,7 @@ Manuscript Status: The contents of this chapter have been compiled from a advanc
 
 Citation: Cebulski, A. C., & Pomeroy, J. W. (2025). Theoretical Underpinnings of Snow Interception and Canopy Snow Ablation Parameterisations. *WIREs Water*, 12, e70010. <https://doi.org/10.1002/wat2.70010>
 
-Role in thesis: This paper provides the thesis literature review, which identified key research gaps that shaped the direction of the following chapters. The review first outlined how hydrological models represent each component of the canopy snow mass and energy balance, as well as the methods used to develop these representations. The findings directly address Research Question 1 of Objective 1, regarding what the theories and assumptions underlying canopy snow interception and ablation parameterisations.
+Role in thesis: This paper provides the thesis literature review, which identified key research gaps that shaped the direction of the following chapters. The review first outlined how hydrological models represent each component of the canopy snow mass and energy balance, as well as the methods used to develop these representations. The findings directly address Research Question 1 of Objective 1, regarding what are the theories and assumptions underlying canopy snow interception and ablation parameterisations.
 
 Author Contribution: 
 
@@ -167,7 +167,7 @@ Snow interception parameterisations differ in their approximation of the maximum
 
 ![The state of canopy snow load (solid lines) for a cold and warm event using the parameterisations by Hedstrom and Pomeroy (1998) (HP98), Katsushima et al., (2023), combined Storck et al. (2002) and Andreadis et al., (2009) (SA09). The interception storage capacity is shown for the HP98 (purple) and SA09 (orange) parameterisations using a horizontal dashed line. The KA23 parameterisation does not include a canopy snow storage capacity. To isolate the influence of snow interception parameterisations ablative processes have not been computed. Constants for these two plots include a wind speed of 1 m s^-1^, LAI of 3.5 (-) and the HP98 species coefficient for spruce (5.9 kg m^-2^).](figs/figure7.png){#fig-L-cold-warm}
 
-::: {#tbl-mod-desc tbl-cap="Summary of canopy interception/precipitation (I/P) model behaviour and measurement techniques."}
+::: {#tbl-mod-desc tbl-cap="Summary of snow interception efficiency (interception/precipitation, I/P) model behaviour and measurement techniques."}
 | Model | Variables | General Description | Measurement Technique |
 |---|---|---|---|
 | Satterlund & Haupt (1967) | $L_{max}$, $K$, $q_{sf}$, $P_{sf}^{e}$ | I/P initially rises due to rising $L$ which bridges gaps and increases $C_p$. I/P later declines when $L$ approaches $L_{max}$ due to branch bending which reduces $C_{p}$ and increases unloading. | Weighed tree lysimeter |
@@ -297,7 +297,7 @@ $$ {#eq-satterlund}
 
 where $K$ is a constant expressing the rate of interception (kg m^-2^ ^-1^), and $P_{sf}^e$ (kg m^-2^), is the amount of snowfall accumulated at the point of most rapid loading.
 
-The @Moeser2015 parameterisation is based on the @Satterlund1967 sigmoidal growth curve, @eq-satterlund, and a modification to the @Hedstrom1998 $L_{max}$ function (@fig-example-wmax-ip, b). Their modifications to $L_{max}$ were informed by detailed measurements of canopy structure derived from aerial LiDAR and manual snow depth measurements within a dense forest with a temperate climate in Switzerland. The observations in the @Moeser2015 study are based on snowfall events of 13 to 27 cm in a temperate climate with observed air temperatures ranging from -12 °C to -1.9 °C. Since @Moeser2015 did not observe snowfall storm events below 10 mm, their decision to use a sigmoidal function with initially low snow interception efficiency is based observations from @Satterlund1967.
+The @Moeser2015 parameterisation is based on the @Satterlund1967 sigmoidal growth curve, @eq-satterlund, and a modification to the @Hedstrom1998 $L_{max}$ function (@fig-example-wmax-ip, b). Their modifications to $L_{max}$ were informed by detailed measurements of canopy structure derived from aerial lidar and manual snow depth measurements within a dense forest with a temperate climate in Switzerland. The observations in the @Moeser2015 study are based on snowfall events of 13 to 27 cm in a temperate climate with observed air temperatures ranging from -12 °C to -1.9 °C. Since @Moeser2015 did not observe snowfall storm events below 10 mm, their decision to use a sigmoidal function with initially low snow interception efficiency is based observations from @Satterlund1967.
 
 The @Moeser2015 formulation of $L_{max}$ also differs from the previous studies in that it does not include a parameter for air temperature. To calculate $L_{max}$, @Moeser2015 use the natural logarithm of mean distance to canopy ($\overline{D_c}$, m), and total open area ($A_o$, m^2^):
 
@@ -311,7 +311,7 @@ $$ {#eq-moeser-imax}
 
 The use of additional forest structure metrics in the @Moeser2015 snow interception equation allows for application to highly heterogeneous forests, something that LAI-based algorithms such as @Hedstrom1998 were not designed for. While lidar-derived canopy metrics like those in @eq-moeser-imax are beneficial for capturing plot-scale variability in subcanopy snow accumulation, these metrics are currently not feasible to obtain for larger scale hydrological models.
 
-A more recent study by @Roth2019 presents another event-based snow interception algorithm based on point-scale measurements of snow depth between paired open and forested sites. The @Roth2019 study was conducted over 6 years at stations located in Oregon with air temperatures ranging from -14 to 6 °C. The wind speed observed over their study period is not provided. They make use of a new forest structure metric, median gap length $G_z$ which can be derived by aerial LiDAR observations. Like @Andreadis2009, the @Roth2019 formulation includes air temperature but rather than using a step function they use a continuous representation. This new algorithm is derived using a power law relationship, based on an empirical relationship with event size, temperature, and forest structure, which deviates from the exponential function used in @Hedstrom1998 or @Moeser2015. The @Roth2019 algorithm does not include a maximum canopy snow capacity, such as used in @Hedstrom1998 and @Moeser2015, but rather calculates the change in canopy snow load, $\Delta L$ (kg m^-2^) as:
+A more recent study by @Roth2019 presents another event-based snow interception algorithm based on point-scale measurements of snow depth between paired open and forested sites. The @Roth2019 study was conducted over 6 years at stations located in Oregon with air temperatures ranging from -14 to 6 °C. The wind speed observed over their study period is not provided. They make use of a new forest structure metric, median gap length $G_z$ which can be derived by aerial lidar observations. Like @Andreadis2009, the @Roth2019 formulation includes air temperature but rather than using a step function they use a continuous representation. This new algorithm is derived using a power law relationship, based on an empirical relationship with event size, temperature, and forest structure, which deviates from the exponential function used in @Hedstrom1998 or @Moeser2015. The @Roth2019 algorithm does not include a maximum canopy snow capacity, such as used in @Hedstrom1998 and @Moeser2015, but rather calculates the change in canopy snow load, $\Delta L$ (kg m^-2^) as:
 
 $$
 \Delta L = \overline{q_{sf}} \Delta t ^{0.04 \cdot T_{air} - 0.75 \cdot G_z + 1.56}
@@ -483,56 +483,3 @@ Additional field-based investigations of canopy snow interception and ablation p
 ## Acknowledgments
 
 We wish to acknowledge financial support from the University of Saskatchewan, Natural Sciences and Engineering Research Council of Canada, Global Water Futures Programme, Alberta Innovates and the Canada Research Chairs Programme. We thank Martyn Clark for his advice in outlining the steps to derive analytical solutions from the ordinary difference equation representation of the parameterisations.
-
-## Appendix {#sec-review-appendix}
-
-### Snow Interception Parameterization Derivations
-
-The original formulation of the @Hedstrom1998 snow interception parameterisation is:
-
-$$
-\frac{I}{P}(L) = C_{lca} \frac{L_{max}-L_0-\Delta L}{L_{max}}
-$$ {#eq-hp98-int-orig}
-
-where $L_0$ (kg m^-2^), is the canopy snow load before snowfall is added to the canopy, $\Delta L$ (kg m^-2^), is the change in canopy snow load due to snowfall. @eq-hp98-int-orig is written in this way in @Hedstrom1998 since they had measurements of $L_0$ at the beginning of the storm. However, this equation further simplified here since:
-
-$$
-L = L_0 + \Delta L
-$$
-
-and therefore:
-
-$$
-\frac{I}{P}(L) = C_{lca}\frac{L_{max}-L}{L_{max}}
-$$
-
-The derivation of the @Hedstrom1998 analytical snow interception solution, @eq-hp98-int-numeric, from @eq-hp98-int-smpl1 is provided by first combining @eq-ip and @eq-hp98-int-smpl1:
-
-$$
-\frac{dL}{q_{sf} dt} = C_{lca}\frac{L_{max}-L}{L_{max}}
-$$ {#eq-hp98-int-smpl}
-
-$$\frac{1}{L_{max}-L} dL = \frac{C_{lca}}{L_{max}} q_{sf} dt$$
-
-$$
-\int^{L_1}_{L_0}\left[\frac{1}{L_{max}-L}\right] dL =\frac{C_{lca}}{L_{max}} \overline{q_{sf}} \int^{t_1}_{t_0} dt $$ $$-ln\left(\frac{L_{max}-L_1}{L_{max}-L_0}\right)  = \frac{C_{lca}}{L_{max}} \overline{q_{sf}} \Delta t $$ $$\frac{L_{max}-L_1}{L_{max}-L_0} = \text{exp} \left(-\frac{C_{lca}}{L_{max}} \overline{q_{sf}} \Delta t \right)$$ $$1-\frac{L_{max}-L_1}{L_{max}-L_0} = 1- \text{exp} \left(-\frac{C_{lca}}{L_{max}} \overline{q_{sf}} \Delta t \right)$$ $$(L_{max}-L_0)-(L_{max}-L_1) = (L_{max}-L_0)\left(1- \text{exp} \left(-\frac{C_{lca}}{L_{max}} \overline{q_{sf}} \Delta t \right) \right)$$
-
-$$\Delta L = (L_{max}-L_0)\left(1- \text{exp} \left(-\frac{C_{lca}}{L_{max}} \overline{q_{sf}} \Delta t \right) \right)$$ {#eq-interception-integration-steps}
-
-here, it is assumed that $\overline{q_{sf}}$ is the average snowfall rate over the discrete time interval $\Delta t$. Since $\overline{q_{sf}}$, $C_{lca}$ and $L_{max}$ are temporally constant over the discrete time interval $\Delta t$ they can be moved outside the integral. The analytical solution in @eq-hp98-int-numeric is only possible because the snowfall and throughfall rate are treated in isolation from the other processes in @eq-canopy-mass-bal.
-
-### Snow Unloading Parameterization Derivations
-
-If the change in canopy snow load due to unloading alone is:
-
-$$
- \frac{d L}{d t} =-q_{unld}(L)
-$$ then:
-
-Then the steps to get from @eq-hp98-flu to @eq-hp98-exp-decay when $L \ge 0$ are:
-
-$$\frac{1}{L} d L = -\kappa_{unld} \Delta t$$ $$\int^{L(t+\Delta t)}_{L(t)}\frac{1}{L} dL = -\kappa_{unld}\int^{t+\Delta t}_tdt $$ $$ln(L^{t+\Delta t}) - ln(L^t) = -\kappa_{unld} \Delta t $$ $$ ln \left( \frac{L^{t+\Delta t}}{L^t}\right) = -\kappa_{unld}\Delta t$$ $$L^{t+\Delta t} = L^t \text{exp}^{-\kappa_{unld} \Delta t}$$ {#eq-unloading-integration-steps}
-
-note since $\kappa_{unld}$ is temporally constant it can be moved outside the integral. The analytical solution in @eq-hp98-exp-decay is only possible because unloading is treated in isolation from the other processes in @eq-canopy-mass-bal.
-
-\pagebreak
