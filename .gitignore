@@ -5,3 +5,4 @@
 .vscode/ltex.dictionary.en-CA.txt
 *.html
 *.Rproj
+**/*.quarto_ipynb
