@@ -9,16 +9,16 @@ source('scripts/manuscript_values.R')
 
 # Snow Interception Relationships with Meteorology and Canopy Density
 
-Manuscript status: The contents of this chapter have been compiled from a research article published in the journal *Hydrological Processes*. 
+Manuscript status: The contents of this chapter was compiled from a research article published in the journal *Hydrological Processes*. 
 
 Citation: Cebulski, A. C., & Pomeroy, J. W. (2025). Snow Interception Relationships With Meteorology and Canopy Density. *Hydrological Processes*, 39(4), e70135. <https://doi.org/10.1002/hyp.70135>
 
-Role in thesis: This article presents novel observations of snow interception prior to canopy snow ablation, enabling an evaluation of theories underlying existing parameterisations. In addition, building on previous work, a novel canopy density metric is presented that provides enhanced prediction of initial snow interception and highlights issues in prior parameterisations. The results address the snow interception component of Research Question 2 and 3 of Objective 1 by providing a comprehensive evaluation of existing snow interception theories and proposes new relationships which show improved representation of the interception process.
+Role in thesis: This article presents novel observations of snow interception prior to canopy snow ablation, enabling an evaluation of theories underlying existing interception parameterisations. A novel canopy density metric is also presented that provides enhanced prediction of initial snow interception. The results address the snow interception component of Research Question 2 and 3 of Objective 1 by providing a comprehensive evaluation of existing snow interception theories and proposes new relationships which show improved representation of the interception process.
 
 Author Contribution: 
 
-A. Cebulski: Conceptualization (lead), data collection (lead), analysis (lead), writing – original draft (lead), writing review and editing (equal)\
-J. Pomeroy: Conceptualization (supporting), data collection (supporting), analysis (supporting), writing review and editing (equal)
+A.C. Cebulski: Conceptualization (lead), data collection (lead), analysis (lead), writing – original draft (lead), writing review and editing (equal)\
+J.W. Pomeroy: Conceptualization (supporting), data collection (supporting), analysis (supporting), writing review and editing (equal)
 
 ## Abstract
 
@@ -186,7 +186,7 @@ pretty_table
 
 \pagebreak
 
-Linear regression analysis revealed no relationship between hourly interception efficiency (from the subcanopy lysimeters) and air temperature, wind speed or canopy snow load, either due to non-significant relationships (*p* < 0.05) and/or weak predictive power (*R*^2^ < 0.05) (@tbl-lysimeter-hourly-stats). The Wilcoxon test indicated that the difference in hourly interception efficiencies for air temperatures above and below -5°C was not significant (*p* > 0.05, @tbl-scl-hrly-stats). Additionally, the interception efficiency across differing bins of air temperature did not show any systematic pattern (@fig-scl-ip-bins). Although @fig-scl-ip-bins indicates potentially higher interception efficiency in sparse and mixed canopies at air temperatures below -10°C, these measurements have substantial uncertainty due to heightened instrument error associated with the small accumulations of snowfall and throughfall within these temperature ranges.
+Linear regression analysis revealed no relationship between hourly interception efficiency (from the subcanopy lysimeters) and air temperature, wind speed or canopy snow load, either due to non-significant relationships (*p* > 0.05) and/or weak predictive power (*R*^2^ < 0.05) (@tbl-lysimeter-hourly-stats). The Wilcoxon test indicated that the difference in hourly interception efficiencies for air temperatures above and below -5°C was not significant (*p* > 0.05, @tbl-scl-hrly-stats). Additionally, the interception efficiency across differing bins of air temperature did not show any systematic pattern (@fig-scl-ip-bins). Although @fig-scl-ip-bins indicates potentially higher interception efficiency in sparse and mixed canopies at air temperatures below -10°C, these measurements have substantial uncertainty due to heightened instrument error associated with the small accumulations of snowfall and throughfall within these temperature ranges.
 
 When examining wind speed effects, hourly interception efficiencies were found to be significantly higher (*p* < 0.05, @tbl-scl-hrly-stats) during periods when wind speeds exceeded 1 m s^-1^ compared to calmer conditions in the sparse and closed canopies using the Wilcoxon test. The binned data also show an increase in interception efficiency with increasing wind speed for these two canopy types (@fig-scl-ip-bins). In contrast, the mixed canopy, which had a canopy opening towards the prevailing wind direction (@fig-scl-imgs), exhibited no significant difference (*p* > 0.05, @tbl-scl-hrly-stats). Binned measurements of interception efficiencies corresponding to wind speed bins above 2 m s^-1^ (@fig-scl-ip-bins) contained considerable uncertainty resulting from lower snowfall and throughfall accumulation, reducing confidence in these particular findings across all three canopy environments.
 
