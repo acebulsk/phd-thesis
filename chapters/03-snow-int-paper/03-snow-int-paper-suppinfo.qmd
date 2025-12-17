@@ -1,4 +1,4 @@
-# - Appendix for Chapter 3
+# - Appendix for Chapter 3 {#sec-appdx-ch3}
 
 ## Detailed Description of UAV-Lidar Methodology
 
