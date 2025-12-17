@@ -1,57 +1,27 @@
----
-title: "Supporting Information for Processes Governing Ablation of Intercepted Snow"
-format: 
-  # docx:
-  #   reference-doc: ../config/word_template_hp.docx
-  #   number-sections: true
-  #   toc: false
- pdf:
-   colorlinks: false
-   keep-tex: true
-   number-sections: true
-   toc: false
-   fig-pos: H # makes figs appear in the location specified. without this they sometimes appear in the middle of a paragraph.
-   linestretch: 1.5 # set inline instead
-   header-includes: |
-     \renewcommand{\thefigure}{S.\arabic{figure}}
-     \setcounter{figure}{0}
-     \renewcommand{\thetable}{S.\arabic{table}}
-     \setcounter{table}{0}
-editor: source
-bibliography: ../../papers/bibtex/library.bib
-csl: '../../papers/bibtex/csl-styles/apa-disable-disambiguate-add-names.csl'
----
-
-**Authors:**
-
-Alex C. Cebulski^1^ (ORCID ID - 0000-0001-7910-5056)
-
-John W. Pomeroy^1^ (ORCID ID - 0000-0002-4782-7457)
-
-^1^Centre for Hydrology, University of Saskatchewan, Canmore, Canada\
-
-**Corresponding Author:** A.C. Cebulski, alex.cebulski@usask.ca
-
-\pagebreak
+# - Appendix for Chapter 4 {#sec-appdx-ch4}
 
 ```{r, include=FALSE, warning=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE, fig.align='center')
 
-source('scripts/results/qunld-analysis/00-results-figs-setup.R')
+setwd('/home/alex/local-usask/working-papers/ablation-paper/')
 source('scripts/get-manuscript-values.R')
 ```
-
-# Supporting Information 
 
 ## Existing Snow Interception Theories
 
 Parameterisations for predicting unloading of intercepted snow due to snow load and wind speed are shown in @fig-unl-ex-wind.
 
-![The @Hedstrom1998a model of unloading rate with increasing snow load (left, E10) and the @Roesch2001 model of unloading rate with increasing wind speed and canopy snow load (left, R01). Both examples have a constant air temperature of -10°C to disable the influence of warming on unloading and drip.](figs/supplement/figureS1.png){#fig-unl-ex-wind}
+![The @Hedstrom1998 model of unloading rate with increasing snow load (left, E10) and the @Roesch2001 model of unloading rate with increasing wind speed and canopy snow load (left, R01). Both examples have a constant air temperature of -10°C to disable the influence of warming on unloading and drip.](figs/supplement/figureS1.png){#fig-unl-ex-wind}
 
 Existing unloading relationships associated with air and ice-bulb temperatures are shown in @fig-unl-ex-temp.
 
-![The @Ellis2010 and @Floyd2012b (E10) model of unloading and drip rate (left) and the @Roesch2001 (R01) model of unloading rate (right) with increasing air temperature. Wind speed for the R01 parameterisation was set to zero.](figs/supplement/figureS2.png){#fig-unl-ex-temp}
+![The @Ellis2010 and @Floyd2012 (E10) model of unloading and drip rate (left) and the @Roesch2001 (R01) model of unloading rate (right) with increasing air temperature. Wind speed for the R01 parameterisation was set to zero.](figs/supplement/figureS2.png){#fig-unl-ex-temp}
+
+## Shear Stress Approximation
+
+The association of observed wind shear stress and midcanopy wind speed measured at Forest Tower is shown in @fig-shear-wind. 
+
+![Scatter plot of observed wind shear stress and midcanopy wind speed at Forest Tower.](figs/supplement/mid_cnpy_wind_squared_VS_canopy_low_shear_stress.png){#fig-shear-wind}
 
 ## Unloading Relationships
 
@@ -94,7 +64,7 @@ dry_snow_unld_stats |>
 ```
 :::
 
-# Melt Driven Unloading 
+## Melt Driven Unloading 
 
 ![Spearman and Pearson correlations of differing combinations of snow load, shear stress, wind speed, air temperature, ice-bulb temperature depression (air temperature subtracted by ice-bulb temperature), and canopy snowmelt rate. Pearson correlations are shown in the upper triangle; Spearman correlations in the lower triangle over periods with simulated canopy snowmelt. Bold values indicate |r| > 0.7.](figs/supplement/figureS5.png){#fig-non-melt-cor width=100%}
 
@@ -128,7 +98,3 @@ unld_melt_ratio_stats |>
     # escape = FALSE
   )
 ```
-
-\pagebreak
-
-# References
