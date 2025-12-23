@@ -666,12 +666,17 @@ Unless otherwise noted, copyright of the material in this thesis belongs to the 
 \newcommand{\loa}[1]{\gdef\@loa{#1}}
 \loa{}                                              % initialize empty
 
+\newcommand{\@los}{}               % List of Symbols storage
+\newcommand{\los}[1]{\gdef\@los{#1}}
+\los{}                              % initialize empty
+
 \newcommand{\@ptuaddress}{}                         % PTU address (you had this)
 \newcommand{\ptuaddress}[1]{\gdef\@ptuaddress{#1}}
 \ptuaddress{}
 
 % Command to add an entry to the list of abbreviations.
 \newcommand{\abbrev}[2]{#1& #2\\}
+\newcommand{\symbolentry}[2]{#1 & #2 \\}
 
 %\edef\foo{\PhD}
 %\edef\bar{\@degree}
@@ -825,6 +830,23 @@ Unless otherwise noted, copyright of the material in this thesis belongs to the 
           }
           \newpage
   \fi
+
+%LIST OF SYMBOLS
+\ifx \@los \@empty
+\relax
+\else
+{
+  \phantomsection
+  \addcontentsline{toc}{chapter}{List of Symbols}
+  \chapter*{List of Symbols}
+  \begin{center}
+    \begin{tabularx}{\textwidth}{lX}
+      \@los
+    \end{tabularx}
+  \end{center}
+}
+\newpage
+\fi
 
   \pagenumbering{arabic}
 
