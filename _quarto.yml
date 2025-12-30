@@ -15,6 +15,7 @@ book:
   appendices: 
     - chapters/02-review-paper/02-review-paper-appdx.qmd
     - chapters/03-snow-int-paper/03-snow-int-paper-suppinfo.qmd
+    - chapters/04-ablation-paper/04-ablation-paper-supp-info.qmd
     - chapters/05-model-eval-paper/supp-info-model-eval-paper.qmd
 # title: "Snowfall Partitioning by Needleleaf Canopies: Observations and Model Development"
 title: "Snowfall Interception and Ablation in Needleleaf Canopies: Observations and Model Development"
@@ -53,3 +54,5 @@ format:
   #     fig-prefix: "Fig."
 bibliography: ../../papers/bibtex/better-bibtex.bib
 csl: '../../papers/bibtex/csl-styles/apa-disable-disambiguate-add-names.csl'
+nocite: |
+  @Gupta2009a
