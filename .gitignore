@@ -6,3 +6,8 @@
 *.html
 *.Rproj
 **/*.quarto_ipynb
+revisions/
+hide/pdf/.quarto/
+hide/docx/.quarto/
+external-examiners*
+objectives-research-qs*
