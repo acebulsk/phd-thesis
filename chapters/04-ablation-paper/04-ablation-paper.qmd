@@ -173,7 +173,7 @@ $$
 Q_l = \frac{\rho_a}{r_i+r_a} (q_a(T_a) - q_{vs}(T_{vs}))
 $$ {#eq-ql}
 
-where $r_i$ is a resistance for transport of moisture from intercepted snow to the canopy air space [Eq. 28 in @Essery2003], $q_a(T_a)$ and $q_{vs}(T_{vs})$ are the specific humidity (-) at the air temperature and canopy snow temperature, respectively. $r_i$ was calculated following the concept of how full the canopy is with snow as introduced by @Pomeroy1993a, with modifications to incorporate a larger maximum canopy snow load capacity of 50 mm based on observations by @Storck2002, @Floyd2012, and @sec-chapter-3.
+where $r_i$ is a resistance for transport of moisture from intercepted snow to the canopy airspace [Eq. 28 in @Essery2003], $q_a(T_a)$ and $q_{vs}(T_{vs})$ are the specific humidity (-) at the air temperature and canopy snow temperature, respectively. $r_i$ was calculated following the concept of how full the canopy is with snow as introduced by @Pomeroy1993a, with modifications to incorporate a larger maximum canopy snow load capacity of 50 mm based on observations by @Storck2002, @Floyd2012, and @sec-chapter-3.
 
 The above sensible and latent heat flux equations assume neutral atmospheric stability conditions, which is supported by the uncertainty in stability corrections in forest canopies [@Conway2018] and mountain environments in winter [@Helgason2012a]. Solving @eq-eb requires an iterative solution to determine $\Delta T_{vs}$ and the remaining terms, which are also a function of $T_{vs}$. 
 
