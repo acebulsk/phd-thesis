@@ -1,6 +1,6 @@
 # - Appendix for Chapter 2 {#sec-review-appendix}
 
-## Snow Interception Parameterization Derivations
+## Snow Interception Parameterisation Derivations
 
 The original formulation of the @Hedstrom1998 snow interception parameterisation is:
 
@@ -35,7 +35,7 @@ $$\Delta L = (L_{max}-L_0)\left(1- \text{exp} \left(-\frac{C_{lca}}{L_{max}} \ov
 
 here, it is assumed that $\overline{q_{sf}}$ is the average snowfall rate over the discrete time interval $\Delta t$. Since $\overline{q_{sf}}$, $C_{lca}$ and $L_{max}$ are temporally constant over the discrete time interval $\Delta t$ they can be moved outside the integral. The analytical solution in @eq-hp98-int-numeric is only possible because the snowfall and throughfall rate are treated in isolation from the other processes in @eq-canopy-mass-bal.
 
-## Snow Unloading Parameterization Derivations
+## Snow Unloading Parameterisation Derivations
 
 If the change in canopy snow load due to unloading alone is:
 

@@ -2,6 +2,8 @@
 title: "Synthesis and Conclusion"
 ---
 
+Generative Artificial Intelligence (GenAI) Transparency Statement: GenAI tools (i.e., ChatGPT, Grammarly) were used sparingly and responsibly in this chapter to enhance text clarity.
+
 ## Closing the Research Gap
 
 <!-- Rehash intro and motivation and then summarise how each chapter links to the research gaps/questions/objectives. -->

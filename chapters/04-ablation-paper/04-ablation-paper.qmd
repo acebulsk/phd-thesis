@@ -11,7 +11,7 @@ source('scripts/get-manuscript-values.R')
 
 # Processes Governing the Ablation of Intercepted Snow {#sec-chapter-4}
 
-Manuscript status: This chapter was submitted as a research article to the journal *Water Resources Research* on August 19, 2025 and is currently under review.
+Manuscript status: The contents of this chapter was compiled from a research article published in the journal *Water Resources Research*.
 
 Citation: Cebulski, A. C., & Pomeroy, J. W. (under review). Processes Governing the Ablation of Intercepted Snow. *Water Resources Research*.
 
@@ -79,6 +79,7 @@ where $\frac{dL}{dt}$ is the change in canopy snow load over time, (mm s^-1^), $
 
 In addition to the updated canopy snow model presented in this study, also referred to as CP25 (described in @sec-dry-unld and @sec-melt-unld), three other canopy snow models were implemented in as modules in CRHM following previous studies by @Ellis2010 and @Floyd2012 (E10), @Roesch2001 (R01), and @Andreadis2009, who built on observations by @Storck2002 (SA09) (@tbl-model-desc). The E10 model includes canopy snow sublimation as described in @Pomeroy1998b, dry-snow unloading as a function of canopy snow load from @Hedstrom1998 with modifications described in @Ellis2010 and @Floyd2012 to handle canopy snow melt and drip processes using an ice-bulb temperature threshold. The R01 model represents dry-snow unloading, melt, and drip using linear functions of wind speed and air temperature, while sublimation is simulated using the parameterisation from @Pomeroy1998b. The SA09 model unloads snow as a fraction of the canopy snowmelt rate, following observations by @Storck2002, and does not include dry-snow unloading. The snowmelt rate from @eq-eb was used to calculate the unloading rate for the @Andreadis2009 unloading and thus differs from the energy balance routine described in their study. Canopy snow sublimation in SA09 was represented using the @Essery2003 parameterisation (@eq-ql) as implemented in CP25.
 
+::: {.landscape}
 ```{r}
 #| label: tbl-model-desc
 #| tbl-cap: "Description of canopy snow unloading parameterisations."
@@ -97,6 +98,7 @@ tbl |> knitr::kable(
 )
 
 ```
+:::
 
 The retention of canopy snow meltwater differs across the four canopy snow models implemented in CRHM. For E10, liquid meltwater is not retained in the canopy and immediately drips before it can evaporate. The R01 model also does not account for evaporation of liquid meltwater, as canopy snow is not explicitly separated into solid snow unloading and melt/drip. The canopy liquid water storage capacity ($L_{max}^{liq}$, mm) from SA09 and CP25 was calculated as:
 
