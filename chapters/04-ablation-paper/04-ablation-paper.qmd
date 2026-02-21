@@ -232,7 +232,7 @@ $$
 q_{unld}^{dry} = L \cdot \tau_{mid} \cdot a
 $${#eq-q-unld-tau}
 
-where $\tau_{mid}$ is the shear stress at mid-canopy height (N m^-2^) and $a$ is a fitting constant.
+where $\tau_{mid}$ is the shear stress at mid-canopy height (N m^-2^) and $a$ is a fitting constant (@fig-q-unld-wind).
 
 ![The canopy snow unloading rate measured by the subcanopy weighed snow buckets versus shear stress during periods without canopy snowmelt. The dots represent mean unloading rates within bins of shear stress for three canopy snow load levels; error bars indicate +/- 1 standard deviation. The fitted lines show predictions from @eq-q-unld-tau. The canopy snow load corresponds to the midpoint of each bin (0–2, 2–6, 6–20 mm).](figs/final/figure3.png){#fig-q-unld-wind}
 
@@ -383,7 +383,7 @@ Substantial variability amongst snow ablation model predictions was found in the
 
 ### Future Directions 
 
-Physically based approaches are particularly relevant for predicting snow regimes in forested basins under a changing climate, where warming may reduce the reliability of empirically derived canopy snowmelt models such as E10 and R01. Many regions are shifting, or are expected to shift from cold dry environments, where snow regimes are dominated by canopy snow unloading and sublimation, to warmer and wetter environments with increased drip and melt-driven unloading processes [e.g., @Fang2020b; @Elshamy2025]. Although the new model performed best for this dataset, further validation is required across a wider range of climates and forest structures. 
+Physically based approaches are particularly relevant for predicting snow regimes in forested basins under a changing climate, where warming may reduce the reliability of empirically derived canopy snowmelt models such as E10 and R01. Many regions are shifting, or are expected to shift from cold dry environments, where snow regimes are dominated by canopy snow unloading and sublimation, to warmer and wetter environments with increased drip and melt-driven unloading processes [e.g., @Fang2020; @Elshamy2025]. Although the new model performed best for this dataset, further validation is required across a wider range of climates and forest structures. 
 
 @Lumbrazo2022 suggest that the unloading rate of rime-ice is very low. Vapour deposition and rime-ice accumulation are simulated in some models [e.g., @Clark2015b; @Ellis2010] and in the new model via sublimation parameterisation, as additions to the canopy snow load. However, in the humid, temperate springtime observations presented in this study, canopy riming and frost deposition were not detected. Thus, the snow unloading rates presented here could overestimate unloading rates for ice intercepted in the canopy. This introduces uncertainty in the transferability of these results to maritime climates such as the Coast Mountains of Canada, where rime and frost deposition occur more frequently. The addition of a canopy ice reservoir to hold rime-ice, frost, and ice from melt-freeze cycles might help better represent differing ablation process and should be studied in maritime environments. 
 
