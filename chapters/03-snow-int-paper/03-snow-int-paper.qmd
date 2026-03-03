@@ -162,7 +162,13 @@ where $C_p$ is a function of the canopy cover ($C_c$) and hydrometeor trajectory
 
 To determine how $C_p$ was associated with interception efficiency at different azimuth and zenith angles over the March 13–14^th^ snowfall event, the entire hemisphere at each grid location was considered. The relationship between interception efficiency and $C_p$ was found to be linear and thus the Pearson Correlation Coefficient was used. The Pearson Correlation Coefficient was computed between a single raster of interception efficiency and each of the 32,760 rasters of $C_p$ measured on March 13^th^, representing locations across the hemisphere (azimuth [0°, 1°, ..., 359°], zenith angle [0°, 1°, ..., 90°]) at 0.25 m grid cells spanning the FT and PWL forest plots. 
 
-The pair of azimuth and zenith angles corresponding to the $C_p$ that had the highest correlation with interception efficiency was selected for further analysis. This involved aggregating the interception efficiency and selected $C_p$ rasters from a 0.25 m resolution to 5 m, followed by fitting an ordinary least squares regression between these two variables. The regression was constrained to pass through the origin based on the theoretical principle that the dependent variable must equal zero when the independent variable is zero. To appropriately account for this constraint, the *R*^2^ values were adjusted according to Equation 10 presented in @Kozak1995. The relationship between leaf contact area and simulated trajectory angle was investigated by fitting non-linear models using a non-linear least squares regression. All statistical analyses were performed using the R 'stats' package [@R2024].
+The pair of azimuth and zenith angles corresponding to the $C_p$ that had the highest correlation with interception efficiency was selected for further analysis. This involved aggregating the interception efficiency and selected $C_p$ rasters from a 0.25 m resolution to 5 m, followed by fitting an ordinary least squares regression between these two variables. The regression was constrained to pass through the origin based on the theoretical principle that the dependent variable must equal zero when the independent variable is zero. To appropriately account for this constraint, the *R*^2^ values were adjusted according to Equation 10 presented in @Kozak1995 which can result in a negative *R*^2^ if the residual sum of squares is greater than the total sum of squares:
+
+$$
+R^2 = 1 - \frac{\text{Resisual sum of squares}}{\text{Total sum of squares}}
+$${#eq-kozak}
+
+The relationship between leaf contact area and simulated trajectory angle was investigated by fitting non-linear models using a non-linear least squares regression. All statistical analyses were performed using the R 'stats' package [@R2024].
 
 ## Results
 
@@ -278,7 +284,7 @@ $${#eq-lca-ip}
 
 where $\alpha$ is an efficiency constant which determines the fraction of snowflakes that contact the $C_p$ elements and are stored in the canopy (i.e., intercepted) before canopy snow unloading or ablation processes begin.
 
-![Scatter plots showing the relationship between leaf contact area and interception efficiency rasters resampled to a 5 m grid cell resolution. The left plot (nadir) shows canopy coverage and the right plot (Vector Based) shows the leaf contact area averaged over rasters with zenith angles (PWL = 22°, FT = 21°) and azimuth angles (PWL = 167°, 178°, ... 217°; FT = 171°, 172°, ... 223°). The solid lines (Model fit) show an ordinary least squares linear regression forced through the origin and fitted to the PWL (red) and FT (black) data and the light grey dotted line shows a 1:1 line. The *R*^2^ values for the four different models are shown in the upper left of each panel calculated following the methods outlined in @Kozak1995.](figs/figure9.png){#fig-lca-vs-ip}
+![Scatter plots showing the relationship between leaf contact area and interception efficiency rasters resampled to a 5 m grid cell resolution. The left plot (nadir) shows canopy coverage and the right plot (Vector Based) shows the leaf contact area averaged over rasters with zenith angles (PWL = 22°, FT = 21°) and azimuth angles (PWL = 167°, 178°, ... 217°; FT = 171°, 172°, ... 223°). The solid lines (Model fit) show an ordinary least squares linear regression forced through the origin and fitted to the PWL (red) and FT (black) data and the light grey dotted line shows a 1:1 line. The *R*^2^ values for the four different models are shown in the upper left of each panel calculated following @eq-kozak. The trend line for the PWL-Nadir group was removed due to its insignificant relationship.](figs/figure9.png){#fig-lca-vs-ip}
 
 \pagebreak
 
@@ -286,7 +292,7 @@ For the vector-based model, the relationship between interception efficiency and
 
 ```{r echo=FALSE}
 #| label: tbl-ip-mod-err
-#| tbl-cap: "Summary of error statistics for the linear regression models relating leaf contact area to interception efficiency, presented in @fig-lca-vs-ip. The Mean bias is the difference in the model and observed values, MAE is the mean of the absolute error, RMS Error is the root mean squared error, *R*^2^ is the coefficient of determination adjusted using Equation 10 in @Kozak1995."
+#| tbl-cap: "Summary of error statistics for the linear regression models relating leaf contact area to interception efficiency, presented in @fig-lca-vs-ip. The Mean bias is the difference in the model and observed values, MAE is the mean of the absolute error, RMS Error is the root mean squared error, *R*^2^ is the coefficient of determination adjusted using @eq-kozak."
 #| tbl-colwidths: [10, 25, 15, 15, 10, 12, 13]
 
 mod_error |> 
