@@ -253,7 +253,7 @@ $$
 L_{max}^{liq} = Lh + cLAI
 $${#eq-liq-hold-cap-05}
 
-where $h$ is the liquid meltwater holding capacity that the canopy can retain against gravity (-) and $n$ is a storage constant of the vegetation elements (-). @Andreadis2009 estimated $h$ as 0.035 and $c$ as $e^{-4}$ while using a two sided plant (leaf) area index (LAI). In this study, $h$ was set to 0.01, and $c$ was defined as $C_c \cdot 0.2$ and a one-sided effective LAI was used, including the clumping factor to account for needleleaf canopy structures, following the approach of @Ellis2010 for rainfall interception.
+where $h$ is the liquid meltwater holding capacity that the canopy can retain against gravity (-) and $c$ is a storage constant of the vegetation elements (-). @Andreadis2009 estimated $h$ as 0.035 and $c$ as $e^{-4}$ while using a two sided plant (leaf) area index (LAI). In this study, $h$ was set to 0.01, and $c$ was defined as $C_c \cdot 0.2$ and a one-sided effective LAI was used, including the clumping factor to account for needleleaf canopy structures, following the approach of @Ellis2010 for rainfall interception.
 
 ##### Sublimation and Evaporation of Intercepted Snow and Water
 
@@ -330,7 +330,7 @@ $$
 Q_p = [C_p^{liq} m_r(T_r - T_{vs}) + C_p^{ice} m_s(T_s - T_{vs})] / \Delta t
 $$ {#eq-qp-05}
 
-where $C_p^{liq}$ is the specific heat capacity of liquid water (J kg^-1^ K^-1^), $m_r$ and $m_s$ are the specific masses of rainfall and snowfall (kg m^-2^), respectively, and $T_r$ and $T_s$ are the corresponding temperatures of rainfall and snowfall (K).
+where $C_p^{liq}$ is the specific heat capacity of liquid water (J kg^-1^ K^-1^), $m_r$ and $m_s$ are the specific masses of rainfall and snowfall (kg m^-2^), respectively, and $T_r$ and $T_s$ are the corresponding temperatures of rainfall and snowfall (K). The latent heat exchange associated with refreezing of liquid water intercepted in the canopy is represented by @eq-canopy-snowmelt-05.
 
 ##### Sensible Heat Exchange
 

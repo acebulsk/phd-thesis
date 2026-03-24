@@ -6418,7 +6418,7 @@ L_{max}^{liq} = Lh + cLAI
 }\end{equation}
 
 where \(h\) is the liquid meltwater holding capacity that the canopy can
-retain against gravity (-) and \(n\) is a storage constant of the
+retain against gravity (-) and \(c\) is a storage constant of the
 vegetation elements (-). Andreadis et al. (2009) estimated \(h\) as
 0.035 and \(c\) as \(e^{-4}\) while using a two sided plant (leaf) area
 index (LAI). In this study, \(h\) was set to 0.01, and \(c\) was defined
@@ -6578,7 +6578,9 @@ where \(C_p^{liq}\) is the specific heat capacity of liquid water (J
 kg\textsuperscript{-1} K\textsuperscript{-1}), \(m_r\) and \(m_s\) are
 the specific masses of rainfall and snowfall (kg m\textsuperscript{-2}),
 respectively, and \(T_r\) and \(T_s\) are the corresponding temperatures
-of rainfall and snowfall (K).
+of rainfall and snowfall (K). The latent heat exchange associated with
+refreezing of liquid water intercepted in the canopy is represented by
+Equation~\ref{eq-canopy-snowmelt-05}.
 
 \paragraph{Sensible Heat Exchange}\label{sensible-heat-exchange}
 
@@ -8015,9 +8017,9 @@ Chapter~\ref{sec-chapter-3}, have the potential to validate updates to
 the snow interception and canopy snow ablation parameterisations
 presented here over large spatial extents which could help further build
 confidence in these models. However, it will be important to consider
-the uncertainty in meteorological forcing which becomes bigger at larger
-extents away from station observations (e.g., Tang et al., 2023) which
-will contribute to errors in simulated SWE in addition to the new
+the uncertainty in meteorological forcing which becomes larger, further
+away from station observations (e.g., Tang et al., 2023) which will
+contribute to errors in simulated SWE in addition to the new
 parameterisations that represent snowfall partitioning by forest
 canopies. Moreover, accurately representing surface snowpack processes
 such as rain-on-snow, melt, sublimation, and wind redistribution will
