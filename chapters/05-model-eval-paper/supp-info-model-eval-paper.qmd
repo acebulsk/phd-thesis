@@ -2,7 +2,7 @@
 
 ## Description of New Modules added to the Cold Regions Hydrological Modelling Platform (CRHM)
 
-The following describes the new modules added to the CRHM software as part of this research. The new modules are actively developed in the CRHM repository \href{https://github.com/acebulsk/crhmcode/blob/alex-ceb-thesis-changes}{\color{blue}{here}} and specific changes are documented in pull request \href{https://github.com/srlabUsask/crhmcode/pull/471}{\color{blue}{\#471}}. The version of CRHM used in this manuscript has been permanently archived here \href{https://doi.org/10.5281/zenodo.17981431}{\color{blue}{here}}. The CRHM modules listed below are located at the path and point to the version being actively being developed:
+The following describes the new modules added to the CRHM software as part of this research. The new modules are actively developed in the CRHM repository \href{https://github.com/acebulsk/crhmcode/blob/alex-ceb-thesis-changes}{\color{blue}{here}} and specific changes are documented in pull request \href{https://github.com/srlabUsask/crhmcode/pull/471}{\color{blue}{\#471}}. The version of CRHM used in this manuscript has been permanently archived \href{https://doi.org/10.5281/zenodo.17981431}{\color{blue}{here}}. The CRHM modules listed below are located at the path and point to the version being actively being developed:
 
 \href{https://github.com/acebulsk/crhmcode/blob/alex-ceb-thesis-changes/crhmcode/src/modules}{\color{blue}{https://github.com/acebulsk/crhmcode/blob/alex-ceb-thesis-changes/crhmcode/src/modules}}
 
@@ -10,7 +10,7 @@ The following describes the new modules added to the CRHM software as part of th
 
 **Description:**
 
-A new module called `CanopyVectorBased` was added to CRHM to compute initial snow interception in the canopy as described in @Cebulski2025a. This module differs from the existing CRHM `CanopyClearingGap` module based on @Ellis2010 which calculated initial interception as a function of antecedent canopy snow load and canopy density. The new module represents an improvement by calculating initial interception as a function of snowfall and canopy density (function of canopy coverage and hydrometeor trajectory angle) based on observations presented in @Cebulski2025a. The association of interception with canopy snow load is now handled only once by the canopy snow unloading routine in the canopy snow ablation module.
+A new module called `CanopyVectorBased` was added to CRHM to compute initial snow interception in the canopy as described in @sec-chapter-3. This module differs from the existing CRHM `CanopyClearingGap` module based on @Ellis2010 which calculated initial interception as a function of antecedent canopy snow load and canopy density. The new module represents an improvement by calculating initial interception as a function of snowfall and canopy density (function of canopy coverage and hydrometeor trajectory angle) based on observations presented in @sec-chapter-3. The association of interception with canopy snow load is now handled only once by the canopy snow unloading routine in the canopy snow ablation module.
 
 **Modules:**
 
@@ -21,11 +21,11 @@ A new module called `CanopyVectorBased` was added to CRHM to compute initial sno
 
 **Description:**
 
-A new module called `CanopySnowBalance` simulates the physically-based energy and mass balance of snow stored in forest canopies following developments from @Cebulski2026. It is designed to be paired with the `CanopyVectorBased` module and together with `CanopySnowBalance` replaces the `CanopyClearingGap` module in CRHM. The `CanopySnowBalance` represents both dry- and melt-induced canopy snow unloading coupled with energy balance-based melt and sublimation calculations. 
+A new module called `CanopySnowBalance` simulates the physically-based energy and mass balance of snow stored in forest canopies following developments from @sec-chapter-4. It is designed to be paired with the `CanopyVectorBased` module and together with `CanopySnowBalance` replaces the `CanopyClearingGap` module in CRHM. The `CanopySnowBalance` represents both dry- and melt-induced canopy snow unloading coupled with energy balance-based melt and sublimation calculations. 
 
 **Modules:**
 
-- \href{https://github.com/acebulsk/crhmcode/blob/alex-ceb-thesis-changes/crhmcode/src/modules/ClassCanopySnowBalanceCRHM.cpp}{\color{blue}{ClassCanopySnowBalance.cpp}}
+- \href{https://github.com/acebulsk/crhmcode/blob/alex-ceb-thesis-changes/crhmcode/src/modules/ClassCanopySnowBalanceCRHM.cpp}{\color{blue}{ClassCanopySnowBalanceCRHM.cpp}}
 - \href{https://github.com/acebulsk/crhmcode/blob/alex-ceb-thesis-changes/crhmcode/src/modules/ClassCanopySnowBalanceCRHM.h}{\color{blue}{ClassCanopySnowBalanceCRHM.h}}
 - \href{https://github.com/acebulsk/crhmcode/blob/alex-ceb-thesis-changes/crhmcode/src/modules/ClassCanopySnowBalanceBase.cpp}{\color{blue}{ClassCanopySnowBalanceBase.cpp}}
 - \href{https://github.com/acebulsk/crhmcode/blob/alex-ceb-thesis-changes/crhmcode/src/modules/ClassCanopySnowBalanceBase.h}{\color{blue}{ClassCanopySnowBalanceBase.h}}
