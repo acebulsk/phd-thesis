@@ -5768,18 +5768,22 @@ at peak SWE varied from 0.3 at Russell Creek, 0.4 at Marmot and Wolf
 Creek, and 0.6 at Fortress Mountain. Uncalibrated simulation of canopy
 intercepted snow duration at Marmot Creek improved with the new model,
 where the fractional differences from observations decreased from
--40.1\% to 10.2\%. The new model demonstrated improved simulation of
-subcanopy snow accumulation at a temperate-maritime site, and had
-marginally improved performance at cold-continental and subarctic sites.
-Despite the relatively small improved accuracy at the cold climate
-sites, the new model is based on improved physical understanding leading
-to increased confidence in process diagnosis. At cold, low-wind sites,
-about half of annual snowfall was lost via sublimation of intercepted
-snow, whereas greater unloading at a cold, wind-exposed site reduced
-sublimation losses. At the high-snowfall temperate-maritime site, canopy
-snowmelt, meltwater drip, and melt-induced unloading dominated,
-delivering the largest fraction of snowfall to the forest floor despite
-high initial interception efficiency.
+-40.1\% to 10.2\%. The new model improved simulation of subcanopy snow
+accumulation at the temperate--maritime site, while improvements were
+smaller at the cold-continental and subarctic sites. Despite relatively
+small improvements in accuracy at cold-climate sites, the new model is
+based on an improved physical representation of initial interception and
+subsequent ablation of intercepted snow, increasing transferability and
+confidence in process diagnosis. An existing approach lacked a
+comprehensive representation of snow interception processes, resulting
+in larger errors both across years within individual sites and across
+different sites. Based on diagnosis by the new model, at cold, low-wind
+sites, about half of annual snowfall was lost via sublimation of
+intercepted snow, whereas greater unloading at a cold, wind-exposed site
+reduced sublimation losses. At the high-snowfall temperate-maritime
+site, canopy snowmelt, meltwater drip, and melt-induced unloading
+dominated, delivering the largest fraction of snowfall to the forest
+floor despite high initial interception efficiency.
 
 \section{Introduction}\label{introduction-4}
 
@@ -5812,7 +5816,7 @@ diagnosing snow processes (Lumbrazo et al., 2022; Lundquist et al.,
 canopy density compounds this variability (Mazzotti et al., 2021;
 Pomeroy et al., 1998b; Rojas-Heredia et al., 2024; Staines \& Pomeroy,
 2023; Storck et al., 2002), challenging earlier canopy snow
-parameterisations developed from limited observations and exhibited
+parameterisations developed from limited observations leading to
 distinct process emergence across differing environmental conditions
 (Lundquist et al., 2021). While simulating SWE in forests remains
 challenging, it is a crucial aspect to understanding the impacts of
@@ -6439,7 +6443,8 @@ q_{sub} = \frac{Q_l}{\lambda_{sub}}
 where \(Q_l\) is the turbulent flux of latent heat (W
 m\textsuperscript{-2}) calculated in Equation~\ref{eq-ql-05} and
 \(\lambda_{sub}\) is the latent heat of sublimation (J
-kg\textsuperscript{-1}).
+kg\textsuperscript{-1}). When both liquid water and snow were present in
+the canopy, \(Q_l\) was allocated to sublimation.
 
 The evaporation rate (\(q_{evap}\)) of intercepted rain was calculated
 when snow was not intercepted in the canopy as:
@@ -6464,7 +6469,7 @@ s\textsuperscript{-1}) is expressed as:
 Q_{melt} = 
 Q_{sw} +
 Q_{lw} +
-Q_{p} + Q_{h} + Q_{l} - [C_p^{ice} L \frac{\Delta T_{vs}}{\Delta t}]
+Q_{p} + Q_{l} + Q_{h} - [C_p^{ice} L \frac{\Delta T_{vs}}{\Delta t}]
 }\end{equation}
 
 where \(Q_{sw}\) and \(Q_{lw}\) are the net shortwave and longwave
@@ -6578,9 +6583,10 @@ where \(C_p^{liq}\) is the specific heat capacity of liquid water (J
 kg\textsuperscript{-1} K\textsuperscript{-1}), \(m_r\) and \(m_s\) are
 the specific masses of rainfall and snowfall (kg m\textsuperscript{-2}),
 respectively, and \(T_r\) and \(T_s\) are the corresponding temperatures
-of rainfall and snowfall (K). The latent heat exchange associated with
-refreezing of liquid water intercepted in the canopy is represented by
-Equation~\ref{eq-canopy-snowmelt-05}.
+of rainfall and snowfall (K). The energy exchange associated with
+refreezing of liquid water intercepted in the canopy is treated
+separately by determining the available cold content and the
+corresponding release of latent heat during freezing.
 
 \paragraph{Sensible Heat Exchange}\label{sensible-heat-exchange}
 
@@ -7267,14 +7273,7 @@ larger canopy snow loads across all sites and years
 has implications for the representation of above-canopy albedo in land
 surface models which have previously shown poor performance with
 existing canopy snow ablation models (Thackeray et al., 2014; Wang et
-al., 2016). Moreover, E10's performance in simulating subcanopy SWE
-varied substantially between years; it overestimated SWE over most
-years, but underestimated SWE in low-snowfall years when reduced
-unloading rates allowed more sublimation (e.g., Marmot in 2019;
-Figure~\ref{fig-swe-ts}). These results show that recent improvements in
-process parameterisations---particularly the treatment of canopy load,
-ablation, and unloading---yield measurable improvements in simulating
-canopy and subcanopy SWE across diverse climates and forest types.
+al., 2016).
 
 \subsection{Model Performance on Subcanopy
 SWE}\label{model-performance-on-subcanopy-swe}
@@ -7312,16 +7311,10 @@ relatively warmer second winter could have promoted stronger melt-freeze
 processes, resulting in more cohesive canopy snow, greater canopy
 retention, and reduced partitioning into solid snow unloading. This
 would have led to increased sublimation or drip of intercepted snow.
-Although the intent of this evaluation is to assess the performance of
-each model in simulating subcanopy SWE, uncertainties in model forcing
-and physical parameters (i.e., canopy coverage, LAI) may also contribute
-to systematic biases in the evaluation. Some of the increased model
-error at Russell during the 2008 water year may reflect the use of total
-precipitation data from a nearby highway station rather than on-site
-measurements. Remaining error at Russell may reflect unrepresented
-processes, such as ice accretion from canopy snow melt-freeze cycles and
-rime-ice deposition as observed in other maritime forests (Lumbrazo et
-al., 2022), which can increase canopy loads, lower unloading rates, and
+Remaining error at Russell may reflect unrepresented processes, such as
+ice accretion from canopy snow melt-freeze cycles and rime-ice
+deposition as observed in other maritime forests (Lumbrazo et al.,
+2022), which can increase canopy loads, lower unloading rates, and
 favour partitioning to liquid water. Additional uncertainties stem from
 simplifications in the canopy energy balance (e.g., radiation
 transmittance, longwave emission, and turbulent fluxes), as well as
@@ -7345,6 +7338,21 @@ than the snowpack initiation threshold employed in Snobal, causing
 simulated SWE below this threshold to melt immediately. In contrast, E10
 intercepted less snow and had higher unloading rates than CP25 leading
 to higher initial accumulation for these three years at Wolf Creek.
+Moreover, E10's performance in simulating subcanopy SWE varied
+substantially between years; it overestimated SWE over most years, but
+underestimated SWE in low-snowfall years when reduced unloading rates
+allowed more sublimation (e.g., Marmot in 2019;
+Figure~\ref{fig-swe-ts}). These results show that recent improvements in
+process parameterisations---particularly the treatment of canopy load,
+ablation, and unloading---yield measurable improvements in simulating
+canopy and subcanopy SWE across diverse climates and forest types.
+Although the intent of this evaluation is to assess the performance of
+each model in simulating subcanopy SWE, uncertainties in model forcing
+and physical parameters (i.e., canopy coverage, LAI) may also contribute
+to systematic biases in the evaluation. Some of the increased model
+error at Russell during the 2008 water year may reflect the use of total
+precipitation data from a nearby highway station rather than on-site
+measurements.
 
 The hydrometeor fall velocity and wind shear stress used in the initial
 interception and canopy snow unloading parameterisations, respectively,
@@ -7506,13 +7514,15 @@ vary with canopy snow load. The new parameterisations improved
 simulations of the quantity and duration that snow was intercepted in
 the canopy compared to an existing approach. Simulation of subcanopy SWE
 improved across all four sites and is attributed to more accurately
-representing the canopy snow energy and mass balance in the new model.
-This was most apparent in the temperate--maritime environment, where
-errors in subcanopy SWE were four times lower, attributed to a more
-accurate representation of initial interception, canopy snowmelt, and
-unloading. However, errors at this site remained relatively
-high---though limited to just two years, and further work is needed to
-better constrain these uncertainties in warm-climate environments. These
+representing the canopy snow energy and mass balance in the new model,
+and limited representation of melt-driven ablation of intercepted snow
+by an existing approach. This was most apparent in the
+temperate-maritime environment, where errors in subcanopy SWE from the
+new model were four times lower than an existing approach, attributed to
+a more accurate representation of initial interception, canopy snowmelt,
+and unloading. While errors at this site improved with the new model
+they still remained relatively high and further work is needed to better
+constrain these uncertainties in warm-climate environments. These
 results highlight the robustness of physically based parameterisations
 over a wide range of climatic conditions, which is particularly
 important given that continued warming may reduce the applicability of
@@ -7525,8 +7535,7 @@ exerted stronger controls on seasonal snowfall partitioning than
 species-level differences between fir-, spruce-, and pine-dominated
 forests.
 
-Although the new model simulated canopy and subcanopy SWE well,
-uncertainties remain in partitioning of snowfall between sublimation
+Uncertainties remain in partitioning of snowfall between sublimation
 losses and liquid water inputs to the forest floor, as direct flux
 measurements have only been validated at one site in a previous study.
 Measurements of snow interception, unloading, drip, and sublimation are
